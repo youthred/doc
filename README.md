@@ -2,7 +2,9 @@
 
 [bash](guide/bash)
 
-[hutool-docs](guide/hutool-docs)
+[hutool-docs-html](guide/hutool-docs/index.html)
+
+[hutool-docs-md](guide/hutool-docs/SUMMARY.md)
 
 [mdui-v1.0.2-docs](guide/mdui-v1.0.2-docs)
 
