@@ -8,7 +8,7 @@
 
 [mdui-v1.0.2-docs](guide/mdui-v1.0.2-docs)
 
-[www.mdui.org](guide/www.mdui.org)
+[www.mdui.org](guide/mdui/www.mdui.org/zh-cn/index.htm)
 
 [thymeleaf-docs](guide/thymeleaf-docs)
 

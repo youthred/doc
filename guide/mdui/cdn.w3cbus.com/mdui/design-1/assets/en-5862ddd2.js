@@ -1,0 +1,1 @@
+const e={a1:"Material Design has Android-only guidance for several interactions.",a2:"The following guidance refers specifically to these interactions on Android:",a3:"Notifications",a4:"Fingerprint",a5:"Split screen",a6:"Launcher icons"};export{e as en};
