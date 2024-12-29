@@ -8,8 +8,6 @@
 
 [mdui-v1.0.2-docs](guide/mdui-v1.0.2-docs)
 
-[www.mdui.org](guide/mdui/www.mdui.org/zh-cn/index.htm)
-
 [thymeleaf-docs](guide/thymeleaf-docs)
 
 [Netty 4.x 用户指南](guide/netty-4-user-guide/SUMMARY.md)

@@ -1,1 +1,0 @@
-import{_ as e,o as c,c as n}from"index-255315c2.js"/*tpa=https://cdn.w3cbus.com/mdui/2/assets/index-255315c2.js*/;import"vendor-mdui-689d1f65.js"/*tpa=https://cdn.w3cbus.com/mdui/2/assets/vendor-mdui-689d1f65.js*/;const o={};function r(t,s){return c(),n("div",null,"design")}const i=e(o,[["render",r]]);export{i as default};
