@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" class="mdui-theme-auto">
+<head>
+  <meta charset=utf-8"UTF-8">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=5.0">
+  <title>Snackbar Component - mdui Docs</title>
+  <meta name="description" content="Snackbars provide brief updates about app processes at the bottom of the screen.">
+  <link rel="preconnect" href="https://cdn.w3cbus.com">
+  <link rel="alternate" hreflang="en" href="https://www.mdui.org/en/docs/2/components/snackbar">
+  <link rel="alternate" hreflang="zh-cn" href="https://www.mdui.org/zh-cn/docs/2/components/snackbar">
+  <link rel="alternate" hreflang="x-default" href="https://www.mdui.org/en/docs/2/components/snackbar">
+  <link rel="preload" href="https://cdn.w3cbus.com/library/roboto/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="modulepreload" crossorigin href="https://cdn.w3cbus.com/mdui/2/assets/index-444705a2.js"><link rel="preload" href="https://cdn.w3cbus.com/mdui/2/assets/index-44251c77.css" as="style">
+  <link rel="stylesheet" href="../../../../../cdn.w3cbus.com/mdui/2/assets/index-44251c77.css" tppabs="https://cdn.w3cbus.com/mdui/2/assets/index-44251c77.css"><link rel="modulepreload" crossorigin href="https://cdn.w3cbus.com/mdui/2/assets/ThemeSettings-3f9ecbf9.js"><link rel="preload" href="https://cdn.w3cbus.com/mdui/2/assets/ThemeSettings-fa6ba0b3.css" as="style">
+  <link rel="stylesheet" href="../../../../../cdn.w3cbus.com/mdui/2/assets/ThemeSettings-fa6ba0b3.css" tppabs="https://cdn.w3cbus.com/mdui/2/assets/ThemeSettings-fa6ba0b3.css">
+  <link rel="icon" href="https://cdn.w3cbus.com/mdui/icon-192.png">
+  <link rel="icon" href="https://cdn.w3cbus.com/mdui/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="https://cdn.w3cbus.com/mdui/apple-touch-icon-180.png">
+  <link rel="canonical" href="https://www.mdui.org/en/docs/2/components/snackbar">
+  
+  <script type="application/ld+json">{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"mdui","item":"https://www.mdui.org/en/"},{"@type":"ListItem","position":2,"name":"mdui 2 Docs","item":"https://www.mdui.org/en/docs/2/"},{"@type":"ListItem","position":3,"name":"Snackbar Component"}],"@context":"https://schema.org"}</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'/*tpa=https://www.mdui.org/en/docs/2/components/gtm.js*/});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K3T2R6S');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="../../../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js-client=ca-pub-4466345895756968" tppabs="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4466345895756968" data-overlays="bottom" crossorigin="anonymous"></script>
+  <script type="module" crossorigin src="../../../../../cdn.w3cbus.com/mdui/2/assets/index-255315c2.js" tppabs="https://cdn.w3cbus.com/mdui/2/assets/index-255315c2.js"></script>
+  <link rel="modulepreload" crossorigin href="https://cdn.w3cbus.com/mdui/2/assets/vendor-mdui-689d1f65.js">
+  <link rel="stylesheet" href="../../../../../cdn.w3cbus.com/mdui/2/assets/vendor-mdui-67e1dd1d.css" tppabs="https://cdn.w3cbus.com/mdui/2/assets/vendor-mdui-67e1dd1d.css">
+  <link rel="stylesheet" href="../../../../../cdn.w3cbus.com/mdui/2/assets/index-c1bb6128.css" tppabs="https://cdn.w3cbus.com/mdui/2/assets/index-c1bb6128.css">
+</head>
+<body>
+<div id="app"><mdui-layout class="layout" data-v-5855b255><mdui-top-app-bar class="appbar" scroll-behavior="elevate" order="1" data-nosnippet data-v-5855b255 data-v-93b4b6dd><mdui-button-icon data-v-93b4b6dd><mdui-icon name="menu--rounded" data-v-93b4b6dd></mdui-icon></mdui-button-icon><mdui-top-app-bar-title data-v-93b4b6dd><a href="../../../index.htm" tppabs="https://www.mdui.org/en/" class="title" data-v-93b4b6dd>MDUI</a><a href="../index.htm" tppabs="https://www.mdui.org/en/docs/2/" class="title small" data-v-93b4b6dd>Docs</a></mdui-top-app-bar-title><mdui-dropdown trigger="hover" data-v-93b4b6dd data-v-d73cc679><mdui-button-icon slot="trigger" class="icon" data-v-d73cc679><mdui-icon-translate--rounded data-v-d73cc679></mdui-icon-translate--rounded></mdui-button-icon><mdui-menu selects="single" class="menu" data-v-d73cc679><!--[--><mdui-menu-item value="en" data-v-d73cc679>English</mdui-menu-item><mdui-menu-item value="zh-cn" data-v-d73cc679>简体中文</mdui-menu-item><!--]--></mdui-menu></mdui-dropdown><mdui-dropdown trigger="hover" data-v-93b4b6dd data-v-931aaba3><mdui-button-icon slot="trigger" class="auto" data-v-931aaba3><mdui-icon-light-mode class="light-filled" data-v-931aaba3></mdui-icon-light-mode><mdui-icon-light-mode--outlined class="light-outlined" data-v-931aaba3></mdui-icon-light-mode--outlined><mdui-icon-dark-mode class="dark-filled" data-v-931aaba3></mdui-icon-dark-mode><mdui-icon-dark-mode--outlined class="dark-outlined" data-v-931aaba3></mdui-icon-dark-mode--outlined></mdui-button-icon><mdui-menu selects="single" value="auto" class="menu" data-v-931aaba3><mdui-menu-item value="light" data-v-931aaba3>Light</mdui-menu-item><mdui-menu-item value="dark" data-v-931aaba3>Dark</mdui-menu-item><mdui-divider data-v-931aaba3></mdui-divider><mdui-menu-item value="auto" data-v-931aaba3>System</mdui-menu-item></mdui-menu></mdui-dropdown><mdui-dropdown stay-open-on-click trigger="hover" class="color-scheme" data-v-93b4b6dd data-v-e56655cb><mdui-button-icon slot="trigger" class="icon" data-v-e56655cb><mdui-icon name="palette--outlined" class="outlined" data-v-e56655cb></mdui-icon><mdui-icon name="palette" class="filled" data-v-e56655cb></mdui-icon></mdui-button-icon><mdui-card class="card" data-v-e56655cb><div class="color-label" data-v-e56655cb>Preset Colors</div><div class="color-preset" data-v-e56655cb><div class="red" data-v-e56655cb></div><div class="purple" data-v-e56655cb></div><div class="blue" data-v-e56655cb></div><div class="green" data-v-e56655cb></div><div class="yellow" data-v-e56655cb></div><div class="grey" data-v-e56655cb></div></div><div class="color-label" data-v-e56655cb>Custom Color</div><input type="color" class="color-custom" data-v-e56655cb><div class="color-label" data-v-e56655cb>Extract Color from Wallpaper</div><div class="color-wallpaper" data-v-e56655cb>Select a Wallpaper <input type="file" accept="image/png, image/jpeg" data-v-e56655cb></div></mdui-card></mdui-dropdown></mdui-top-app-bar><mdui-navigation-drawer class="drawer" style="--mdui-motion-duration-long2:0;position:absolute;top:64px;bottom:0px;left:0px;" close-on-esc close-on-overlay-click order="2" data-nosnippet data-v-5855b255 data-v-9c367966><mdui-list class="list" data-v-9c367966><mdui-collapse value="components" accordion data-v-9c367966><!--[--><mdui-collapse-item value="getting-started" data-v-9c367966><mdui-list-item slot="header" rounded data-v-9c367966>Getting Started <mdui-icon slot="icon" name="near_me--rounded" data-v-9c367966></mdui-icon><mdui-icon slot="end-icon" name="expand_more" class="arrow" data-v-9c367966></mdui-icon></mdui-list-item><div class="sublist" data-v-9c367966><!----></div></mdui-collapse-item><mdui-collapse-item value="styles" data-v-9c367966><mdui-list-item slot="header" rounded data-v-9c367966>Styles <mdui-icon slot="icon" name="layers--rounded" data-v-9c367966></mdui-icon><mdui-icon slot="end-icon" name="expand_more" class="arrow" data-v-9c367966></mdui-icon></mdui-list-item><div class="sublist" data-v-9c367966><!----></div></mdui-collapse-item><mdui-collapse-item value="frameworks" data-v-9c367966><mdui-list-item slot="header" rounded data-v-9c367966>Frameworks <mdui-icon slot="icon" name="workspaces--rounded" data-v-9c367966></mdui-icon><mdui-icon slot="end-icon" name="expand_more" class="arrow" data-v-9c367966></mdui-icon></mdui-list-item><div class="sublist" data-v-9c367966><!----></div></mdui-collapse-item><mdui-collapse-item value="components" data-v-9c367966><mdui-list-item slot="header" rounded data-v-9c367966>Components <mdui-icon slot="icon" name="widgets--rounded" data-v-9c367966></mdui-icon><mdui-icon slot="end-icon" name="expand_more" class="arrow-active arrow" data-v-9c367966></mdui-icon></mdui-list-item><div class="sublist" data-v-9c367966><!--[--><!--[--><mdui-list-item rounded active="false" href="avatar.htm" tppabs="https://www.mdui.org/en/docs/2/components/avatar" data-v-9c367966>Avatar <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="badge.htm" tppabs="https://www.mdui.org/en/docs/2/components/badge" data-v-9c367966>Badge <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="bottom-app-bar.htm" tppabs="https://www.mdui.org/en/docs/2/components/bottom-app-bar" data-v-9c367966>BottomAppBar <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="button.htm" tppabs="https://www.mdui.org/en/docs/2/components/button" data-v-9c367966>Button <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="button-icon.htm" tppabs="https://www.mdui.org/en/docs/2/components/button-icon" data-v-9c367966>ButtonIcon <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="card.htm" tppabs="https://www.mdui.org/en/docs/2/components/card" data-v-9c367966>Card <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="checkbox.htm" tppabs="https://www.mdui.org/en/docs/2/components/checkbox" data-v-9c367966>Checkbox <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="chip.htm" tppabs="https://www.mdui.org/en/docs/2/components/chip" data-v-9c367966>Chip <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="circular-progress.htm" tppabs="https://www.mdui.org/en/docs/2/components/circular-progress" data-v-9c367966>CircularProgress <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="collapse.htm" tppabs="https://www.mdui.org/en/docs/2/components/collapse" data-v-9c367966>Collapse <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="dialog.htm" tppabs="https://www.mdui.org/en/docs/2/components/dialog" data-v-9c367966>Dialog <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="divider.htm" tppabs="https://www.mdui.org/en/docs/2/components/divider" data-v-9c367966>Divider <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="dropdown.htm" tppabs="https://www.mdui.org/en/docs/2/components/dropdown" data-v-9c367966>Dropdown <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="fab.htm" tppabs="https://www.mdui.org/en/docs/2/components/fab" data-v-9c367966>Fab <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="icon.htm" tppabs="https://www.mdui.org/en/docs/2/components/icon" data-v-9c367966>Icon <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="layout.htm" tppabs="https://www.mdui.org/en/docs/2/components/layout" data-v-9c367966>Layout <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="linear-progress.htm" tppabs="https://www.mdui.org/en/docs/2/components/linear-progress" data-v-9c367966>LinearProgress <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="list.htm" tppabs="https://www.mdui.org/en/docs/2/components/list" data-v-9c367966>List <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="menu.htm" tppabs="https://www.mdui.org/en/docs/2/components/menu" data-v-9c367966>Menu <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="navigation-bar.htm" tppabs="https://www.mdui.org/en/docs/2/components/navigation-bar" data-v-9c367966>NavigationBar <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="navigation-drawer.htm" tppabs="https://www.mdui.org/en/docs/2/components/navigation-drawer" data-v-9c367966>NavigationDrawer <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="navigation-rail.htm" tppabs="https://www.mdui.org/en/docs/2/components/navigation-rail" data-v-9c367966>NavigationRail <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="radio.htm" tppabs="https://www.mdui.org/en/docs/2/components/radio" data-v-9c367966>Radio <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="range-slider.htm" tppabs="https://www.mdui.org/en/docs/2/components/range-slider" data-v-9c367966>RangeSlider <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="select.htm" tppabs="https://www.mdui.org/en/docs/2/components/select" data-v-9c367966>Select <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="segmented-button.htm" tppabs="https://www.mdui.org/en/docs/2/components/segmented-button" data-v-9c367966>SegmentedButton <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="slider.htm" tppabs="https://www.mdui.org/en/docs/2/components/slider" data-v-9c367966>Slider <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="true" href="snackbar.htm" tppabs="https://www.mdui.org/en/docs/2/components/snackbar" data-v-9c367966>Snackbar <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="switch.htm" tppabs="https://www.mdui.org/en/docs/2/components/switch" data-v-9c367966>Switch <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="tabs.htm" tppabs="https://www.mdui.org/en/docs/2/components/tabs" data-v-9c367966>Tabs <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="text-field.htm" tppabs="https://www.mdui.org/en/docs/2/components/text-field" data-v-9c367966>TextField <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="tooltip.htm" tppabs="https://www.mdui.org/en/docs/2/components/tooltip" data-v-9c367966>Tooltip <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="top-app-bar.htm" tppabs="https://www.mdui.org/en/docs/2/components/top-app-bar" data-v-9c367966>TopAppBar <!----></mdui-list-item><!--]--><!--]--></div></mdui-collapse-item><mdui-collapse-item value="functions" data-v-9c367966><mdui-list-item slot="header" rounded data-v-9c367966>Functions <mdui-icon slot="icon" name="functions--rounded" data-v-9c367966></mdui-icon><mdui-icon slot="end-icon" name="expand_more" class="arrow" data-v-9c367966></mdui-icon></mdui-list-item><div class="sublist" data-v-9c367966><!----></div></mdui-collapse-item><mdui-collapse-item value="libraries" data-v-9c367966><mdui-list-item slot="header" rounded data-v-9c367966>Libraries <mdui-icon slot="icon" name="local_mall--rounded" data-v-9c367966></mdui-icon><mdui-icon slot="end-icon" name="expand_more" class="arrow" data-v-9c367966></mdui-icon></mdui-list-item><div class="sublist" data-v-9c367966><!----></div></mdui-collapse-item><!--]--></mdui-collapse></mdui-list></mdui-navigation-drawer><mdui-layout-main class="layout-main" data-v-5855b255><div class="main" data-v-5855b255><main class="container mdui-prose" data-v-5855b255><h1 data-v-5855b255>Snackbar</h1><!--[--><!--[--><!--[--><div><p>Snackbars provide brief updates about app processes at the bottom of the screen.</p>
+<p>In addition to direct component usage, mdui also offers a <a href="../functions/snackbar.htm" tppabs="https://www.mdui.org/en/docs/2/functions/snackbar"><code>mdui.snackbar</code></a> function for simplified Snackbar component usage.</p>
+</div><!--[--><ins class="reward reward-display first-screen adsbygoogle" style="display:block;border-bottom:none;color-scheme:auto;text-decoration:none;margin-top:1rem;" data-ad-client="ca-pub-4466345895756968" data-ad-slot="3732322489"></ins><!----><!--]--><div style="margin-top:4.21875em;"><h2 id="usage">
+                  <a href="#usage">Usage</a>
+                </h2>
+<p>Import the component:</p>
+<pre><code class="language-js">import &#39;mdui/components/snackbar.js&#39;;
+</code></pre>
+<p>Import the TypeScript type:</p>
+<pre><code class="language-ts">import type { Snackbar } from &#39;mdui/components/snackbar.js&#39;;
+</code></pre>
+<p>Example:</p></div><!--]--><!--]--><!--[--><div class="example" data-v-5855b255 data-v-4432c7e8><div class="demo" data-v-4432c7e8><mdui-snackbar class="example-snackbar">Photo archived</mdui-snackbar>
+
+<mdui-button>Open Snackbar</mdui-button>
+
+</div><mdui-collapse value="one" data-v-4432c7e8><mdui-collapse-item value="one" data-v-4432c7e8><pre class="code" data-v-4432c7e8><code class="language-html" data-v-4432c7e8>&lt;mdui-snackbar class=&quot;example-snackbar&quot;&gt;Photo archived&lt;/mdui-snackbar&gt;
+
+&lt;mdui-button&gt;Open Snackbar&lt;/mdui-button&gt;
+
+&lt;script&gt;
+  const snackbar = document.querySelector(&quot;.example-snackbar&quot;);
+  const openButton = snackbar.nextElementSibling;
+
+  openButton.addEventListener(&quot;click&quot;, () =&gt; snackbar.open = true);
+&lt;/script&gt;</code></pre><!----></mdui-collapse-item></mdui-collapse></div><!--]--><!--[--><div style="margin-top:4.21875em;" data-v-5855b255><h2 id="examples">
+                  <a href="#examples">Examples</a>
+                </h2>
+<h3 id="example-placement">
+                  <a href="#example-placement">Position</a>
+                </h3>
+<p>You can set the snackbar&#39;s position using the <code>placement</code> attribute.</p></div><!--]--><!--[--><div class="example expandable" data-v-5855b255 data-v-4432c7e8><div class="demo" data-v-4432c7e8><div class="example-placement">
+  <div class="row">
+    <mdui-snackbar placement="top-start">Photo archived</mdui-snackbar>
+    <mdui-button variant="outlined">top-start</mdui-button>
+
+    <mdui-snackbar placement="top">Photo archived</mdui-snackbar>
+    <mdui-button variant="outlined">top</mdui-button>
+
+    <mdui-snackbar placement="top-end">Photo archived</mdui-snackbar>
+    <mdui-button variant="outlined">top-end</mdui-button>
+  </div>
+  <div class="row">
+    <mdui-snackbar placement="bottom-start">Photo archived</mdui-snackbar>
+    <mdui-button variant="outlined">bottom-start</mdui-button>
+
+    <mdui-snackbar placement="bottom">Photo archived</mdui-snackbar>
+    <mdui-button variant="outlined">bottom</mdui-button>
+
+    <mdui-snackbar placement="bottom-end">Photo archived</mdui-snackbar>
+    <mdui-button variant="outlined">bottom-end</mdui-button>
+  </div>
+</div>
+
+
+
+<style>
+.example-placement mdui-button {
+  margin: 0.25rem;
+  width: 7.5rem;
+}
+</style></div><mdui-collapse value="" data-v-4432c7e8><mdui-collapse-item value="one" data-v-4432c7e8><pre class="code" data-v-4432c7e8><code class="language-html" data-v-4432c7e8>&lt;div class=&quot;example-placement&quot;&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;mdui-snackbar placement=&quot;top-start&quot;&gt;Photo archived&lt;/mdui-snackbar&gt;
+    &lt;mdui-button variant=&quot;outlined&quot;&gt;top-start&lt;/mdui-button&gt;
+
+    &lt;mdui-snackbar placement=&quot;top&quot;&gt;Photo archived&lt;/mdui-snackbar&gt;
+    &lt;mdui-button variant=&quot;outlined&quot;&gt;top&lt;/mdui-button&gt;
+
+    &lt;mdui-snackbar placement=&quot;top-end&quot;&gt;Photo archived&lt;/mdui-snackbar&gt;
+    &lt;mdui-button variant=&quot;outlined&quot;&gt;top-end&lt;/mdui-button&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;mdui-snackbar placement=&quot;bottom-start&quot;&gt;Photo archived&lt;/mdui-snackbar&gt;
+    &lt;mdui-button variant=&quot;outlined&quot;&gt;bottom-start&lt;/mdui-button&gt;
+
+    &lt;mdui-snackbar placement=&quot;bottom&quot;&gt;Photo archived&lt;/mdui-snackbar&gt;
+    &lt;mdui-button variant=&quot;outlined&quot;&gt;bottom&lt;/mdui-button&gt;
+
+    &lt;mdui-snackbar placement=&quot;bottom-end&quot;&gt;Photo archived&lt;/mdui-snackbar&gt;
+    &lt;mdui-button variant=&quot;outlined&quot;&gt;bottom-end&lt;/mdui-button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  const snackbars = document.querySelectorAll(&quot;.example-placement mdui-snackbar&quot;);
+
+  snackbars.forEach((snackbar) =&gt; {
+    const button = snackbar.nextElementSibling;
+    button.addEventListener(&quot;click&quot;, () =&gt; snackbar.open = true);
+  });
+&lt;/script&gt;
+
+&lt;style&gt;
+.example-placement mdui-button {
+  margin: 0.25rem;
+  width: 7.5rem;
+}
+&lt;/style&gt;</code></pre><mdui-button slot="header" class="source" variant="text" full-width end-icon="arrow_drop_down" data-v-4432c7e8>Code</mdui-button></mdui-collapse-item></mdui-collapse></div><!--]--><!--[--><div style="margin-top:3em;" data-v-5855b255><h3 id="example-action">
+                  <a href="#example-action">Action Button</a>
+                </h3>
+<p>The <code>action</code> attribute adds an action button on the right side and specifies its text. The <code>action-click</code> event is triggered when the action button is clicked. The <code>action-loading</code> attribute displays a loading state on the action button.</p></div><!--]--><!--[--><div class="example expandable" data-v-5855b255 data-v-4432c7e8><div class="demo" data-v-4432c7e8><mdui-snackbar action="Undo" class="example-action">Photo archived</mdui-snackbar>
+
+<mdui-button>Open Snackbar</mdui-button>
+
+</div><mdui-collapse value="" data-v-4432c7e8><mdui-collapse-item value="one" data-v-4432c7e8><pre class="code" data-v-4432c7e8><code class="language-html" data-v-4432c7e8>&lt;mdui-snackbar action=&quot;Undo&quot; class=&quot;example-action&quot;&gt;Photo archived&lt;/mdui-snackbar&gt;
+
+&lt;mdui-button&gt;Open Snackbar&lt;/mdui-button&gt;
+
+&lt;script&gt;
+  const snackbar = document.querySelector(&quot;.example-action&quot;);
+  const openButton = snackbar.nextElementSibling;
+
+  snackbar.addEventListener(&quot;action-click&quot;, () =&gt; {
+    snackbar.actionLoading = true;
+    setTimeout(() =&gt; snackbar.actionLoading = false, 2000);
+  });
+
+  openButton.addEventListener(&quot;click&quot;, () =&gt; snackbar.open = true);
+&lt;/script&gt;</code></pre><mdui-button slot="header" class="source" variant="text" full-width end-icon="arrow_drop_down" data-v-4432c7e8>Code</mdui-button></mdui-collapse-item></mdui-collapse></div><!--]--><!--[--><div style="margin-top:1.25em;" data-v-5855b255><p>The <code>action</code> slot can also be used to add elements on the right side.</p></div><!--]--><!--[--><div class="example expandable" data-v-5855b255 data-v-4432c7e8><div class="demo" data-v-4432c7e8><mdui-snackbar class="example-action-slot">
+  Photo archived
+  <mdui-button slot="action" variant="text">Undo</mdui-button>
+</mdui-snackbar>
+
+<mdui-button>Open Snackbar</mdui-button>
+
+</div><mdui-collapse value="" data-v-4432c7e8><mdui-collapse-item value="one" data-v-4432c7e8><pre class="code" data-v-4432c7e8><code class="language-html" data-v-4432c7e8>&lt;mdui-snackbar class=&quot;example-action-slot&quot;&gt;
+  Photo archived
+  &lt;mdui-button slot=&quot;action&quot; variant=&quot;text&quot;&gt;Undo&lt;/mdui-button&gt;
+&lt;/mdui-snackbar&gt;
+
+&lt;mdui-button&gt;Open Snackbar&lt;/mdui-button&gt;
+
+&lt;script&gt;
+  const snackbar = document.querySelector(&quot;.example-action-slot&quot;);
+  const openButton = snackbar.nextElementSibling;
+
+  openButton.addEventListener(&quot;click&quot;, () =&gt; snackbar.open = true);
+&lt;/script&gt;</code></pre><mdui-button slot="header" class="source" variant="text" full-width end-icon="arrow_drop_down" data-v-4432c7e8>Code</mdui-button></mdui-collapse-item></mdui-collapse></div><!--]--><!--[--><div style="margin-top:3em;" data-v-5855b255><h3 id="example-closeable">
+                  <a href="#example-closeable">Closable</a>
+                </h3>
+<p>The <code>closeable</code> attribute adds a close button on the right. Clicking the button closes the snackbar and triggers the <code>close</code> event.</p></div><!--]--><!--[--><div class="example expandable" data-v-5855b255 data-v-4432c7e8><div class="demo" data-v-4432c7e8><mdui-snackbar closeable class="example-closeable">Photo archived</mdui-snackbar>
+
+<mdui-button>Open Snackbar</mdui-button>
+
+</div><mdui-collapse value="" data-v-4432c7e8><mdui-collapse-item value="one" data-v-4432c7e8><pre class="code" data-v-4432c7e8><code class="language-html" data-v-4432c7e8>&lt;mdui-snackbar closeable class=&quot;example-closeable&quot;&gt;Photo archived&lt;/mdui-snackbar&gt;
+
+&lt;mdui-button&gt;Open Snackbar&lt;/mdui-button&gt;
+
+&lt;script&gt;
+  const snackbar = document.querySelector(&quot;.example-closeable&quot;);
+  const openButton = snackbar.nextElementSibling;
+
+  openButton.addEventListener(&quot;click&quot;, () =&gt; snackbar.open = true);
+&lt;/script&gt;</code></pre><mdui-button slot="header" class="source" variant="text" full-width end-icon="arrow_drop_down" data-v-4432c7e8>Code</mdui-button></mdui-collapse-item></mdui-collapse></div><!--]--><!--[--><div style="margin-top:1.25em;" data-v-5855b255><p>The <code>close-button</code> slot specifies the element of the close button.</p></div><!--]--><!--[--><div class="example expandable" data-v-5855b255 data-v-4432c7e8><div class="demo" data-v-4432c7e8><mdui-snackbar closeable class="example-close-button-slot">
+  Photo archived
+  <mdui-avatar slot="close-button" icon="people_alt"></mdui-avatar>
+</mdui-snackbar>
+
+<mdui-button>Open Snackbar</mdui-button>
+
+</div><mdui-collapse value="" data-v-4432c7e8><mdui-collapse-item value="one" data-v-4432c7e8><pre class="code" data-v-4432c7e8><code class="language-html" data-v-4432c7e8>&lt;mdui-snackbar closeable class=&quot;example-close-button-slot&quot;&gt;
+  Photo archived
+  &lt;mdui-avatar slot=&quot;close-button&quot; icon=&quot;people_alt&quot;&gt;&lt;/mdui-avatar&gt;
+&lt;/mdui-snackbar&gt;
+
+&lt;mdui-button&gt;Open Snackbar&lt;/mdui-button&gt;
+
+&lt;script&gt;
+  const snackbar = document.querySelector(&quot;.example-close-button-slot&quot;);
+  const openButton = snackbar.nextElementSibling;
+
+  openButton.addEventListener(&quot;click&quot;, () =&gt; snackbar.open = true);
+&lt;/script&gt;</code></pre><mdui-button slot="header" class="source" variant="text" full-width end-icon="arrow_drop_down" data-v-4432c7e8>Code</mdui-button></mdui-collapse-item></mdui-collapse></div><!--]--><!--[--><div style="margin-top:1.25em;" data-v-5855b255><p>The <code>close-icon</code> attribute sets the Material Icon in the default close button. The <code>close-icon</code> slot sets the icon element in the default close button.</p></div><!--]--><!--[--><div class="example expandable" data-v-5855b255 data-v-4432c7e8><div class="demo" data-v-4432c7e8><mdui-snackbar
+  closeable
+  close-icon="delete"
+  class="example-close-icon"
+>Photo archived</mdui-snackbar>
+
+<mdui-button>Open Snackbar</mdui-button>
+
+</div><mdui-collapse value="" data-v-4432c7e8><mdui-collapse-item value="one" data-v-4432c7e8><pre class="code" data-v-4432c7e8><code class="language-html" data-v-4432c7e8>&lt;mdui-snackbar
+  closeable
+  close-icon=&quot;delete&quot;
+  class=&quot;example-close-icon&quot;
+&gt;Photo archived&lt;/mdui-snackbar&gt;
+
+&lt;mdui-button&gt;Open Snackbar&lt;/mdui-button&gt;
+
+&lt;script&gt;
+  const snackbar = document.querySelector(&quot;.example-close-icon&quot;);
+  const openButton = snackbar.nextElementSibling;
+
+  openButton.addEventListener(&quot;click&quot;, () =&gt; snackbar.open = true);
+&lt;/script&gt;</code></pre><mdui-button slot="header" class="source" variant="text" full-width end-icon="arrow_drop_down" data-v-4432c7e8>Code</mdui-button></mdui-collapse-item></mdui-collapse></div><!--]--><!--[--><div style="margin-top:3em;" data-v-5855b255><h3 id="example-message-line">
+                  <a href="#example-message-line">Text Lines</a>
+                </h3>
+<p>The <code>message-line</code> attribute limits the number of lines in the message text, with a maximum of <code>2</code> lines.</p></div><!--]--><!--[--><div class="example expandable" data-v-5855b255 data-v-4432c7e8><div class="demo" data-v-4432c7e8><mdui-snackbar message-line="1" class="example-line">The item already has the label "travel". You can add a new label. You can add a new label.</mdui-snackbar>
+
+<mdui-button>Open Snackbar</mdui-button>
+
+</div><mdui-collapse value="" data-v-4432c7e8><mdui-collapse-item value="one" data-v-4432c7e8><pre class="code" data-v-4432c7e8><code class="language-html" data-v-4432c7e8>&lt;mdui-snackbar message-line=&quot;1&quot; class=&quot;example-line&quot;&gt;The item already has the label &quot;travel&quot;. You can add a new label. You can add a new label.&lt;/mdui-snackbar&gt;
+
+&lt;mdui-button&gt;Open Snackbar&lt;/mdui-button&gt;
+
+&lt;script&gt;
+  const snackbar = document.querySelector(&quot;.example-line&quot;);
+  const openButton = snackbar.nextElementSibling;
+
+  openButton.addEventListener(&quot;click&quot;, () =&gt; snackbar.open = true);
+&lt;/script&gt;</code></pre><mdui-button slot="header" class="source" variant="text" full-width end-icon="arrow_drop_down" data-v-4432c7e8>Code</mdui-button></mdui-collapse-item></mdui-collapse></div><!--]--><!--[--><div style="margin-top:3em;" data-v-5855b255><h3 id="example-auto-close-delay">
+                  <a href="#example-auto-close-delay">Auto Close Delay</a>
+                </h3>
+<p>The <code>auto-close-delay</code> attribute sets the delay for automatic closure, in milliseconds. The default is <code>5000</code> milliseconds.</p></div><!--]--><!--[--><div class="example expandable" data-v-5855b255 data-v-4432c7e8><div class="demo" data-v-4432c7e8><mdui-snackbar auto-close-delay="2000" class="example-close-delay">Photo archived</mdui-snackbar>
+
+<mdui-button>Open Snackbar</mdui-button>
+
+</div><mdui-collapse value="" data-v-4432c7e8><mdui-collapse-item value="one" data-v-4432c7e8><pre class="code" data-v-4432c7e8><code class="language-html" data-v-4432c7e8>&lt;mdui-snackbar auto-close-delay=&quot;2000&quot; class=&quot;example-close-delay&quot;&gt;Photo archived&lt;/mdui-snackbar&gt;
+
+&lt;mdui-button&gt;Open Snackbar&lt;/mdui-button&gt;
+
+&lt;script&gt;
+  const snackbar = document.querySelector(&quot;.example-close-delay&quot;);
+  const openButton = snackbar.nextElementSibling;
+
+  openButton.addEventListener(&quot;click&quot;, () =&gt; snackbar.open = true);
+&lt;/script&gt;</code></pre><mdui-button slot="header" class="source" variant="text" full-width end-icon="arrow_drop_down" data-v-4432c7e8>Code</mdui-button></mdui-collapse-item></mdui-collapse></div><!--]--><!--[--><div style="margin-top:3em;" data-v-5855b255><h3 id="example-close-on-outside-click">
+                  <a href="#example-close-on-outside-click">Closing on Outside Click</a>
+                </h3>
+<p>The <code>close-on-outside-click</code> attribute closes the snackbar when clicking outside of its area.</p></div><!--]--><!--[--><div class="example expandable" data-v-5855b255 data-v-4432c7e8><div class="demo" data-v-4432c7e8><mdui-snackbar close-on-outside-click class="example-outside">Photo archived</mdui-snackbar>
+
+<mdui-button>Open Snackbar</mdui-button>
+
+</div><mdui-collapse value="" data-v-4432c7e8><mdui-collapse-item value="one" data-v-4432c7e8><pre class="code" data-v-4432c7e8><code class="language-html" data-v-4432c7e8>&lt;mdui-snackbar close-on-outside-click class=&quot;example-outside&quot;&gt;Photo archived&lt;/mdui-snackbar&gt;
+
+&lt;mdui-button&gt;Open Snackbar&lt;/mdui-button&gt;
+
+&lt;script&gt;
+  const snackbar = document.querySelector(&quot;.example-outside&quot;);
+  const openButton = snackbar.nextElementSibling;
+
+  openButton.addEventListener(&quot;click&quot;, () =&gt; snackbar.open = true);
+&lt;/script&gt;</code></pre><mdui-button slot="header" class="source" variant="text" full-width end-icon="arrow_drop_down" data-v-4432c7e8>Code</mdui-button></mdui-collapse-item></mdui-collapse></div><!--]--><!--]--><!--[--><!--[--><h2 id="api" data-v-646cee88><a href="#api" data-v-646cee88>API</a></h2><!--[--><ins class="reward reward-display adsbygoogle" style="display:block;border-bottom:none;color-scheme:auto;text-decoration:none;margin-bottom:1rem;" data-ad-client="ca-pub-4466345895756968" data-ad-slot="3732322489"></ins><!----><!--]--><div class="block attributes" data-v-646cee88><h3 id="attributes" data-v-646cee88><a href="#attributes" data-v-646cee88>Properties</a></h3><div class="mdui-table" data-v-646cee88><table data-v-646cee88><thead data-v-646cee88><tr data-v-646cee88><th data-v-646cee88>Attribute</th><th data-v-646cee88>Property</th><th data-v-646cee88>Reflect</th><th data-v-646cee88>Type</th><th data-v-646cee88>Default</th></tr></thead><tbody data-v-646cee88><!--[--><!--[--><tr class="api" id="attributes-open" data-v-646cee88><td data-v-646cee88><a href="#attributes-open" data-v-646cee88><code data-v-646cee88>open</code></a></td><td data-v-646cee88><a href="#attributes-open" data-v-646cee88><code data-v-646cee88>open</code></a></td><td data-v-646cee88><mdui-icon name="check--rounded" class="reflect" data-v-646cee88></mdui-icon></td><td class="wrap" data-v-646cee88><code data-v-646cee88>boolean</code></td><td data-v-646cee88><code data-v-646cee88>false</code></td></tr><tr data-v-646cee88><td colspan="5" data-v-646cee88><p>Opens the Snackbar.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="attributes-placement" data-v-646cee88><td data-v-646cee88><a href="#attributes-placement" data-v-646cee88><code data-v-646cee88>placement</code></a></td><td data-v-646cee88><a href="#attributes-placement" data-v-646cee88><code data-v-646cee88>placement</code></a></td><td data-v-646cee88><mdui-icon name="check--rounded" class="reflect" data-v-646cee88></mdui-icon></td><td class="wrap" data-v-646cee88><code data-v-646cee88>&#39;top&#39; | &#39;top-start&#39; | &#39;top-end&#39; | &#39;bottom&#39; | &#39;bottom-start&#39; | &#39;bottom-end&#39;</code></td><td data-v-646cee88><code data-v-646cee88>&#39;bottom&#39;</code></td></tr><tr data-v-646cee88><td colspan="5" data-v-646cee88><p>Snackbar placement. Default is <code>bottom</code>. Possible values:</p>
+<ul>
+<li><code>top</code>: Top, centered.</li>
+<li><code>top-start</code>: Top, left-aligned.</li>
+<li><code>top-end</code>: Top, right-aligned.</li>
+<li><code>bottom</code>: Bottom, centered.</li>
+<li><code>bottom-start</code>: Bottom, left-aligned.</li>
+<li><code>bottom-end</code>: Bottom, right-aligned.</li>
+</ul>
+</td></tr><!--]--><!--[--><tr class="api" id="attributes-action" data-v-646cee88><td data-v-646cee88><a href="#attributes-action" data-v-646cee88><code data-v-646cee88>action</code></a></td><td data-v-646cee88><a href="#attributes-action" data-v-646cee88><code data-v-646cee88>action</code></a></td><td data-v-646cee88><mdui-icon name="check--rounded" class="reflect" data-v-646cee88></mdui-icon></td><td class="wrap" data-v-646cee88><code data-v-646cee88>string</code></td><td data-v-646cee88><!--[-->-<!--]--></td></tr><tr data-v-646cee88><td colspan="5" data-v-646cee88><p>Text for the action button. Alternatively, use <code>slot=&quot;action&quot;</code>.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="attributes-action-loading" data-v-646cee88><td data-v-646cee88><a href="#attributes-action-loading" data-v-646cee88><code data-v-646cee88>action-loading</code></a></td><td data-v-646cee88><a href="#attributes-action-loading" data-v-646cee88><code data-v-646cee88>actionLoading</code></a></td><td data-v-646cee88><mdui-icon name="check--rounded" class="reflect" data-v-646cee88></mdui-icon></td><td class="wrap" data-v-646cee88><code data-v-646cee88>boolean</code></td><td data-v-646cee88><code data-v-646cee88>false</code></td></tr><tr data-v-646cee88><td colspan="5" data-v-646cee88><p>Indicates if the action button is in the loading state.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="attributes-closeable" data-v-646cee88><td data-v-646cee88><a href="#attributes-closeable" data-v-646cee88><code data-v-646cee88>closeable</code></a></td><td data-v-646cee88><a href="#attributes-closeable" data-v-646cee88><code data-v-646cee88>closeable</code></a></td><td data-v-646cee88><mdui-icon name="check--rounded" class="reflect" data-v-646cee88></mdui-icon></td><td class="wrap" data-v-646cee88><code data-v-646cee88>boolean</code></td><td data-v-646cee88><code data-v-646cee88>false</code></td></tr><tr data-v-646cee88><td colspan="5" data-v-646cee88><p>Shows a close button on the right.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="attributes-close-icon" data-v-646cee88><td data-v-646cee88><a href="#attributes-close-icon" data-v-646cee88><code data-v-646cee88>close-icon</code></a></td><td data-v-646cee88><a href="#attributes-close-icon" data-v-646cee88><code data-v-646cee88>closeIcon</code></a></td><td data-v-646cee88><mdui-icon name="check--rounded" class="reflect" data-v-646cee88></mdui-icon></td><td class="wrap" data-v-646cee88><code data-v-646cee88>string</code></td><td data-v-646cee88><!--[-->-<!--]--></td></tr><tr data-v-646cee88><td colspan="5" data-v-646cee88><p>Material Icons name for the close button. Alternatively, use <code>slot=&quot;close-icon&quot;</code>.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="attributes-message-line" data-v-646cee88><td data-v-646cee88><a href="#attributes-message-line" data-v-646cee88><code data-v-646cee88>message-line</code></a></td><td data-v-646cee88><a href="#attributes-message-line" data-v-646cee88><code data-v-646cee88>messageLine</code></a></td><td data-v-646cee88><mdui-icon name="check--rounded" class="reflect" data-v-646cee88></mdui-icon></td><td class="wrap" data-v-646cee88><code data-v-646cee88>1 | 2</code></td><td data-v-646cee88><!--[-->-<!--]--></td></tr><tr data-v-646cee88><td colspan="5" data-v-646cee88><p>Maximum lines for message text. Default is unlimited. Possible values:</p>
+<ul>
+<li><code>1</code>: Single line.</li>
+<li><code>2</code>: Two lines.</li>
+</ul>
+</td></tr><!--]--><!--[--><tr class="api" id="attributes-auto-close-delay" data-v-646cee88><td data-v-646cee88><a href="#attributes-auto-close-delay" data-v-646cee88><code data-v-646cee88>auto-close-delay</code></a></td><td data-v-646cee88><a href="#attributes-auto-close-delay" data-v-646cee88><code data-v-646cee88>autoCloseDelay</code></a></td><td data-v-646cee88><mdui-icon name="check--rounded" class="reflect" data-v-646cee88></mdui-icon></td><td class="wrap" data-v-646cee88><code data-v-646cee88>number</code></td><td data-v-646cee88><code data-v-646cee88>5000</code></td></tr><tr data-v-646cee88><td colspan="5" data-v-646cee88><p>Automatically closes the Snackbar after a specified time (in milliseconds). Set to <code>0</code> to disable auto-closing. Default is 5 seconds.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="attributes-close-on-outside-click" data-v-646cee88><td data-v-646cee88><a href="#attributes-close-on-outside-click" data-v-646cee88><code data-v-646cee88>close-on-outside-click</code></a></td><td data-v-646cee88><a href="#attributes-close-on-outside-click" data-v-646cee88><code data-v-646cee88>closeOnOutsideClick</code></a></td><td data-v-646cee88><mdui-icon name="check--rounded" class="reflect" data-v-646cee88></mdui-icon></td><td class="wrap" data-v-646cee88><code data-v-646cee88>boolean</code></td><td data-v-646cee88><code data-v-646cee88>false</code></td></tr><tr data-v-646cee88><td colspan="5" data-v-646cee88><p>Closes the Snackbar when clicking or touching outside the Snackbar area.</p>
+</td></tr><!--]--><!--]--></tbody></table></div></div><!----><div class="block events" data-v-646cee88><h3 id="events" data-v-646cee88><a href="#events" data-v-646cee88>Events</a></h3><div class="mdui-table" data-v-646cee88><table data-v-646cee88><thead data-v-646cee88><tr data-v-646cee88><th data-v-646cee88>Name</th></tr></thead><tbody data-v-646cee88><!--[--><!--[--><tr class="api" id="events-open" data-v-646cee88><td data-v-646cee88><a href="#events-open" data-v-646cee88><code data-v-646cee88>open</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>Emitted when the snackbar starts to open. Can be prevented with <code>event.preventDefault()</code>.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="events-opened" data-v-646cee88><td data-v-646cee88><a href="#events-opened" data-v-646cee88><code data-v-646cee88>opened</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>Emitted after the snackbar opens and animations complete.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="events-close" data-v-646cee88><td data-v-646cee88><a href="#events-close" data-v-646cee88><code data-v-646cee88>close</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>Emitted when the snackbar starts to close. Can be prevented with <code>event.preventDefault()</code>.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="events-closed" data-v-646cee88><td data-v-646cee88><a href="#events-closed" data-v-646cee88><code data-v-646cee88>closed</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>Emitted after the snackbar closes and animations complete.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="events-action-click" data-v-646cee88><td data-v-646cee88><a href="#events-action-click" data-v-646cee88><code data-v-646cee88>action-click</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>Emitted when the action button is clicked.</p>
+</td></tr><!--]--><!--]--></tbody></table></div></div><div class="block slots" data-v-646cee88><h3 id="slots" data-v-646cee88><a href="#slots" data-v-646cee88>Slots</a></h3><div class="mdui-table" data-v-646cee88><table data-v-646cee88><thead data-v-646cee88><tr data-v-646cee88><th data-v-646cee88>Name</th></tr></thead><tbody data-v-646cee88><!--[--><!--[--><tr class="api" id="slots-default" data-v-646cee88><td data-v-646cee88><a href="#slots-default" data-v-646cee88><span data-v-646cee88>(default)</span></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>Snackbar message.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="slots-action" data-v-646cee88><td data-v-646cee88><a href="#slots-action" data-v-646cee88><code data-v-646cee88>action</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>Right action button.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="slots-close-button" data-v-646cee88><td data-v-646cee88><a href="#slots-close-button" data-v-646cee88><code data-v-646cee88>close-button</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>Right close button. Displayed if <code>closeable</code> is set</p>
+</td></tr><!--]--><!--[--><tr class="api" id="slots-close-icon" data-v-646cee88><td data-v-646cee88><a href="#slots-close-icon" data-v-646cee88><code data-v-646cee88>close-icon</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>Icon in right close button.</p>
+</td></tr><!--]--><!--]--></tbody></table></div></div><div class="block css-parts" data-v-646cee88><h3 id="cssParts" data-v-646cee88><a href="#cssParts" data-v-646cee88>CSS Parts</a></h3><div class="mdui-table" data-v-646cee88><table data-v-646cee88><thead data-v-646cee88><tr data-v-646cee88><th data-v-646cee88>Name</th></tr></thead><tbody data-v-646cee88><!--[--><!--[--><tr class="api" id="cssParts-message" data-v-646cee88><td data-v-646cee88><a href="#cssParts-message" data-v-646cee88><code data-v-646cee88>message</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>Message text.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="cssParts-action" data-v-646cee88><td data-v-646cee88><a href="#cssParts-action" data-v-646cee88><code data-v-646cee88>action</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>Action button.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="cssParts-close-button" data-v-646cee88><td data-v-646cee88><a href="#cssParts-close-button" data-v-646cee88><code data-v-646cee88>close-button</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>Close button.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="cssParts-close-icon" data-v-646cee88><td data-v-646cee88><a href="#cssParts-close-icon" data-v-646cee88><code data-v-646cee88>close-icon</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>Icon in the close button.</p>
+</td></tr><!--]--><!--]--></tbody></table></div></div><div class="block css-properties" data-v-646cee88><h3 id="cssProperties" data-v-646cee88><a href="#cssProperties" data-v-646cee88>CSS Custom Properties</a></h3><div class="mdui-table" data-v-646cee88><table data-v-646cee88><thead data-v-646cee88><tr data-v-646cee88><th data-v-646cee88>Name</th></tr></thead><tbody data-v-646cee88><!--[--><!--[--><tr class="api" id="cssProperties-shape-corner" data-v-646cee88><td data-v-646cee88><a href="#cssProperties-shape-corner" data-v-646cee88><code data-v-646cee88>--shape-corner</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>The size of the component corner. You can use a specific pixel value, but it&#39;s recommended to reference <a href="../styles/design-tokens.htm#shape-corner" tppabs="https://www.mdui.org/docs/2/styles/design-tokens#shape-corner">design tokens</a>.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="cssProperties-z-index" data-v-646cee88><td data-v-646cee88><a href="#cssProperties-z-index" data-v-646cee88><code data-v-646cee88>--z-index</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>The CSS <code>z-index</code> value of the component.</p>
+</td></tr><!--]--><!--]--></tbody></table></div></div><!--]--><!--]--><!----><!----><div class="nav" data-v-5855b255 data-v-b3c12c93><!--[--><mdui-card href="slider.htm" tppabs="https://www.mdui.org/en/docs/2/components/slider" variant="filled" class="card prev" data-v-b3c12c93><div class="container" data-v-b3c12c93><div class="overline" data-v-b3c12c93><mdui-icon name="east--rounded" class="arrow" data-v-b3c12c93></mdui-icon> Previous</div><div class="title" data-v-b3c12c93>Slider <!----></div></div></mdui-card><!--]--><!--[--><mdui-card href="switch.htm" tppabs="https://www.mdui.org/en/docs/2/components/switch" variant="filled" class="card next" data-v-b3c12c93><div class="container" data-v-b3c12c93><div class="overline" data-v-b3c12c93>Up Next <mdui-icon name="east--rounded" class="arrow" data-v-b3c12c93></mdui-icon></div><div class="title" data-v-b3c12c93>Switch <!----></div></div></mdui-card><!--]--></div></main><div class="contents" data-v-5855b255><div class="title" data-v-5855b255>On this page</div><mdui-list class="items" data-v-5855b255><!--[--><!--]--></mdui-list></div></div></mdui-layout-main></mdui-layout></div>
+
+<script>
+  window.__INITIAL_DATA__ = {"docs":{"loading":false,"path":"components/snackbar","notFound":false,"docsHtml":"<p>Snackbars provide brief updates about app processes at the bottom of the screen.</p>\n<p>In addition to direct component usage, mdui also offers a <a href=\"../functions/snackbar.htm\"/*tpa=https://www.mdui.org/en/docs/2/functions/snackbar*/><code>mdui.snackbar</code></a> function for simplified Snackbar component usage.</p>\n<h2 id=\"usage\">\n                  <a href=\"#usage\">Usage</a>\n                </h2>\n<p>Import the component:</p>\n<pre><code class=\"language-js\">import &#39;mdui/components/snackbar.js&#39;;\n</code></pre>\n<p>Import the TypeScript type:</p>\n<pre><code class=\"language-ts\">import type { Snackbar } from &#39;mdui/components/snackbar.js&#39;;\n</code></pre>\n<p>Example:</p>\n<pre><code class=\"language-html,example\">&lt;mdui-snackbar class=&quot;example-snackbar&quot;&gt;Photo archived&lt;/mdui-snackbar&gt;\n\n&lt;mdui-button&gt;Open Snackbar&lt;/mdui-button&gt;\n\n&lt;script&gt;\n  const snackbar = document.querySelector(&quot;.example-snackbar&quot;);\n  const openButton = snackbar.nextElementSibling;\n\n  openButton.addEventListener(&quot;click&quot;, () =&gt; snackbar.open = true);\n&lt;/script&gt;\n</code></pre>\n<h2 id=\"examples\">\n                  <a href=\"#examples\">Examples</a>\n                </h2>\n<h3 id=\"example-placement\">\n                  <a href=\"#example-placement\">Position</a>\n                </h3>\n<p>You can set the snackbar&#39;s position using the <code>placement</code> attribute.</p>\n<pre><code class=\"language-html,example,expandable\">&lt;div class=&quot;example-placement&quot;&gt;\n  &lt;div class=&quot;row&quot;&gt;\n    &lt;mdui-snackbar placement=&quot;top-start&quot;&gt;Photo archived&lt;/mdui-snackbar&gt;\n    &lt;mdui-button variant=&quot;outlined&quot;&gt;top-start&lt;/mdui-button&gt;\n\n    &lt;mdui-snackbar placement=&quot;top&quot;&gt;Photo archived&lt;/mdui-snackbar&gt;\n    &lt;mdui-button variant=&quot;outlined&quot;&gt;top&lt;/mdui-button&gt;\n\n    &lt;mdui-snackbar placement=&quot;top-end&quot;&gt;Photo archived&lt;/mdui-snackbar&gt;\n    &lt;mdui-button variant=&quot;outlined&quot;&gt;top-end&lt;/mdui-button&gt;\n  &lt;/div&gt;\n  &lt;div class=&quot;row&quot;&gt;\n    &lt;mdui-snackbar placement=&quot;bottom-start&quot;&gt;Photo archived&lt;/mdui-snackbar&gt;\n    &lt;mdui-button variant=&quot;outlined&quot;&gt;bottom-start&lt;/mdui-button&gt;\n\n    &lt;mdui-snackbar placement=&quot;bottom&quot;&gt;Photo archived&lt;/mdui-snackbar&gt;\n    &lt;mdui-button variant=&quot;outlined&quot;&gt;bottom&lt;/mdui-button&gt;\n\n    &lt;mdui-snackbar placement=&quot;bottom-end&quot;&gt;Photo archived&lt;/mdui-snackbar&gt;\n    &lt;mdui-button variant=&quot;outlined&quot;&gt;bottom-end&lt;/mdui-button&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n\n&lt;script&gt;\n  const snackbars = document.querySelectorAll(&quot;.example-placement mdui-snackbar&quot;);\n\n  snackbars.forEach((snackbar) =&gt; {\n    const button = snackbar.nextElementSibling;\n    button.addEventListener(&quot;click&quot;, () =&gt; snackbar.open = true);\n  });\n&lt;/script&gt;\n\n&lt;style&gt;\n.example-placement mdui-button {\n  margin: 0.25rem;\n  width: 7.5rem;\n}\n&lt;/style&gt;\n</code></pre>\n<h3 id=\"example-action\">\n                  <a href=\"#example-action\">Action Button</a>\n                </h3>\n<p>The <code>action</code> attribute adds an action button on the right side and specifies its text. The <code>action-click</code> event is triggered when the action button is clicked. The <code>action-loading</code> attribute displays a loading state on the action button.</p>\n<pre><code class=\"language-html,example,expandable\">&lt;mdui-snackbar action=&quot;Undo&quot; class=&quot;example-action&quot;&gt;Photo archived&lt;/mdui-snackbar&gt;\n\n&lt;mdui-button&gt;Open Snackbar&lt;/mdui-button&gt;\n\n&lt;script&gt;\n  const snackbar = document.querySelector(&quot;.example-action&quot;);\n  const openButton = snackbar.nextElementSibling;\n\n  snackbar.addEventListener(&quot;action-click&quot;, () =&gt; {\n    snackbar.actionLoading = true;\n    setTimeout(() =&gt; snackbar.actionLoading = false, 2000);\n  });\n\n  openButton.addEventListener(&quot;click&quot;, () =&gt; snackbar.open = true);\n&lt;/script&gt;\n</code></pre>\n<p>The <code>action</code> slot can also be used to add elements on the right side.</p>\n<pre><code class=\"language-html,example,expandable\">&lt;mdui-snackbar class=&quot;example-action-slot&quot;&gt;\n  Photo archived\n  &lt;mdui-button slot=&quot;action&quot; variant=&quot;text&quot;&gt;Undo&lt;/mdui-button&gt;\n&lt;/mdui-snackbar&gt;\n\n&lt;mdui-button&gt;Open Snackbar&lt;/mdui-button&gt;\n\n&lt;script&gt;\n  const snackbar = document.querySelector(&quot;.example-action-slot&quot;);\n  const openButton = snackbar.nextElementSibling;\n\n  openButton.addEventListener(&quot;click&quot;, () =&gt; snackbar.open = true);\n&lt;/script&gt;\n</code></pre>\n<h3 id=\"example-closeable\">\n                  <a href=\"#example-closeable\">Closable</a>\n                </h3>\n<p>The <code>closeable</code> attribute adds a close button on the right. Clicking the button closes the snackbar and triggers the <code>close</code> event.</p>\n<pre><code class=\"language-html,example,expandable\">&lt;mdui-snackbar closeable class=&quot;example-closeable&quot;&gt;Photo archived&lt;/mdui-snackbar&gt;\n\n&lt;mdui-button&gt;Open Snackbar&lt;/mdui-button&gt;\n\n&lt;script&gt;\n  const snackbar = document.querySelector(&quot;.example-closeable&quot;);\n  const openButton = snackbar.nextElementSibling;\n\n  openButton.addEventListener(&quot;click&quot;, () =&gt; snackbar.open = true);\n&lt;/script&gt;\n</code></pre>\n<p>The <code>close-button</code> slot specifies the element of the close button.</p>\n<pre><code class=\"language-html,example,expandable\">&lt;mdui-snackbar closeable class=&quot;example-close-button-slot&quot;&gt;\n  Photo archived\n  &lt;mdui-avatar slot=&quot;close-button&quot; icon=&quot;people_alt&quot;&gt;&lt;/mdui-avatar&gt;\n&lt;/mdui-snackbar&gt;\n\n&lt;mdui-button&gt;Open Snackbar&lt;/mdui-button&gt;\n\n&lt;script&gt;\n  const snackbar = document.querySelector(&quot;.example-close-button-slot&quot;);\n  const openButton = snackbar.nextElementSibling;\n\n  openButton.addEventListener(&quot;click&quot;, () =&gt; snackbar.open = true);\n&lt;/script&gt;\n</code></pre>\n<p>The <code>close-icon</code> attribute sets the Material Icon in the default close button. The <code>close-icon</code> slot sets the icon element in the default close button.</p>\n<pre><code class=\"language-html,example,expandable\">&lt;mdui-snackbar\n  closeable\n  close-icon=&quot;delete&quot;\n  class=&quot;example-close-icon&quot;\n&gt;Photo archived&lt;/mdui-snackbar&gt;\n\n&lt;mdui-button&gt;Open Snackbar&lt;/mdui-button&gt;\n\n&lt;script&gt;\n  const snackbar = document.querySelector(&quot;.example-close-icon&quot;);\n  const openButton = snackbar.nextElementSibling;\n\n  openButton.addEventListener(&quot;click&quot;, () =&gt; snackbar.open = true);\n&lt;/script&gt;\n</code></pre>\n<h3 id=\"example-message-line\">\n                  <a href=\"#example-message-line\">Text Lines</a>\n                </h3>\n<p>The <code>message-line</code> attribute limits the number of lines in the message text, with a maximum of <code>2</code> lines.</p>\n<pre><code class=\"language-html,example,expandable\">&lt;mdui-snackbar message-line=&quot;1&quot; class=&quot;example-line&quot;&gt;The item already has the label &quot;travel&quot;. You can add a new label. You can add a new label.&lt;/mdui-snackbar&gt;\n\n&lt;mdui-button&gt;Open Snackbar&lt;/mdui-button&gt;\n\n&lt;script&gt;\n  const snackbar = document.querySelector(&quot;.example-line&quot;);\n  const openButton = snackbar.nextElementSibling;\n\n  openButton.addEventListener(&quot;click&quot;, () =&gt; snackbar.open = true);\n&lt;/script&gt;\n</code></pre>\n<h3 id=\"example-auto-close-delay\">\n                  <a href=\"#example-auto-close-delay\">Auto Close Delay</a>\n                </h3>\n<p>The <code>auto-close-delay</code> attribute sets the delay for automatic closure, in milliseconds. The default is <code>5000</code> milliseconds.</p>\n<pre><code class=\"language-html,example,expandable\">&lt;mdui-snackbar auto-close-delay=&quot;2000&quot; class=&quot;example-close-delay&quot;&gt;Photo archived&lt;/mdui-snackbar&gt;\n\n&lt;mdui-button&gt;Open Snackbar&lt;/mdui-button&gt;\n\n&lt;script&gt;\n  const snackbar = document.querySelector(&quot;.example-close-delay&quot;);\n  const openButton = snackbar.nextElementSibling;\n\n  openButton.addEventListener(&quot;click&quot;, () =&gt; snackbar.open = true);\n&lt;/script&gt;\n</code></pre>\n<h3 id=\"example-close-on-outside-click\">\n                  <a href=\"#example-close-on-outside-click\">Closing on Outside Click</a>\n                </h3>\n<p>The <code>close-on-outside-click</code> attribute closes the snackbar when clicking outside of its area.</p>\n<pre><code class=\"language-html,example,expandable\">&lt;mdui-snackbar close-on-outside-click class=&quot;example-outside&quot;&gt;Photo archived&lt;/mdui-snackbar&gt;\n\n&lt;mdui-button&gt;Open Snackbar&lt;/mdui-button&gt;\n\n&lt;script&gt;\n  const snackbar = document.querySelector(&quot;.example-outside&quot;);\n  const openButton = snackbar.nextElementSibling;\n\n  openButton.addEventListener(&quot;click&quot;, () =&gt; snackbar.open = true);\n&lt;/script&gt;\n</code></pre>\n","customElements":[{"name":"Snackbar","tagName":"mdui-snackbar","summary":"<p>Snackbar Component.</p>\n<pre><code class=\"language-html\">&lt;mdui-snackbar&gt;message&lt;/mdui-snackbar&gt;\n</code></pre>\n","attributes":[{"attributeName":"open","propertyName":"open","reflect":true,"description":"<p>Opens the Snackbar.</p>\n","type":"boolean","enum":[],"default":"false"},{"attributeName":"placement","propertyName":"placement","reflect":true,"description":"<p>Snackbar placement. Default is <code>bottom</code>. Possible values:</p>\n<ul>\n<li><code>top</code>: Top, centered.</li>\n<li><code>top-start</code>: Top, left-aligned.</li>\n<li><code>top-end</code>: Top, right-aligned.</li>\n<li><code>bottom</code>: Bottom, centered.</li>\n<li><code>bottom-start</code>: Bottom, left-aligned.</li>\n<li><code>bottom-end</code>: Bottom, right-aligned.</li>\n</ul>\n","type":"'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end'","enum":["'top'","'top-start'","'top-end'","'bottom'","'bottom-start'","'bottom-end'"],"default":"'bottom'"},{"attributeName":"action","propertyName":"action","reflect":true,"description":"<p>Text for the action button. Alternatively, use <code>slot=&quot;action&quot;</code>.</p>\n","type":"string","enum":[]},{"attributeName":"action-loading","propertyName":"actionLoading","reflect":true,"description":"<p>Indicates if the action button is in the loading state.</p>\n","type":"boolean","enum":[],"default":"false"},{"attributeName":"closeable","propertyName":"closeable","reflect":true,"description":"<p>Shows a close button on the right.</p>\n","type":"boolean","enum":[],"default":"false"},{"attributeName":"close-icon","propertyName":"closeIcon","reflect":true,"description":"<p>Material Icons name for the close button. Alternatively, use <code>slot=&quot;close-icon&quot;</code>.</p>\n","type":"string","enum":[]},{"attributeName":"message-line","propertyName":"messageLine","reflect":true,"description":"<p>Maximum lines for message text. Default is unlimited. Possible values:</p>\n<ul>\n<li><code>1</code>: Single line.</li>\n<li><code>2</code>: Two lines.</li>\n</ul>\n","type":"1 | 2","enum":["1","2"]},{"attributeName":"auto-close-delay","propertyName":"autoCloseDelay","reflect":true,"description":"<p>Automatically closes the Snackbar after a specified time (in milliseconds). Set to <code>0</code> to disable auto-closing. Default is 5 seconds.</p>\n","type":"number","enum":[],"default":"5000"},{"attributeName":"close-on-outside-click","propertyName":"closeOnOutsideClick","reflect":true,"description":"<p>Closes the Snackbar when clicking or touching outside the Snackbar area.</p>\n","type":"boolean","enum":[],"default":"false"}],"methods":[],"events":[{"name":"open","description":"<p>Emitted when the snackbar starts to open. Can be prevented with <code>event.preventDefault()</code>.</p>\n"},{"name":"opened","description":"<p>Emitted after the snackbar opens and animations complete.</p>\n"},{"name":"close","description":"<p>Emitted when the snackbar starts to close. Can be prevented with <code>event.preventDefault()</code>.</p>\n"},{"name":"closed","description":"<p>Emitted after the snackbar closes and animations complete.</p>\n"},{"name":"action-click","description":"<p>Emitted when the action button is clicked.</p>\n"}],"slots":[{"name":"","description":"<p>Snackbar message.</p>\n"},{"name":"action","description":"<p>Right action button.</p>\n"},{"name":"close-button","description":"<p>Right close button. Displayed if <code>closeable</code> is set</p>\n"},{"name":"close-icon","description":"<p>Icon in right close button.</p>\n"}],"cssParts":[{"name":"message","description":"<p>Message text.</p>\n"},{"name":"action","description":"<p>Action button.</p>\n"},{"name":"close-button","description":"<p>Close button.</p>\n"},{"name":"close-icon","description":"<p>Icon in the close button.</p>\n"}],"cssProperties":[{"name":"--shape-corner","description":"<p>The size of the component corner. You can use a specific pixel value, but it&#39;s recommended to reference <a href=\"../styles/design-tokens.htm#shape-corner\"/*tpa=https://www.mdui.org/docs/2/styles/design-tokens#shape-corner*/>design tokens</a>.</p>\n"},{"name":"--z-index","description":"<p>The CSS <code>z-index</code> value of the component.</p>\n"}]}]},"drawer":{"open":false}};
+</script>
+</body>
+</html>

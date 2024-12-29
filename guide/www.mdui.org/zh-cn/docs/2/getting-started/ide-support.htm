@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="mdui-theme-auto">
+<head>
+  <meta charset=utf-8"UTF-8">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=5.0">
+  <title>IDE 支持 - mdui 开发文档</title>
+  <meta name="description" content="mdui 专门为 VS Code 和 WebStorm 进行了优化，在这些 IDE 中可以获得代码自动完成、悬停提示等功能。">
+  <link rel="preconnect" href="https://cdn.w3cbus.com">
+  <link rel="alternate" hreflang="en" href="https://www.mdui.org/en/docs/2/getting-started/ide-support">
+  <link rel="alternate" hreflang="zh-cn" href="https://www.mdui.org/zh-cn/docs/2/getting-started/ide-support">
+  <link rel="alternate" hreflang="x-default" href="https://www.mdui.org/en/docs/2/getting-started/ide-support">
+  <link rel="preload" href="https://cdn.w3cbus.com/library/roboto/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="modulepreload" crossorigin href="https://cdn.w3cbus.com/mdui/2/assets/index-444705a2.js"><link rel="preload" href="https://cdn.w3cbus.com/mdui/2/assets/index-44251c77.css" as="style">
+  <link rel="stylesheet" href="../../../../../cdn.w3cbus.com/mdui/2/assets/index-44251c77.css" tppabs="https://cdn.w3cbus.com/mdui/2/assets/index-44251c77.css"><link rel="modulepreload" crossorigin href="https://cdn.w3cbus.com/mdui/2/assets/ThemeSettings-3f9ecbf9.js"><link rel="preload" href="https://cdn.w3cbus.com/mdui/2/assets/ThemeSettings-fa6ba0b3.css" as="style">
+  <link rel="stylesheet" href="../../../../../cdn.w3cbus.com/mdui/2/assets/ThemeSettings-fa6ba0b3.css" tppabs="https://cdn.w3cbus.com/mdui/2/assets/ThemeSettings-fa6ba0b3.css">
+  <link rel="icon" href="https://cdn.w3cbus.com/mdui/icon-192.png">
+  <link rel="icon" href="https://cdn.w3cbus.com/mdui/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="https://cdn.w3cbus.com/mdui/apple-touch-icon-180.png">
+  <link rel="canonical" href="https://www.mdui.org/zh-cn/docs/2/getting-started/ide-support">
+  
+  <script type="application/ld+json">{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"mdui","item":"https://www.mdui.org/zh-cn/"},{"@type":"ListItem","position":2,"name":"mdui 2 开发文档","item":"https://www.mdui.org/zh-cn/docs/2/"},{"@type":"ListItem","position":3,"name":"IDE 支持"}],"@context":"https://schema.org"}</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'/*tpa=https://www.mdui.org/zh-cn/docs/2/getting-started/gtm.js*/});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K3T2R6S');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="../../../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js-client=ca-pub-4466345895756968" tppabs="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4466345895756968" data-overlays="bottom" crossorigin="anonymous"></script>
+  <script type="module" crossorigin src="../../../../../cdn.w3cbus.com/mdui/2/assets/index-255315c2.js" tppabs="https://cdn.w3cbus.com/mdui/2/assets/index-255315c2.js"></script>
+  <link rel="modulepreload" crossorigin href="https://cdn.w3cbus.com/mdui/2/assets/vendor-mdui-689d1f65.js">
+  <link rel="stylesheet" href="../../../../../cdn.w3cbus.com/mdui/2/assets/vendor-mdui-67e1dd1d.css" tppabs="https://cdn.w3cbus.com/mdui/2/assets/vendor-mdui-67e1dd1d.css">
+  <link rel="stylesheet" href="../../../../../cdn.w3cbus.com/mdui/2/assets/index-c1bb6128.css" tppabs="https://cdn.w3cbus.com/mdui/2/assets/index-c1bb6128.css">
+</head>
+<body>
+<div id="app"><mdui-layout class="layout" data-v-5855b255><mdui-top-app-bar class="appbar" scroll-behavior="elevate" order="1" data-nosnippet data-v-5855b255 data-v-93b4b6dd><mdui-button-icon data-v-93b4b6dd><mdui-icon name="menu--rounded" data-v-93b4b6dd></mdui-icon></mdui-button-icon><mdui-top-app-bar-title data-v-93b4b6dd><a href="../../../index.htm" tppabs="https://www.mdui.org/zh-cn/" class="title" data-v-93b4b6dd>MDUI</a><a href="../index.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/" class="title small" data-v-93b4b6dd>文档</a></mdui-top-app-bar-title><mdui-dropdown trigger="hover" data-v-93b4b6dd data-v-d73cc679><mdui-button-icon slot="trigger" class="icon" data-v-d73cc679><mdui-icon-translate--rounded data-v-d73cc679></mdui-icon-translate--rounded></mdui-button-icon><mdui-menu selects="single" class="menu" data-v-d73cc679><!--[--><mdui-menu-item value="en" data-v-d73cc679>English</mdui-menu-item><mdui-menu-item value="zh-cn" data-v-d73cc679>简体中文</mdui-menu-item><!--]--></mdui-menu></mdui-dropdown><mdui-dropdown trigger="hover" data-v-93b4b6dd data-v-931aaba3><mdui-button-icon slot="trigger" class="auto" data-v-931aaba3><mdui-icon-light-mode class="light-filled" data-v-931aaba3></mdui-icon-light-mode><mdui-icon-light-mode--outlined class="light-outlined" data-v-931aaba3></mdui-icon-light-mode--outlined><mdui-icon-dark-mode class="dark-filled" data-v-931aaba3></mdui-icon-dark-mode><mdui-icon-dark-mode--outlined class="dark-outlined" data-v-931aaba3></mdui-icon-dark-mode--outlined></mdui-button-icon><mdui-menu selects="single" value="auto" class="menu" data-v-931aaba3><mdui-menu-item value="light" data-v-931aaba3>亮色模式</mdui-menu-item><mdui-menu-item value="dark" data-v-931aaba3>暗色模式</mdui-menu-item><mdui-divider data-v-931aaba3></mdui-divider><mdui-menu-item value="auto" data-v-931aaba3>跟随系统</mdui-menu-item></mdui-menu></mdui-dropdown><mdui-dropdown stay-open-on-click trigger="hover" class="color-scheme" data-v-93b4b6dd data-v-e56655cb><mdui-button-icon slot="trigger" class="icon" data-v-e56655cb><mdui-icon name="palette--outlined" class="outlined" data-v-e56655cb></mdui-icon><mdui-icon name="palette" class="filled" data-v-e56655cb></mdui-icon></mdui-button-icon><mdui-card class="card" data-v-e56655cb><div class="color-label" data-v-e56655cb>预设颜色</div><div class="color-preset" data-v-e56655cb><div class="red" data-v-e56655cb></div><div class="purple" data-v-e56655cb></div><div class="blue" data-v-e56655cb></div><div class="green" data-v-e56655cb></div><div class="yellow" data-v-e56655cb></div><div class="grey" data-v-e56655cb></div></div><div class="color-label" data-v-e56655cb>自选颜色</div><input type="color" class="color-custom" data-v-e56655cb><div class="color-label" data-v-e56655cb>从壁纸提取颜色</div><div class="color-wallpaper" data-v-e56655cb>请选择一张壁纸 <input type="file" accept="image/png, image/jpeg" data-v-e56655cb></div></mdui-card></mdui-dropdown></mdui-top-app-bar><mdui-navigation-drawer class="drawer" style="--mdui-motion-duration-long2:0;position:absolute;top:64px;bottom:0px;left:0px;" close-on-esc close-on-overlay-click order="2" data-nosnippet data-v-5855b255 data-v-9c367966><mdui-list class="list" data-v-9c367966><mdui-collapse value="getting-started" accordion data-v-9c367966><!--[--><mdui-collapse-item value="getting-started" data-v-9c367966><mdui-list-item slot="header" rounded data-v-9c367966>开发指南 <mdui-icon slot="icon" name="near_me--rounded" data-v-9c367966></mdui-icon><mdui-icon slot="end-icon" name="expand_more" class="arrow-active arrow" data-v-9c367966></mdui-icon></mdui-list-item><div class="sublist" data-v-9c367966><!--[--><!--[--><mdui-list-item rounded active="false" href="../index.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/" data-v-9c367966>概述 <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="installation.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/getting-started/installation" data-v-9c367966>安装 <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="usage.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/getting-started/usage" data-v-9c367966>快速入门 <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="typescript-support.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/getting-started/typescript-support" data-v-9c367966>TypeScript 支持 <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="true" href="ide-support.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/getting-started/ide-support" data-v-9c367966>IDE 支持 <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="localization.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/getting-started/localization" data-v-9c367966>本地化 <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="faq.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/getting-started/faq" data-v-9c367966>常见问题 <!----></mdui-list-item><!--]--><!--]--></div></mdui-collapse-item><mdui-collapse-item value="styles" data-v-9c367966><mdui-list-item slot="header" rounded data-v-9c367966>样式 <mdui-icon slot="icon" name="layers--rounded" data-v-9c367966></mdui-icon><mdui-icon slot="end-icon" name="expand_more" class="arrow" data-v-9c367966></mdui-icon></mdui-list-item><div class="sublist" data-v-9c367966><!----></div></mdui-collapse-item><mdui-collapse-item value="frameworks" data-v-9c367966><mdui-list-item slot="header" rounded data-v-9c367966>与框架集成 <mdui-icon slot="icon" name="workspaces--rounded" data-v-9c367966></mdui-icon><mdui-icon slot="end-icon" name="expand_more" class="arrow" data-v-9c367966></mdui-icon></mdui-list-item><div class="sublist" data-v-9c367966><!----></div></mdui-collapse-item><mdui-collapse-item value="components" data-v-9c367966><mdui-list-item slot="header" rounded data-v-9c367966>组件 <mdui-icon slot="icon" name="widgets--rounded" data-v-9c367966></mdui-icon><mdui-icon slot="end-icon" name="expand_more" class="arrow" data-v-9c367966></mdui-icon></mdui-list-item><div class="sublist" data-v-9c367966><!----></div></mdui-collapse-item><mdui-collapse-item value="functions" data-v-9c367966><mdui-list-item slot="header" rounded data-v-9c367966>工具函数 <mdui-icon slot="icon" name="functions--rounded" data-v-9c367966></mdui-icon><mdui-icon slot="end-icon" name="expand_more" class="arrow" data-v-9c367966></mdui-icon></mdui-list-item><div class="sublist" data-v-9c367966><!----></div></mdui-collapse-item><mdui-collapse-item value="libraries" data-v-9c367966><mdui-list-item slot="header" rounded data-v-9c367966>独立包 <mdui-icon slot="icon" name="local_mall--rounded" data-v-9c367966></mdui-icon><mdui-icon slot="end-icon" name="expand_more" class="arrow" data-v-9c367966></mdui-icon></mdui-list-item><div class="sublist" data-v-9c367966><!----></div></mdui-collapse-item><!--]--></mdui-collapse></mdui-list></mdui-navigation-drawer><mdui-layout-main class="layout-main" data-v-5855b255><div class="main" data-v-5855b255><main class="container mdui-prose" data-v-5855b255><h1 data-v-5855b255>IDE 支持</h1><!--[--><!--[--><!--[--><div><p>mdui 专门为 VS Code 和 WebStorm 进行了优化，在这些 IDE 中可以获得代码自动完成、悬停提示等功能。</p>
+<style>
+.ide-support-icon {
+  user-select: none;
+  font-size: 1rem;
+}
+</style>
+
+</div><!--[--><ins class="reward reward-display first-screen adsbygoogle" style="display:block;border-bottom:none;color-scheme:auto;text-decoration:none;margin-top:1rem;" data-ad-client="ca-pub-4466345895756968" data-ad-slot="3732322489"></ins><!----><!--]--><div style="margin-top:4.21875em;"><h2 id="vscode">
+                  <a href="#vscode">VS Code</a>
+                </h2>
+<h3 id="vscode-npm">
+                  <a href="#vscode-npm">通过 npm 安装的 mdui</a>
+                </h3>
+<p>如果你通过 npm 安装了 mdui，可以按照以下步骤在当前项目中启用 VS Code 的 IDE 支持：</p>
+<ol>
+<li>在项目的根目录中创建 <code>.vscode</code> 目录。</li>
+<li>在 <code>.vscode</code> 目录中创建 <code>settings.json</code> 文件。</li>
+<li>将以下代码添加到 <code>settings.json</code> 文件中：<pre><code class="language-json">{
+  &quot;html.customData&quot;: [&quot;./node_modules/mdui/html-data.zh-cn.json&quot;],
+  &quot;css.customData&quot;: [&quot;./node_modules/mdui/css-data.zh-cn.json&quot;]
+}
+</code></pre>
+</li>
+</ol>
+<p>如果 <code>settings.json</code> 文件已经存在，只需将上述两行代码添加到 JSON 文档的根节点即可。修改完成后，重启 VS Code。</p>
+<h3 id="vscode-cdn">
+                  <a href="#vscode-cdn">通过 CDN 使用的 mdui</a>
+                </h3>
+<p>如果你是通过 CDN 引入的 mdui，可以通过安装 mdui 的 VS Code 扩展来获得 IDE 支持。</p>
+<p>在 VS Code 的扩展商店中搜索 <code>mdui</code>，选择第一条搜索结果进行安装，或者<a href="vscode:extension/zdhxiong.mdui">点击此处安装</a>。安装完成后，所有项目都将启用 mdui 的 IDE 支持。</p>
+<p>建议优先通过 npm 安装并设置 <code>settings.json</code> 文件，而非安装 VS Code 扩展，以确保 IDE 支持与当前使用的 mdui 版本保持一致。</p>
+<h2 id="webstorm">
+                  <a href="#webstorm">WebStorm</a>
+                </h2>
+<h3 id="webstorm-npm">
+                  <a href="#webstorm-npm">通过 npm 安装的 mdui</a>
+                </h3>
+<p>如果你通过 npm 安装了 mdui，可以按照以下步骤在当前项目中启用 WebStorm 的 IDE 支持：</p>
+<ol>
+<li>在项目根目录的 <code>package.json</code> 文件的根节点中添加以下代码：<pre><code>web-types: [&quot;./node_modules/mdui/web-types.zh-cn.json&quot;]
+</code></pre>
+</li>
+</ol>
+<p>如果 <code>package.json</code> 文件的根节点已存在 <code>web-types</code> 属性，只需将 <code>./node_modules/mdui/web-types.zh-cn.json</code> 添加到 <code>web-types</code> 数组中即可。修改完成后，重启 WebStorm。</p>
+<h3 id="webstorm-cdn">
+                  <a href="#webstorm-cdn">通过 CDN 使用的 mdui</a>
+                </h3>
+<p>如果你是通过 CDN 引入的 mdui，可以通过安装 mdui 的 WebStorm 插件来获得 IDE 支持。</p>
+<p>在 WebStorm 的插件市场中搜索 <code>mdui</code>，选择第一条搜索结果进行安装。安装完成后，所有项目都将启用 mdui 的 IDE 支持。</p>
+<p>建议优先通过 npm 安装来获取 IDE 支持，而非安装 WebStorm 插件，以确保 IDE 支持与当前使用的 mdui 版本保持一致。</p>
+<h2 id="difference">
+                  <a href="#difference">对 VS Code 和 WebStorm 支持的差异</a>
+                </h2>
+<p>mdui 对 VS Code 和 WebStorm 的支持存在一些差异。以下表格列出了详细的差异：</p>
+<div class="mdui-table"><table>
+<thead>
+<tr>
+<th>具有代码自动完成及悬浮提示的位置</th>
+<th>VS Code</th>
+<th>WebStorm</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HTML 标签名</td>
+<td><mdui-icon name="check--rounded" class="ide-support-icon"></mdui-icon></td>
+<td><mdui-icon name="check--rounded" class="ide-support-icon"></mdui-icon></td>
+</tr>
+<tr>
+<td>HTML 标签中的属性名</td>
+<td><mdui-icon name="check--rounded" class="ide-support-icon"></mdui-icon></td>
+<td><mdui-icon name="check--rounded" class="ide-support-icon"></mdui-icon></td>
+</tr>
+<tr>
+<td>HTML 标签中属性值的枚举值</td>
+<td><mdui-icon name="check--rounded" class="ide-support-icon"></mdui-icon></td>
+<td><mdui-icon name="check--rounded" class="ide-support-icon"></mdui-icon>（不支持显示枚举值的注释）</td>
+</tr>
+<tr>
+<td>HTML 标签中的事件名</td>
+<td></td>
+<td><mdui-icon name="check--rounded" class="ide-support-icon"></mdui-icon></td>
+</tr>
+<tr>
+<td>HTML 中 slot 的 <code>name</code> 属性值</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CSS 中 <code>::part()</code> 选择器的 <code>part</code> 属性名</td>
+<td></td>
+<td><mdui-icon name="check--rounded" class="ide-support-icon"></mdui-icon>（需要 WebStorm 2023.2 及以上版本）</td>
+</tr>
+<tr>
+<td>CSS 中组件内的 CSS 自定义属性名</td>
+<td></td>
+<td><mdui-icon name="check--rounded" class="ide-support-icon"></mdui-icon></td>
+</tr>
+<tr>
+<td>CSS 中的全局 CSS 自定义属性名</td>
+<td><mdui-icon name="check--rounded" class="ide-support-icon"></mdui-icon></td>
+<td><mdui-icon name="check--rounded" class="ide-support-icon"></mdui-icon></td>
+</tr>
+<tr>
+<td>CSS 中的全局 class 名</td>
+<td></td>
+<td><mdui-icon name="check--rounded" class="ide-support-icon"></mdui-icon></td>
+</tr>
+</tbody></table></div></div><!--]--><!--]--><!--]--><!--[--><!--]--><!----><!----><div class="nav" data-v-5855b255 data-v-b3c12c93><!--[--><mdui-card href="typescript-support.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/getting-started/typescript-support" variant="filled" class="card prev" data-v-b3c12c93><div class="container" data-v-b3c12c93><div class="overline" data-v-b3c12c93><mdui-icon name="east--rounded" class="arrow" data-v-b3c12c93></mdui-icon> 上一章</div><div class="title" data-v-b3c12c93>TypeScript 支持 <!----></div></div></mdui-card><!--]--><!--[--><mdui-card href="localization.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/getting-started/localization" variant="filled" class="card next" data-v-b3c12c93><div class="container" data-v-b3c12c93><div class="overline" data-v-b3c12c93>下一章 <mdui-icon name="east--rounded" class="arrow" data-v-b3c12c93></mdui-icon></div><div class="title" data-v-b3c12c93>本地化 <!----></div></div></mdui-card><!--]--></div></main><div class="contents" data-v-5855b255><div class="title" data-v-5855b255>本页目录</div><mdui-list class="items" data-v-5855b255><!--[--><!--]--></mdui-list></div></div></mdui-layout-main></mdui-layout></div>
+
+<script>
+  window.__INITIAL_DATA__ = {"docs":{"loading":false,"path":"getting-started/ide-support","notFound":false,"docsHtml":"<p>mdui 专门为 VS Code 和 WebStorm 进行了优化，在这些 IDE 中可以获得代码自动完成、悬停提示等功能。</p>\n<style>\n.ide-support-icon {\n  user-select: none;\n  font-size: 1rem;\n}\n</style>\n\n<h2 id=\"vscode\">\n                  <a href=\"#vscode\">VS Code</a>\n                </h2>\n<h3 id=\"vscode-npm\">\n                  <a href=\"#vscode-npm\">通过 npm 安装的 mdui</a>\n                </h3>\n<p>如果你通过 npm 安装了 mdui，可以按照以下步骤在当前项目中启用 VS Code 的 IDE 支持：</p>\n<ol>\n<li>在项目的根目录中创建 <code>.vscode</code> 目录。</li>\n<li>在 <code>.vscode</code> 目录中创建 <code>settings.json</code> 文件。</li>\n<li>将以下代码添加到 <code>settings.json</code> 文件中：<pre><code class=\"language-json\">{\n  &quot;html.customData&quot;: [&quot;./node_modules/mdui/html-data.zh-cn.json&quot;],\n  &quot;css.customData&quot;: [&quot;./node_modules/mdui/css-data.zh-cn.json&quot;]\n}\n</code></pre>\n</li>\n</ol>\n<p>如果 <code>settings.json</code> 文件已经存在，只需将上述两行代码添加到 JSON 文档的根节点即可。修改完成后，重启 VS Code。</p>\n<h3 id=\"vscode-cdn\">\n                  <a href=\"#vscode-cdn\">通过 CDN 使用的 mdui</a>\n                </h3>\n<p>如果你是通过 CDN 引入的 mdui，可以通过安装 mdui 的 VS Code 扩展来获得 IDE 支持。</p>\n<p>在 VS Code 的扩展商店中搜索 <code>mdui</code>，选择第一条搜索结果进行安装，或者<a href=\"vscode:extension/zdhxiong.mdui\">点击此处安装</a>。安装完成后，所有项目都将启用 mdui 的 IDE 支持。</p>\n<p>建议优先通过 npm 安装并设置 <code>settings.json</code> 文件，而非安装 VS Code 扩展，以确保 IDE 支持与当前使用的 mdui 版本保持一致。</p>\n<h2 id=\"webstorm\">\n                  <a href=\"#webstorm\">WebStorm</a>\n                </h2>\n<h3 id=\"webstorm-npm\">\n                  <a href=\"#webstorm-npm\">通过 npm 安装的 mdui</a>\n                </h3>\n<p>如果你通过 npm 安装了 mdui，可以按照以下步骤在当前项目中启用 WebStorm 的 IDE 支持：</p>\n<ol>\n<li>在项目根目录的 <code>package.json</code> 文件的根节点中添加以下代码：<pre><code>web-types: [&quot;./node_modules/mdui/web-types.zh-cn.json&quot;]\n</code></pre>\n</li>\n</ol>\n<p>如果 <code>package.json</code> 文件的根节点已存在 <code>web-types</code> 属性，只需将 <code>./node_modules/mdui/web-types.zh-cn.json</code> 添加到 <code>web-types</code> 数组中即可。修改完成后，重启 WebStorm。</p>\n<h3 id=\"webstorm-cdn\">\n                  <a href=\"#webstorm-cdn\">通过 CDN 使用的 mdui</a>\n                </h3>\n<p>如果你是通过 CDN 引入的 mdui，可以通过安装 mdui 的 WebStorm 插件来获得 IDE 支持。</p>\n<p>在 WebStorm 的插件市场中搜索 <code>mdui</code>，选择第一条搜索结果进行安装。安装完成后，所有项目都将启用 mdui 的 IDE 支持。</p>\n<p>建议优先通过 npm 安装来获取 IDE 支持，而非安装 WebStorm 插件，以确保 IDE 支持与当前使用的 mdui 版本保持一致。</p>\n<h2 id=\"difference\">\n                  <a href=\"#difference\">对 VS Code 和 WebStorm 支持的差异</a>\n                </h2>\n<p>mdui 对 VS Code 和 WebStorm 的支持存在一些差异。以下表格列出了详细的差异：</p>\n<table>\n<thead>\n<tr>\n<th>具有代码自动完成及悬浮提示的位置</th>\n<th>VS Code</th>\n<th>WebStorm</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>HTML 标签名</td>\n<td><mdui-icon name=\"check--rounded\" class=\"ide-support-icon\"></mdui-icon></td>\n<td><mdui-icon name=\"check--rounded\" class=\"ide-support-icon\"></mdui-icon></td>\n</tr>\n<tr>\n<td>HTML 标签中的属性名</td>\n<td><mdui-icon name=\"check--rounded\" class=\"ide-support-icon\"></mdui-icon></td>\n<td><mdui-icon name=\"check--rounded\" class=\"ide-support-icon\"></mdui-icon></td>\n</tr>\n<tr>\n<td>HTML 标签中属性值的枚举值</td>\n<td><mdui-icon name=\"check--rounded\" class=\"ide-support-icon\"></mdui-icon></td>\n<td><mdui-icon name=\"check--rounded\" class=\"ide-support-icon\"></mdui-icon>（不支持显示枚举值的注释）</td>\n</tr>\n<tr>\n<td>HTML 标签中的事件名</td>\n<td></td>\n<td><mdui-icon name=\"check--rounded\" class=\"ide-support-icon\"></mdui-icon></td>\n</tr>\n<tr>\n<td>HTML 中 slot 的 <code>name</code> 属性值</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>CSS 中 <code>::part()</code> 选择器的 <code>part</code> 属性名</td>\n<td></td>\n<td><mdui-icon name=\"check--rounded\" class=\"ide-support-icon\"></mdui-icon>（需要 WebStorm 2023.2 及以上版本）</td>\n</tr>\n<tr>\n<td>CSS 中组件内的 CSS 自定义属性名</td>\n<td></td>\n<td><mdui-icon name=\"check--rounded\" class=\"ide-support-icon\"></mdui-icon></td>\n</tr>\n<tr>\n<td>CSS 中的全局 CSS 自定义属性名</td>\n<td><mdui-icon name=\"check--rounded\" class=\"ide-support-icon\"></mdui-icon></td>\n<td><mdui-icon name=\"check--rounded\" class=\"ide-support-icon\"></mdui-icon></td>\n</tr>\n<tr>\n<td>CSS 中的全局 class 名</td>\n<td></td>\n<td><mdui-icon name=\"check--rounded\" class=\"ide-support-icon\"></mdui-icon></td>\n</tr>\n</tbody></table>\n","customElements":[]},"drawer":{"open":false}};
+</script>
+</body>
+</html>

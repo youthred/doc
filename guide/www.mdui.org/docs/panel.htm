@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset=utf-8"UTF-8">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=5.0">
+  <title>可扩展面板组件 - mdui v1 开发文档</title>
+  <meta name="description" content="可扩展面板在点击后展开，常用于创建流程或进行简单编辑，提升用户交互体验。">
+  <link rel="preconnect" href="https://cdn.w3cbus.com">
+  <link rel="preload" href="https://cdn.w3cbus.com/library/mdui/1.0.2/fonts/roboto/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="modulepreload" crossorigin href="https://cdn.w3cbus.com/mdui/docs-1/assets/panel-24c7d7f5.js"><link rel="modulepreload" crossorigin href="https://cdn.w3cbus.com/mdui/docs-1/assets/MyReward.vue_vue_type_script_setup_true_lang-df11eaf3.js"><link rel="preload" href="https://cdn.w3cbus.com/mdui/docs-1/assets/MyReward-0ad2484e.css" as="style">
+  <link rel="stylesheet" href="../../cdn.w3cbus.com/mdui/docs-1/assets/MyReward-0ad2484e.css" tppabs="https://cdn.w3cbus.com/mdui/docs-1/assets/MyReward-0ad2484e.css"><link rel="modulepreload" crossorigin href="https://cdn.w3cbus.com/mdui/docs-1/assets/Demo-5062ffc5.js"><link rel="preload" href="https://cdn.w3cbus.com/mdui/docs-1/assets/Demo-e5dd9f9f.css" as="style">
+  <link rel="stylesheet" href="../../cdn.w3cbus.com/mdui/docs-1/assets/Demo-e5dd9f9f.css" tppabs="https://cdn.w3cbus.com/mdui/docs-1/assets/Demo-e5dd9f9f.css">
+  <link rel="stylesheet" href="../../cdn.w3cbus.com/library/mdui/1.0.2/css/mdui.min.css" tppabs="https://cdn.w3cbus.com/library/mdui/1.0.2/css/mdui.min.css">
+  <script src="../../cdn.w3cbus.com/library/mdui/1.0.2/js/mdui.min.js" tppabs="https://cdn.w3cbus.com/library/mdui/1.0.2/js/mdui.min.js"></script>
+  <script src="../../cdn.w3cbus.com/library/holderjs/2.9.9/holder.min.js" tppabs="https://cdn.w3cbus.com/library/holderjs/2.9.9/holder.min.js"></script>
+  <link rel="canonical" href="https://www.mdui.org/docs/panel">
+  
+  <script type="application/ld+json">{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"mdui","item":"https://www.mdui.org"},{"@type":"ListItem","position":2,"name":"mdui 1 开发文档","item":"https://www.mdui.org/docs/"},{"@type":"ListItem","position":3,"name":"可扩展面板"}],"@context":"https://schema.org"}</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'/*tpa=https://www.mdui.org/docs/gtm.js*/});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K3T2R6S');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js-client=ca-pub-4466345895756968" tppabs="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4466345895756968" data-overlays="bottom" crossorigin="anonymous"></script>
+  <script type="module" crossorigin src="../../cdn.w3cbus.com/mdui/docs-1/assets/index-15cb1481.js" tppabs="https://cdn.w3cbus.com/mdui/docs-1/assets/index-15cb1481.js"></script>
+  <link rel="stylesheet" href="../../cdn.w3cbus.com/mdui/docs-1/assets/index-abafda3c.css" tppabs="https://cdn.w3cbus.com/mdui/docs-1/assets/index-abafda3c.css">
+</head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-auto mdui-theme-layout-auto mdui-theme-primary-indigo mdui-theme-accent-pink">
+<div id="app"><!--[--><header class="appbar mdui-appbar mdui-appbar-fixed" data-v-724d73df><div class="mdui-toolbar mdui-color-theme" data-nosnippet data-v-724d73df><span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" data-v-724d73df><i class="mdui-icon material-icons" data-v-724d73df>menu</i></span><a href="../zh-cn/index.htm" tppabs="https://www.mdui.org/" class="mdui-typo-headline mdui-hidden-xs" data-v-724d73df>MDUI</a><a href="index.htm" tppabs="https://www.mdui.org/docs/" class="mdui-typo-title" data-v-724d73df>文档</a><div class="mdui-toolbar-spacer" data-v-724d73df></div><span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: &#39;设置主题&#39;}" data-v-724d73df><i class="mdui-icon material-icons" data-v-724d73df>color_lens</i></span><a href="javascript:if(confirm('https://github.com/zdhxiong/mdui  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://github.com/zdhxiong/mdui'" tppabs="https://github.com/zdhxiong/mdui" target="_blank" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: &#39;查看 Github&#39;}" data-v-724d73df><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36 36" enable-background="new 0 0 36 36" tppabs="https://www.mdui.org/docs/new 0 0 36 36" xml:space="preserve" class="mdui-icon" style="width:24px;height:24px;" data-v-724d73df><path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4c-0.2-0.4-0.7-2.1,0.2-4.3c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C34.3,8.7,27,1.4,18,1.4z" data-v-724d73df></path></svg></a></div></header><div class="mdui-drawer" data-nosnippet><div class="mdui-list" id="drawer-collapse" style="margin-bottom:76px;"><!--[--><div class="mdui-collapse-item"><div class="mdui-collapse-item-header mdui-list-item mdui-ripple"><i class="mdui-text-color-blue mdui-list-item-icon mdui-icon material-icons">near_me</i><div class="mdui-list-item-content">开始使用</div><i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><div class="mdui-collapse-item-body mdui-list"><!----></div></div><div class="mdui-collapse-item"><div class="mdui-collapse-item-header mdui-list-item mdui-ripple"><i class="mdui-text-color-deep-orange mdui-list-item-icon mdui-icon material-icons">layers</i><div class="mdui-list-item-content">样式</div><i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><div class="mdui-collapse-item-body mdui-list"><!----></div></div><div class="mdui-collapse-item-open mdui-collapse-item"><div class="mdui-collapse-item-header mdui-list-item mdui-ripple"><i class="mdui-text-color-green mdui-list-item-icon mdui-icon material-icons">widgets</i><div class="mdui-list-item-content">组件</div><i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><div class="mdui-collapse-item-body mdui-list"><!--[--><a href="ripple.htm" tppabs="https://www.mdui.org/docs/ripple" class="mdui-list-item mdui-ripple">涟漪动画效果</a><a href="button.htm" tppabs="https://www.mdui.org/docs/button" class="mdui-list-item mdui-ripple">按钮</a><a href="fab.htm" tppabs="https://www.mdui.org/docs/fab" class="mdui-list-item mdui-ripple">浮动操作按钮</a><a href="select.htm" tppabs="https://www.mdui.org/docs/select" class="mdui-list-item mdui-ripple">下拉选择</a><a href="divider.htm" tppabs="https://www.mdui.org/docs/divider" class="mdui-list-item mdui-ripple">分隔线</a><a aria-current="page" href="panel.htm" tppabs="https://www.mdui.org/docs/panel" class="router-link-active router-link-exact-active mdui-list-item mdui-ripple mdui-list-item-active">可扩展面板</a><a href="textfield.htm" tppabs="https://www.mdui.org/docs/textfield" class="mdui-list-item mdui-ripple">文本框</a><a href="selection_control.htm" tppabs="https://www.mdui.org/docs/selection_control" class="mdui-list-item mdui-ripple">选择控件</a><a href="slider.htm" tppabs="https://www.mdui.org/docs/slider" class="mdui-list-item mdui-ripple">滑块</a><a href="list.htm" tppabs="https://www.mdui.org/docs/list" class="mdui-list-item mdui-ripple">列表</a><a href="list_control.htm" tppabs="https://www.mdui.org/docs/list_control" class="mdui-list-item mdui-ripple">列表控制</a><a href="grid_list.htm" tppabs="https://www.mdui.org/docs/grid_list" class="mdui-list-item mdui-ripple">网格列表</a><a href="tab.htm" tppabs="https://www.mdui.org/docs/tab" class="mdui-list-item mdui-ripple">Tab 选项卡</a><a href="toolbar.htm" tppabs="https://www.mdui.org/docs/toolbar" class="mdui-list-item mdui-ripple">工具栏</a><a href="appbar.htm" tppabs="https://www.mdui.org/docs/appbar" class="mdui-list-item mdui-ripple">应用栏</a><a href="drawer.htm" tppabs="https://www.mdui.org/docs/drawer" class="mdui-list-item mdui-ripple">抽屉式导航</a><a href="bottom_nav.htm" tppabs="https://www.mdui.org/docs/bottom_nav" class="mdui-list-item mdui-ripple">底部导航栏</a><a href="card.htm" tppabs="https://www.mdui.org/docs/card" class="mdui-list-item mdui-ripple">卡片</a><a href="chip.htm" tppabs="https://www.mdui.org/docs/chip" class="mdui-list-item mdui-ripple">纸片</a><a href="tooltip.htm" tppabs="https://www.mdui.org/docs/tooltip" class="mdui-list-item mdui-ripple">工具提示</a><a href="snackbar.htm" tppabs="https://www.mdui.org/docs/snackbar" class="mdui-list-item mdui-ripple">Snackbar</a><a href="table.htm" tppabs="https://www.mdui.org/docs/table" class="mdui-list-item mdui-ripple">表格</a><a href="dialog.htm" tppabs="https://www.mdui.org/docs/dialog" class="mdui-list-item mdui-ripple">对话框</a><a href="menu.htm" tppabs="https://www.mdui.org/docs/menu" class="mdui-list-item mdui-ripple">菜单</a><a href="progress.htm" tppabs="https://www.mdui.org/docs/progress" class="mdui-list-item mdui-ripple">进度指示器</a><!--]--></div></div><div class="mdui-collapse-item"><div class="mdui-collapse-item-header mdui-list-item mdui-ripple"><i class="mdui-text-color-brown mdui-list-item-icon mdui-icon material-icons">view_carousel</i><div class="mdui-list-item-content">JavaScript 插件</div><i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><div class="mdui-collapse-item-body mdui-list"><!----></div></div><div class="mdui-collapse-item"><div class="mdui-collapse-item-header mdui-list-item mdui-ripple"><i class="mdui-text-color-purple mdui-list-item-icon mdui-icon material-icons">local_mall</i><div class="mdui-list-item-content">资源</div><i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><div class="mdui-collapse-item-body mdui-list"><!----></div></div><!--]--></div></div><a id="anchor-top"></a><div class="container mdui-container"><!--[--><div class="mdui-typo to-mdui2" data-nosnippet data-v-f11a6feb> 基于 Material Design 3 和 Web Components 的 mdui 2 已发布，查看 <a href="../zh-cn/docs/2/index.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/" data-v-f11a6feb>mdui 2 开发文档</a>。 </div><h1 class="title mdui-text-color-theme">可扩展面板</h1><div class="intro mdui-typo"><div class="intro-module"><h3>调用方式</h3><ol><li> 通过自定义属性调用（若组件是动态生成的，则需要调用 <a href="global.htm#mutation" tppabs="https://www.mdui.org/docs/global#mutation" class=""><code>mdui.mutation()</code></a> 进行初始化） </li><li>通过 JavaScript 调用</li></ol></div><div class="intro-module"><h3>相关阅读</h3><p><a href="../zh-cn/design/1/components/expansion-panels.html" tppabs="https://www.mdui.org/zh-cn/design/1/components/expansion-panels.html" target="_blank">Material Design 设计指南：组件 - 扩展面板</a></p></div></div><!--[--><ins class="reward reward-display first-screen adsbygoogle" style="display:block;border-bottom:none;color-scheme:auto;text-decoration:none;" data-ad-client="ca-pub-4466345895756968" data-ad-slot="3103002934"></ins><!----><!--]--><nav class="toc mdui-text-color-theme"><ul><li><a href="#style">样式</a><ul><li><a href="#complete">完整 HTML 结构</a></li><li><a href="#simple">最简 HTML 结构</a></li><li><a href="#open">默认打开的面板项</a></li><li><a href="#gapless">移除面板间距</a></li><li><a href="#popout">弹出面板</a></li><li><a href="#nest">面板嵌套</a></li></ul></li><li><a href="#call">调用方式</a><ul><li><a href="#attr">通过自定义属性调用</a></li><li><a href="#js">通过 JavaScript 调用</a></li><li><a href="#option">参数</a></li><li><a href="#method">方法</a></li><li><a href="#event">事件</a></li></ul></li><li><a href="#class">CSS 类名列表</a></li></ul></nav><div class="chapter"><div class="mdui-typo"><h2 class="chapter-title chapter-title-first mdui-text-color-theme"> 样式 <a class="anchor" id="style"></a></h2><h4 class="article-title"> 完整 HTML 结构 <a class="anchor" id="complete"></a></h4><p>这个示例包含了所有可以包含的 HTML 元素。</p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="panel/demo1.htm" tppabs="https://www.mdui.org/docs/panel/demo1" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;div class=&quot;mdui-panel&quot; mdui-panel&gt;
+
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;
+      &lt;div class=&quot;mdui-panel-item-title&quot;&gt;Trip name&lt;/div&gt;
+      &lt;div class=&quot;mdui-panel-item-summary&quot;&gt;Carribean cruise&lt;/div&gt;
+      &lt;i class=&quot;mdui-panel-item-arrow mdui-icon material-icons&quot;&gt;keyboard_arrow_down&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;div class=&quot;mdui-panel-item-actions&quot;&gt;
+        &lt;button class=&quot;mdui-btn mdui-ripple&quot; mdui-panel-item-close&gt;cancel&lt;/button&gt;
+        &lt;button class=&quot;mdui-btn mdui-ripple&quot;&gt;save&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;
+      &lt;div class=&quot;mdui-panel-item-title&quot;&gt;Location&lt;/div&gt;
+      &lt;i class=&quot;mdui-panel-item-arrow mdui-icon material-icons&quot;&gt;keyboard_arrow_down&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;div class=&quot;mdui-panel-item-actions&quot;&gt;
+        &lt;button class=&quot;mdui-btn mdui-ripple&quot; mdui-panel-item-close&gt;cancel&lt;/button&gt;
+        &lt;button class=&quot;mdui-btn mdui-ripple&quot;&gt;save&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;
+      &lt;div class=&quot;mdui-panel-item-title&quot;&gt;Start and end dates&lt;/div&gt;
+      &lt;div class=&quot;mdui-panel-item-summary&quot;&gt;Start date: Feb 29, 2016&lt;/div&gt;
+      &lt;div class=&quot;mdui-panel-item-summary&quot;&gt;End date: Not set&lt;/div&gt;
+      &lt;i class=&quot;mdui-panel-item-arrow mdui-icon material-icons&quot;&gt;keyboard_arrow_down&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;div class=&quot;mdui-panel-item-actions&quot;&gt;
+        &lt;button class=&quot;mdui-btn mdui-ripple&quot; mdui-panel-item-close&gt;cancel&lt;/button&gt;
+        &lt;button class=&quot;mdui-btn mdui-ripple&quot;&gt;save&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;<!--]--></code></pre></div><div class="mdui-typo"><h4 class="article-title"> 最简 HTML 结构 <a class="anchor" id="simple"></a></h4><p>上例中的部分元素并不是必须的，下面的示例只包含必须的 HTML 元素。</p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="panel/demo2.htm" tppabs="https://www.mdui.org/docs/panel/demo2" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;div class=&quot;mdui-panel&quot; mdui-panel&gt;
+
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;First&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Second&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Third&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;<!--]--></code></pre></div><div class="mdui-typo"><h4 class="article-title"> 默认打开的面板项 <a class="anchor" id="open"></a></h4><p> 在 <code>&lt;div class=&quot;mdui-panel-item&quot;&gt;&lt;/div&gt;</code> 元素上添加类 <code>.mdui-panel-item-open</code> 即可使该面板项处于默认打开状态。 </p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="panel/demo3.htm" tppabs="https://www.mdui.org/docs/panel/demo3" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;div class=&quot;mdui-panel&quot; mdui-panel&gt;
+
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;First&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;mdui-panel-item mdui-panel-item-open&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Second&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Third&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;<!--]--></code></pre></div><div class="mdui-typo"><h4 class="article-title"> 移除面板间距 <a class="anchor" id="gapless"></a></h4><p> 在 <code>&lt;div class=&quot;mdui-panel&quot;&gt;&lt;/div&gt;</code> 元素上添加类 <code>.mdui-panel-gapless</code> 即可移除打开的面板和其他面板之间的间距。 </p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="panel/demo4.htm" tppabs="https://www.mdui.org/docs/panel/demo4" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;div class=&quot;mdui-panel mdui-panel-gapless&quot; mdui-panel&gt;
+
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;First&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Second&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Third&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;<!--]--></code></pre></div><div class="mdui-typo"><h4 class="article-title">弹出面板 <a class="anchor" id="popout"></a></h4><p> 在 <code>&lt;div class=&quot;mdui-panel&quot;&gt;&lt;/div&gt;</code> 元素上添加类 <code>.mdui-panel-popout</code> 即可使打开的面板有弹出效果。 </p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="panel/demo5.htm" tppabs="https://www.mdui.org/docs/panel/demo5" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;div class=&quot;mdui-panel mdui-panel-popout&quot; mdui-panel&gt;
+
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;First&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Second&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Third&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;<!--]--></code></pre></div><div class="mdui-typo"><h4 class="article-title">面板嵌套 <a class="anchor" id="nest"></a></h4><p>可扩展面板可以互相嵌套。</p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="panel/demo6.htm" tppabs="https://www.mdui.org/docs/panel/demo6" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;div class=&quot;mdui-panel&quot; mdui-panel&gt;
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;First&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+
+      &lt;!-- 第一个嵌套的可扩展列表 --&gt;
+      &lt;div class=&quot;mdui-panel&quot; mdui-panel&gt;
+        &lt;div class=&quot;mdui-panel-item&quot;&gt;
+          &lt;div class=&quot;mdui-panel-item-header&quot;&gt;First&lt;/div&gt;
+          &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+            &lt;p&gt;First content&lt;/p&gt;
+            &lt;p&gt;First content&lt;/p&gt;
+            &lt;p&gt;First content&lt;/p&gt;
+
+            &lt;!-- 第二个嵌套的可扩展列表 --&gt;
+            &lt;div class=&quot;mdui-panel&quot; mdui-panel&gt;
+              &lt;div class=&quot;mdui-panel-item&quot;&gt;
+                &lt;div class=&quot;mdui-panel-item-header&quot;&gt;First&lt;/div&gt;
+                &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+                  &lt;p&gt;First content&lt;/p&gt;
+                  &lt;p&gt;First content&lt;/p&gt;
+                  &lt;p&gt;First content&lt;/p&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;mdui-panel-item&quot;&gt;
+                &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Second&lt;/div&gt;
+                &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+                  &lt;p&gt;Second content&lt;/p&gt;
+                  &lt;p&gt;Second content&lt;/p&gt;
+                  &lt;p&gt;Second content&lt;/p&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;mdui-panel-item&quot;&gt;
+          &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Second&lt;/div&gt;
+          &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+            &lt;p&gt;Second content&lt;/p&gt;
+            &lt;p&gt;Second content&lt;/p&gt;
+            &lt;p&gt;Second content&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Second&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Third&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;<!--]--></code></pre></div><div class="mdui-typo"><h2 class="chapter-title mdui-text-color-theme"> 调用方式 <a class="anchor" id="call"></a></h2><h4 class="article-title"> 通过自定义属性调用 <a class="anchor" id="attr"></a></h4><p> 使用该方式无需编写 JavaScript 代码。只需在 <code>&lt;div class=&quot;mdui-panel&quot;&gt;&lt;/div&gt;</code> 元素上添加 <code>mdui-panel=&quot;<a href="#option">options</a>&quot;</code> 属性即可激活该插件。 </p><p> 若组件是动态生成的，则需要调用 <a href="global.htm#mutation" tppabs="https://www.mdui.org/docs/global#mutation" class=""><code>mdui.mutation()</code></a> 进行初始化。 </p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="panel/demo7.htm" tppabs="https://www.mdui.org/docs/panel/demo7" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;div class=&quot;mdui-panel&quot; mdui-panel=&quot;{accordion: true}&quot;&gt;
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;First&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Second&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Third&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;<!--]--></code></pre></div><div class="mdui-typo"><p> 在可扩展面板内的元素上可以添加一些属性来绑定事件，这些属性在使用 JavaScript 调用方式时也可以使用。 </p><div class="mdui-table-fluid"><table class="mdui-table"><thead><tr><th>属性</th><th>说明</th></tr></thead><tbody><tr><td><code>mdui-panel-item-close</code></td><td> 点击该元素会触发 <code>close.mdui.panel</code> 事件，并关闭该元素所处的面板。 </td></tr></tbody></table></div></div><div class="mdui-typo"><h4 class="article-title"> 通过 JavaScript 调用 <a class="anchor" id="js"></a></h4><p>实例化组件：</p><pre><code class="language-js">// selector 为 .mdui-panel 元素的 CSS 选择器或 DOM 元素
+// options 为插件的参数，见下面的参数列表
+var inst = new mdui.Panel(selector, options);</code></pre></div><a href="panel/demo8.htm" tppabs="https://www.mdui.org/docs/panel/demo8" target="_blank" class="mdui-btn mdui-color-theme-accent">运行</a><div class="mdui-typo"><h4 class="article-title">参数 <a class="anchor" id="option"></a></h4><div class="mdui-table-fluid"><table class="mdui-table"><thead><tr><th>参数名</th><th>类型</th><th>默认值</th><th>描述</th></tr></thead><tbody><tr><td><code>accordion</code></td><td><code>boolean</code></td><td><code>false</code></td><td> 是否启用手风琴效果。 <ul><li> 为 <code>true</code> 时，最多只能有一个面板项处于打开状态，打开一个面板项时会关闭其他面板项。 </li><li>为 <code>false</code> 时，可同时打开多个面板项。</li></ul></td></tr></tbody></table></div></div><div class="mdui-typo"><h4 class="article-title">方法 <a class="anchor" id="method"></a></h4><div class="mdui-table-fluid"><table class="mdui-table"><thead><tr><th>方法名</th><th>描述</th></tr></thead><tbody><tr><td><code>open(item)</code></td><td> 打开面板项。 <ul><li><code>item</code>：面板项的索引号、或者 DOM 元素、或者 CSS 选择器。 </li></ul></td></tr><tr><td><code>close(item)</code></td><td> 关闭面板项。 <ul><li><code>item</code>：面板项的索引号、或者 DOM 元素、或者 CSS 选择器。 </li></ul></td></tr><tr><td><code>toggle(item)</code></td><td> 切换面板项状态。 <ul><li><code>item</code>：面板项的索引号、或者 DOM 元素、或者 CSS 选择器。 </li></ul></td></tr><tr><td><code>openAll()</code></td><td> 打开所有面板项。该方法仅在 <code>accordion</code> 为 <code>false</code> 时有效。 </td></tr><tr><td><code>closeAll()</code></td><td>关闭所有面板项。</td></tr></tbody></table></div></div><div class="mdui-typo"><h4 class="article-title">事件 <a class="anchor" id="event"></a></h4><div class="mdui-table-fluid"><table class="mdui-table"><thead><tr><th>事件</th><th>描述</th><th>目标</th><th>参数</th></tr></thead><tbody><tr><td><code>open.mdui.panel</code></td><td>面板项开始打开动画时，事件将被触发。</td><td rowspan="4"><code>&lt;div class=&quot;mdui-panel-item&quot;&gt;&lt;/div&gt;</code></td><td rowspan="4"><code>event._detail.inst</code>：实例</td></tr><tr><td><code>opened.mdui.panel</code></td><td>面板项结束打开动画时，事件将被触发。</td></tr><tr><td><code>close.mdui.panel</code></td><td>面板项开始关闭动画时，事件将被触发。</td></tr><tr><td><code>closed.mdui.panel</code></td><td>面板项结束关闭动画时，事件将被触发。</td></tr></tbody></table></div></div><div class="mdui-typo"><h2 class="chapter-title mdui-text-color-theme"> CSS 类名列表 <a class="anchor" id="class"></a></h2><div class="mdui-table-fluid"><table class="mdui-table"><thead><tr><th>类名</th><th>效果</th></tr></thead><tbody><tr><td><code>.mdui-panel</code></td><td>定义一个可扩展面板。</td></tr><tr><td><code>.mdui-panel-gapless</code></td><td>移除打开的面板和其他面板之间的间距。</td></tr><tr><td><code>.mdui-panel-popout</code></td><td>使打开的面板具有弹出效果。</td></tr><tr><td><code>.mdui-panel-item</code></td><td>定义一个可扩展面板的面板项。</td></tr><tr><td><code>.mdui-panel-item-open</code></td><td>使面板项默认打开。</td></tr><tr><td><code>.mdui-panel-item-header</code></td><td>定义一个面板项的头部。</td></tr><tr><td><code>.mdui-panel-item-title</code></td><td>定义面板项头部的标题。</td></tr><tr><td><code>.mdui-panel-item-summary</code></td><td>定义面板项头部的概要。</td></tr><tr><td><code>.mdui-panel-item-arrow</code></td><td>定义面板项的展开收起图标。</td></tr><tr><td><code>.mdui-panel-item-body</code></td><td>定义面板项内容。</td></tr><tr><td><code>.mdui-panel-item-actions</code></td><td>定义面板项的操作栏。</td></tr></tbody></table></div></div></div><!--]--></div><div class="nav mdui-color-theme" data-nosnippet data-v-36aafd1d><div class="mdui-container" data-v-36aafd1d><div class="mdui-row" data-v-36aafd1d><a href="divider.htm" tppabs="https://www.mdui.org/docs/divider" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 nav-left" data-v-36aafd1d><div class="nav-text" data-v-36aafd1d><i class="mdui-icon material-icons" data-v-36aafd1d>arrow_back</i><span class="nav-direction mdui-hidden-xs-down" data-v-36aafd1d>Previous</span><div class="nav-chapter mdui-hidden-xs-down" data-v-36aafd1d>分隔线</div></div></a><a href="textfield.htm" tppabs="https://www.mdui.org/docs/textfield" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 nav-right" data-v-36aafd1d><div class="nav-text" data-v-36aafd1d><i class="mdui-icon material-icons" data-v-36aafd1d>arrow_forward</i><span class="nav-direction" data-v-36aafd1d>Next</span><div class="nav-chapter" data-v-36aafd1d>文本框</div></div></a></div></div></div><!----><!--]--></div>
+
+<script>
+  window.__INITIAL_DATA__ = {"docs":{"defaultPrimary":"indigo","defaultAccent":"pink","defaultLayout":"auto","primary":"indigo","accent":"pink","layout":"auto","drawer":null,"themeDialog":null}};
+</script>
+</body>
+</html>

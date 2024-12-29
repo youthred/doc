@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" class="mdui-theme-auto">
+<head>
+  <meta charset=utf-8"UTF-8">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=5.0">
+  <title>Collapse Component - mdui Docs</title>
+  <meta name="description" content="Collapse panels are utilized to group and conceal complex content areas, enhancing page organization.">
+  <link rel="preconnect" href="https://cdn.w3cbus.com">
+  <link rel="alternate" hreflang="en" href="https://www.mdui.org/en/docs/2/components/collapse">
+  <link rel="alternate" hreflang="zh-cn" href="https://www.mdui.org/zh-cn/docs/2/components/collapse">
+  <link rel="alternate" hreflang="x-default" href="https://www.mdui.org/en/docs/2/components/collapse">
+  <link rel="preload" href="https://cdn.w3cbus.com/library/roboto/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="modulepreload" crossorigin href="https://cdn.w3cbus.com/mdui/2/assets/index-444705a2.js"><link rel="preload" href="https://cdn.w3cbus.com/mdui/2/assets/index-44251c77.css" as="style">
+  <link rel="stylesheet" href="../../../../../cdn.w3cbus.com/mdui/2/assets/index-44251c77.css" tppabs="https://cdn.w3cbus.com/mdui/2/assets/index-44251c77.css"><link rel="modulepreload" crossorigin href="https://cdn.w3cbus.com/mdui/2/assets/ThemeSettings-3f9ecbf9.js"><link rel="preload" href="https://cdn.w3cbus.com/mdui/2/assets/ThemeSettings-fa6ba0b3.css" as="style">
+  <link rel="stylesheet" href="../../../../../cdn.w3cbus.com/mdui/2/assets/ThemeSettings-fa6ba0b3.css" tppabs="https://cdn.w3cbus.com/mdui/2/assets/ThemeSettings-fa6ba0b3.css">
+  <link rel="icon" href="https://cdn.w3cbus.com/mdui/icon-192.png">
+  <link rel="icon" href="https://cdn.w3cbus.com/mdui/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="https://cdn.w3cbus.com/mdui/apple-touch-icon-180.png">
+  <link rel="canonical" href="https://www.mdui.org/en/docs/2/components/collapse">
+  
+  <script type="application/ld+json">{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"mdui","item":"https://www.mdui.org/en/"},{"@type":"ListItem","position":2,"name":"mdui 2 Docs","item":"https://www.mdui.org/en/docs/2/"},{"@type":"ListItem","position":3,"name":"Collapse Component"}],"@context":"https://schema.org"}</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'/*tpa=https://www.mdui.org/en/docs/2/components/gtm.js*/});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K3T2R6S');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="../../../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js-client=ca-pub-4466345895756968" tppabs="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4466345895756968" data-overlays="bottom" crossorigin="anonymous"></script>
+  <script type="module" crossorigin src="../../../../../cdn.w3cbus.com/mdui/2/assets/index-255315c2.js" tppabs="https://cdn.w3cbus.com/mdui/2/assets/index-255315c2.js"></script>
+  <link rel="modulepreload" crossorigin href="https://cdn.w3cbus.com/mdui/2/assets/vendor-mdui-689d1f65.js">
+  <link rel="stylesheet" href="../../../../../cdn.w3cbus.com/mdui/2/assets/vendor-mdui-67e1dd1d.css" tppabs="https://cdn.w3cbus.com/mdui/2/assets/vendor-mdui-67e1dd1d.css">
+  <link rel="stylesheet" href="../../../../../cdn.w3cbus.com/mdui/2/assets/index-c1bb6128.css" tppabs="https://cdn.w3cbus.com/mdui/2/assets/index-c1bb6128.css">
+</head>
+<body>
+<div id="app"><mdui-layout class="layout" data-v-5855b255><mdui-top-app-bar class="appbar" scroll-behavior="elevate" order="1" data-nosnippet data-v-5855b255 data-v-93b4b6dd><mdui-button-icon data-v-93b4b6dd><mdui-icon name="menu--rounded" data-v-93b4b6dd></mdui-icon></mdui-button-icon><mdui-top-app-bar-title data-v-93b4b6dd><a href="../../../index.htm" tppabs="https://www.mdui.org/en/" class="title" data-v-93b4b6dd>MDUI</a><a href="../index.htm" tppabs="https://www.mdui.org/en/docs/2/" class="title small" data-v-93b4b6dd>Docs</a></mdui-top-app-bar-title><mdui-dropdown trigger="hover" data-v-93b4b6dd data-v-d73cc679><mdui-button-icon slot="trigger" class="icon" data-v-d73cc679><mdui-icon-translate--rounded data-v-d73cc679></mdui-icon-translate--rounded></mdui-button-icon><mdui-menu selects="single" class="menu" data-v-d73cc679><!--[--><mdui-menu-item value="en" data-v-d73cc679>English</mdui-menu-item><mdui-menu-item value="zh-cn" data-v-d73cc679>简体中文</mdui-menu-item><!--]--></mdui-menu></mdui-dropdown><mdui-dropdown trigger="hover" data-v-93b4b6dd data-v-931aaba3><mdui-button-icon slot="trigger" class="auto" data-v-931aaba3><mdui-icon-light-mode class="light-filled" data-v-931aaba3></mdui-icon-light-mode><mdui-icon-light-mode--outlined class="light-outlined" data-v-931aaba3></mdui-icon-light-mode--outlined><mdui-icon-dark-mode class="dark-filled" data-v-931aaba3></mdui-icon-dark-mode><mdui-icon-dark-mode--outlined class="dark-outlined" data-v-931aaba3></mdui-icon-dark-mode--outlined></mdui-button-icon><mdui-menu selects="single" value="auto" class="menu" data-v-931aaba3><mdui-menu-item value="light" data-v-931aaba3>Light</mdui-menu-item><mdui-menu-item value="dark" data-v-931aaba3>Dark</mdui-menu-item><mdui-divider data-v-931aaba3></mdui-divider><mdui-menu-item value="auto" data-v-931aaba3>System</mdui-menu-item></mdui-menu></mdui-dropdown><mdui-dropdown stay-open-on-click trigger="hover" class="color-scheme" data-v-93b4b6dd data-v-e56655cb><mdui-button-icon slot="trigger" class="icon" data-v-e56655cb><mdui-icon name="palette--outlined" class="outlined" data-v-e56655cb></mdui-icon><mdui-icon name="palette" class="filled" data-v-e56655cb></mdui-icon></mdui-button-icon><mdui-card class="card" data-v-e56655cb><div class="color-label" data-v-e56655cb>Preset Colors</div><div class="color-preset" data-v-e56655cb><div class="red" data-v-e56655cb></div><div class="purple" data-v-e56655cb></div><div class="blue" data-v-e56655cb></div><div class="green" data-v-e56655cb></div><div class="yellow" data-v-e56655cb></div><div class="grey" data-v-e56655cb></div></div><div class="color-label" data-v-e56655cb>Custom Color</div><input type="color" class="color-custom" data-v-e56655cb><div class="color-label" data-v-e56655cb>Extract Color from Wallpaper</div><div class="color-wallpaper" data-v-e56655cb>Select a Wallpaper <input type="file" accept="image/png, image/jpeg" data-v-e56655cb></div></mdui-card></mdui-dropdown></mdui-top-app-bar><mdui-navigation-drawer class="drawer" style="--mdui-motion-duration-long2:0;position:absolute;top:64px;bottom:0px;left:0px;" close-on-esc close-on-overlay-click order="2" data-nosnippet data-v-5855b255 data-v-9c367966><mdui-list class="list" data-v-9c367966><mdui-collapse value="components" accordion data-v-9c367966><!--[--><mdui-collapse-item value="getting-started" data-v-9c367966><mdui-list-item slot="header" rounded data-v-9c367966>Getting Started <mdui-icon slot="icon" name="near_me--rounded" data-v-9c367966></mdui-icon><mdui-icon slot="end-icon" name="expand_more" class="arrow" data-v-9c367966></mdui-icon></mdui-list-item><div class="sublist" data-v-9c367966><!----></div></mdui-collapse-item><mdui-collapse-item value="styles" data-v-9c367966><mdui-list-item slot="header" rounded data-v-9c367966>Styles <mdui-icon slot="icon" name="layers--rounded" data-v-9c367966></mdui-icon><mdui-icon slot="end-icon" name="expand_more" class="arrow" data-v-9c367966></mdui-icon></mdui-list-item><div class="sublist" data-v-9c367966><!----></div></mdui-collapse-item><mdui-collapse-item value="frameworks" data-v-9c367966><mdui-list-item slot="header" rounded data-v-9c367966>Frameworks <mdui-icon slot="icon" name="workspaces--rounded" data-v-9c367966></mdui-icon><mdui-icon slot="end-icon" name="expand_more" class="arrow" data-v-9c367966></mdui-icon></mdui-list-item><div class="sublist" data-v-9c367966><!----></div></mdui-collapse-item><mdui-collapse-item value="components" data-v-9c367966><mdui-list-item slot="header" rounded data-v-9c367966>Components <mdui-icon slot="icon" name="widgets--rounded" data-v-9c367966></mdui-icon><mdui-icon slot="end-icon" name="expand_more" class="arrow-active arrow" data-v-9c367966></mdui-icon></mdui-list-item><div class="sublist" data-v-9c367966><!--[--><!--[--><mdui-list-item rounded active="false" href="avatar.htm" tppabs="https://www.mdui.org/en/docs/2/components/avatar" data-v-9c367966>Avatar <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="badge.htm" tppabs="https://www.mdui.org/en/docs/2/components/badge" data-v-9c367966>Badge <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="bottom-app-bar.htm" tppabs="https://www.mdui.org/en/docs/2/components/bottom-app-bar" data-v-9c367966>BottomAppBar <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="button.htm" tppabs="https://www.mdui.org/en/docs/2/components/button" data-v-9c367966>Button <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="button-icon.htm" tppabs="https://www.mdui.org/en/docs/2/components/button-icon" data-v-9c367966>ButtonIcon <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="card.htm" tppabs="https://www.mdui.org/en/docs/2/components/card" data-v-9c367966>Card <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="checkbox.htm" tppabs="https://www.mdui.org/en/docs/2/components/checkbox" data-v-9c367966>Checkbox <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="chip.htm" tppabs="https://www.mdui.org/en/docs/2/components/chip" data-v-9c367966>Chip <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="circular-progress.htm" tppabs="https://www.mdui.org/en/docs/2/components/circular-progress" data-v-9c367966>CircularProgress <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="true" href="collapse.htm" tppabs="https://www.mdui.org/en/docs/2/components/collapse" data-v-9c367966>Collapse <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="dialog.htm" tppabs="https://www.mdui.org/en/docs/2/components/dialog" data-v-9c367966>Dialog <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="divider.htm" tppabs="https://www.mdui.org/en/docs/2/components/divider" data-v-9c367966>Divider <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="dropdown.htm" tppabs="https://www.mdui.org/en/docs/2/components/dropdown" data-v-9c367966>Dropdown <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="fab.htm" tppabs="https://www.mdui.org/en/docs/2/components/fab" data-v-9c367966>Fab <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="icon.htm" tppabs="https://www.mdui.org/en/docs/2/components/icon" data-v-9c367966>Icon <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="layout.htm" tppabs="https://www.mdui.org/en/docs/2/components/layout" data-v-9c367966>Layout <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="linear-progress.htm" tppabs="https://www.mdui.org/en/docs/2/components/linear-progress" data-v-9c367966>LinearProgress <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="list.htm" tppabs="https://www.mdui.org/en/docs/2/components/list" data-v-9c367966>List <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="menu.htm" tppabs="https://www.mdui.org/en/docs/2/components/menu" data-v-9c367966>Menu <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="navigation-bar.htm" tppabs="https://www.mdui.org/en/docs/2/components/navigation-bar" data-v-9c367966>NavigationBar <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="navigation-drawer.htm" tppabs="https://www.mdui.org/en/docs/2/components/navigation-drawer" data-v-9c367966>NavigationDrawer <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="navigation-rail.htm" tppabs="https://www.mdui.org/en/docs/2/components/navigation-rail" data-v-9c367966>NavigationRail <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="radio.htm" tppabs="https://www.mdui.org/en/docs/2/components/radio" data-v-9c367966>Radio <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="range-slider.htm" tppabs="https://www.mdui.org/en/docs/2/components/range-slider" data-v-9c367966>RangeSlider <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="select.htm" tppabs="https://www.mdui.org/en/docs/2/components/select" data-v-9c367966>Select <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="segmented-button.htm" tppabs="https://www.mdui.org/en/docs/2/components/segmented-button" data-v-9c367966>SegmentedButton <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="slider.htm" tppabs="https://www.mdui.org/en/docs/2/components/slider" data-v-9c367966>Slider <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="snackbar.htm" tppabs="https://www.mdui.org/en/docs/2/components/snackbar" data-v-9c367966>Snackbar <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="switch.htm" tppabs="https://www.mdui.org/en/docs/2/components/switch" data-v-9c367966>Switch <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="tabs.htm" tppabs="https://www.mdui.org/en/docs/2/components/tabs" data-v-9c367966>Tabs <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="text-field.htm" tppabs="https://www.mdui.org/en/docs/2/components/text-field" data-v-9c367966>TextField <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="tooltip.htm" tppabs="https://www.mdui.org/en/docs/2/components/tooltip" data-v-9c367966>Tooltip <!----></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="top-app-bar.htm" tppabs="https://www.mdui.org/en/docs/2/components/top-app-bar" data-v-9c367966>TopAppBar <!----></mdui-list-item><!--]--><!--]--></div></mdui-collapse-item><mdui-collapse-item value="functions" data-v-9c367966><mdui-list-item slot="header" rounded data-v-9c367966>Functions <mdui-icon slot="icon" name="functions--rounded" data-v-9c367966></mdui-icon><mdui-icon slot="end-icon" name="expand_more" class="arrow" data-v-9c367966></mdui-icon></mdui-list-item><div class="sublist" data-v-9c367966><!----></div></mdui-collapse-item><mdui-collapse-item value="libraries" data-v-9c367966><mdui-list-item slot="header" rounded data-v-9c367966>Libraries <mdui-icon slot="icon" name="local_mall--rounded" data-v-9c367966></mdui-icon><mdui-icon slot="end-icon" name="expand_more" class="arrow" data-v-9c367966></mdui-icon></mdui-list-item><div class="sublist" data-v-9c367966><!----></div></mdui-collapse-item><!--]--></mdui-collapse></mdui-list></mdui-navigation-drawer><mdui-layout-main class="layout-main" data-v-5855b255><div class="main" data-v-5855b255><main class="container mdui-prose" data-v-5855b255><h1 data-v-5855b255>Collapse</h1><!--[--><!--[--><!--[--><div><p>Collapse panels are utilized to group and conceal complex content areas, enhancing page organization.</p>
+<p>The collapse panel component does not come with styles. You must either create your own styles or use it in conjunction with other components.</p>
+</div><!--[--><ins class="reward reward-display first-screen adsbygoogle" style="display:block;border-bottom:none;color-scheme:auto;text-decoration:none;margin-top:1rem;" data-ad-client="ca-pub-4466345895756968" data-ad-slot="3732322489"></ins><!----><!--]--><div style="margin-top:4.21875em;"><h2 id="usage">
+                  <a href="#usage">Usage</a>
+                </h2>
+<p>Import the component:</p>
+<pre><code class="language-js">import &#39;mdui/components/collapse.js&#39;;
+import &#39;mdui/components/collapse-item.js&#39;;
+</code></pre>
+<p>Import the TypeScript type:</p>
+<pre><code class="language-ts">import type { Collapse } from &#39;mdui/components/collapse.js&#39;;
+import type { CollapseItem } from &#39;mdui/components/collapse-item.js&#39;;
+</code></pre>
+<p>Example:</p></div><!--]--><!--]--><!--[--><div class="example" data-v-5855b255 data-v-4432c7e8><div class="demo" data-v-4432c7e8><mdui-collapse>
+  <mdui-collapse-item header="first header">first content</mdui-collapse-item>
+  <mdui-collapse-item header="second header">second content</mdui-collapse-item>
+</mdui-collapse></div><mdui-collapse value="one" data-v-4432c7e8><mdui-collapse-item value="one" data-v-4432c7e8><pre class="code" data-v-4432c7e8><code class="language-html" data-v-4432c7e8>&lt;mdui-collapse&gt;
+  &lt;mdui-collapse-item header=&quot;first header&quot;&gt;first content&lt;/mdui-collapse-item&gt;
+  &lt;mdui-collapse-item header=&quot;second header&quot;&gt;second content&lt;/mdui-collapse-item&gt;
+&lt;/mdui-collapse&gt;</code></pre><!----></mdui-collapse-item></mdui-collapse></div><!--]--><!--[--><div style="margin-top:4.21875em;" data-v-5855b255><h2 id="examples">
+                  <a href="#examples">Examples</a>
+                </h2>
+<h3 id="example-header">
+                  <a href="#example-header">Panel Header and Content</a>
+                </h3>
+<p>You can set the panel header text using the <code>header</code> attribute of the <code>&lt;mdui-collapse-item&gt;</code> component. Alternatively, use the <code>header</code> slot to specify the panel header element. The default slot of the component is for the panel content.</p></div><!--]--><!--[--><div class="example expandable" data-v-5855b255 data-v-4432c7e8><div class="demo" data-v-4432c7e8><mdui-list>
+  <mdui-collapse>
+    <mdui-collapse-item>
+      <mdui-list-item slot="header" icon="near_me">Item 1</mdui-list-item>
+      <div style="margin-left: 2.5rem">
+        <mdui-list-item>Item 1 - subitem</mdui-list-item>
+      </div>
+    </mdui-collapse-item>
+    <mdui-collapse-item>
+      <mdui-list-item slot="header" icon="near_me">Item 2</mdui-list-item>
+      <div style="margin-left: 2.5rem">
+        <mdui-list-item>Item 2 - subitem</mdui-list-item>
+      </div>
+    </mdui-collapse-item>
+  </mdui-collapse>
+</mdui-list></div><mdui-collapse value="" data-v-4432c7e8><mdui-collapse-item value="one" data-v-4432c7e8><pre class="code" data-v-4432c7e8><code class="language-html" data-v-4432c7e8>&lt;mdui-list&gt;
+  &lt;mdui-collapse&gt;
+    &lt;mdui-collapse-item&gt;
+      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;Item 1&lt;/mdui-list-item&gt;
+      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;
+        &lt;mdui-list-item&gt;Item 1 - subitem&lt;/mdui-list-item&gt;
+      &lt;/div&gt;
+    &lt;/mdui-collapse-item&gt;
+    &lt;mdui-collapse-item&gt;
+      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;Item 2&lt;/mdui-list-item&gt;
+      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;
+        &lt;mdui-list-item&gt;Item 2 - subitem&lt;/mdui-list-item&gt;
+      &lt;/div&gt;
+    &lt;/mdui-collapse-item&gt;
+  &lt;/mdui-collapse&gt;
+&lt;/mdui-list&gt;</code></pre><mdui-button slot="header" class="source" variant="text" full-width end-icon="arrow_drop_down" data-v-4432c7e8>Code</mdui-button></mdui-collapse-item></mdui-collapse></div><!--]--><!--[--><div style="margin-top:3em;" data-v-5855b255><h3 id="example-accordion">
+                  <a href="#example-accordion">Accordion Mode</a>
+                </h3>
+<p>To enable accordion mode, add the <code>accordion</code> attribute to the <code>&lt;mdui-collapse&gt;</code> component. In this mode, only one panel can be open at a time.</p></div><!--]--><!--[--><div class="example expandable" data-v-5855b255 data-v-4432c7e8><div class="demo" data-v-4432c7e8><mdui-list>
+  <mdui-collapse accordion>
+    <mdui-collapse-item>
+      <mdui-list-item slot="header" icon="near_me">Item 1</mdui-list-item>
+      <div style="margin-left: 2.5rem">
+        <mdui-list-item>Item 1 - subitem</mdui-list-item>
+      </div>
+    </mdui-collapse-item>
+    <mdui-collapse-item>
+      <mdui-list-item slot="header" icon="near_me">Item 2</mdui-list-item>
+      <div style="margin-left: 2.5rem">
+        <mdui-list-item>Item 2 - subitem</mdui-list-item>
+      </div>
+    </mdui-collapse-item>
+  </mdui-collapse>
+</mdui-list></div><mdui-collapse value="" data-v-4432c7e8><mdui-collapse-item value="one" data-v-4432c7e8><pre class="code" data-v-4432c7e8><code class="language-html" data-v-4432c7e8>&lt;mdui-list&gt;
+  &lt;mdui-collapse accordion&gt;
+    &lt;mdui-collapse-item&gt;
+      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;Item 1&lt;/mdui-list-item&gt;
+      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;
+        &lt;mdui-list-item&gt;Item 1 - subitem&lt;/mdui-list-item&gt;
+      &lt;/div&gt;
+    &lt;/mdui-collapse-item&gt;
+    &lt;mdui-collapse-item&gt;
+      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;Item 2&lt;/mdui-list-item&gt;
+      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;
+        &lt;mdui-list-item&gt;Item 2 - subitem&lt;/mdui-list-item&gt;
+      &lt;/div&gt;
+    &lt;/mdui-collapse-item&gt;
+  &lt;/mdui-collapse&gt;
+&lt;/mdui-list&gt;</code></pre><mdui-button slot="header" class="source" variant="text" full-width end-icon="arrow_drop_down" data-v-4432c7e8>Code</mdui-button></mdui-collapse-item></mdui-collapse></div><!--]--><!--[--><div style="margin-top:3em;" data-v-5855b255><h3 id="example-value">
+                  <a href="#example-value">Setting the Active Panel</a>
+                </h3>
+<p>The <code>value</code> attribute of the <code>&lt;mdui-collapse&gt;</code> component can be used to get the currently open panel or set the panel you want to open.</p>
+<p>In accordion mode, <code>value</code> is a string and can be manipulated using either attribute or property. In non-accordion mode, <code>value</code> is an array and can only be manipulated using JavaScript property.</p></div><!--]--><!--[--><div class="example expandable" data-v-5855b255 data-v-4432c7e8><div class="demo" data-v-4432c7e8><mdui-list>
+  <mdui-list-subheader>Accordion Mode</mdui-list-subheader>
+  <mdui-collapse accordion value="item-1">
+    <mdui-collapse-item value="item-1">
+      <mdui-list-item slot="header" icon="near_me">Item 1</mdui-list-item>
+      <div style="margin-left: 2.5rem">
+        <mdui-list-item>Item 1 - subitem</mdui-list-item>
+      </div>
+    </mdui-collapse-item>
+    <mdui-collapse-item value="item-2">
+      <mdui-list-item slot="header" icon="near_me">Item 2</mdui-list-item>
+      <div style="margin-left: 2.5rem">
+        <mdui-list-item>Item 2 - subitem</mdui-list-item>
+      </div>
+    </mdui-collapse-item>
+  </mdui-collapse>
+
+  <mdui-list-subheader>Non-Accordion Mode</mdui-list-subheader>
+  <mdui-collapse class="example-value">
+    <mdui-collapse-item value="item-1">
+      <mdui-list-item slot="header" icon="near_me">Item 1</mdui-list-item>
+      <div style="margin-left: 2.5rem">
+        <mdui-list-item>Item 1 - subitem</mdui-list-item>
+      </div>
+    </mdui-collapse-item>
+    <mdui-collapse-item value="item-2">
+      <mdui-list-item slot="header" icon="near_me">Item 2</mdui-list-item>
+      <div style="margin-left: 2.5rem">
+        <mdui-list-item>Item 2 - subitem</mdui-list-item>
+      </div>
+    </mdui-collapse-item>
+  </mdui-collapse>
+</mdui-list>
+
+</div><mdui-collapse value="" data-v-4432c7e8><mdui-collapse-item value="one" data-v-4432c7e8><pre class="code" data-v-4432c7e8><code class="language-html" data-v-4432c7e8>&lt;mdui-list&gt;
+  &lt;mdui-list-subheader&gt;Accordion Mode&lt;/mdui-list-subheader&gt;
+  &lt;mdui-collapse accordion value=&quot;item-1&quot;&gt;
+    &lt;mdui-collapse-item value=&quot;item-1&quot;&gt;
+      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;Item 1&lt;/mdui-list-item&gt;
+      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;
+        &lt;mdui-list-item&gt;Item 1 - subitem&lt;/mdui-list-item&gt;
+      &lt;/div&gt;
+    &lt;/mdui-collapse-item&gt;
+    &lt;mdui-collapse-item value=&quot;item-2&quot;&gt;
+      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;Item 2&lt;/mdui-list-item&gt;
+      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;
+        &lt;mdui-list-item&gt;Item 2 - subitem&lt;/mdui-list-item&gt;
+      &lt;/div&gt;
+    &lt;/mdui-collapse-item&gt;
+  &lt;/mdui-collapse&gt;
+
+  &lt;mdui-list-subheader&gt;Non-Accordion Mode&lt;/mdui-list-subheader&gt;
+  &lt;mdui-collapse class=&quot;example-value&quot;&gt;
+    &lt;mdui-collapse-item value=&quot;item-1&quot;&gt;
+      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;Item 1&lt;/mdui-list-item&gt;
+      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;
+        &lt;mdui-list-item&gt;Item 1 - subitem&lt;/mdui-list-item&gt;
+      &lt;/div&gt;
+    &lt;/mdui-collapse-item&gt;
+    &lt;mdui-collapse-item value=&quot;item-2&quot;&gt;
+      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;Item 2&lt;/mdui-list-item&gt;
+      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;
+        &lt;mdui-list-item&gt;Item 2 - subitem&lt;/mdui-list-item&gt;
+      &lt;/div&gt;
+    &lt;/mdui-collapse-item&gt;
+  &lt;/mdui-collapse&gt;
+&lt;/mdui-list&gt;
+
+&lt;script&gt;
+  const collapse = document.querySelector(&quot;.example-value&quot;);
+  collapse.value = [&quot;item-1&quot;, &quot;item-2&quot;];
+&lt;/script&gt;</code></pre><mdui-button slot="header" class="source" variant="text" full-width end-icon="arrow_drop_down" data-v-4432c7e8>Code</mdui-button></mdui-collapse-item></mdui-collapse></div><!--]--><!--[--><div style="margin-top:3em;" data-v-5855b255><h3 id="example-disabled">
+                  <a href="#example-disabled">Disabled State</a>
+                </h3>
+<p>To disable the entire collapse panel group, add the <code>disabled</code> attribute to the <code>&lt;mdui-collapse&gt;</code> component. To disable a specific collapse panel, add the <code>disabled</code> attribute to the <code>&lt;mdui-collapse-item&gt;</code>.</p></div><!--]--><!--[--><div class="example expandable" data-v-5855b255 data-v-4432c7e8><div class="demo" data-v-4432c7e8><mdui-list>
+  <mdui-list-subheader>All Disabled</mdui-list-subheader>
+  <mdui-collapse disabled>
+    <mdui-collapse-item>
+      <mdui-list-item slot="header" icon="near_me">Item 1</mdui-list-item>
+      <div style="margin-left: 2.5rem">
+        <mdui-list-item>Item 1 - subitem</mdui-list-item>
+      </div>
+    </mdui-collapse-item>
+    <mdui-collapse-item>
+      <mdui-list-item slot="header" icon="near_me">Item 2</mdui-list-item>
+      <div style="margin-left: 2.5rem">
+        <mdui-list-item>Item 2 - subitem</mdui-list-item>
+      </div>
+    </mdui-collapse-item>
+  </mdui-collapse>
+
+  <mdui-list-subheader>Disable the First Panel</mdui-list-subheader>
+  <mdui-collapse>
+    <mdui-collapse-item disabled>
+      <mdui-list-item slot="header" icon="near_me">Item 1</mdui-list-item>
+      <div style="margin-left: 2.5rem">
+        <mdui-list-item>Item 1 - subitem</mdui-list-item>
+      </div>
+    </mdui-collapse-item>
+    <mdui-collapse-item>
+      <mdui-list-item slot="header" icon="near_me">Item 2</mdui-list-item>
+      <div style="margin-left: 2.5rem">
+        <mdui-list-item>Item 2 - subitem</mdui-list-item>
+      </div>
+    </mdui-collapse-item>
+  </mdui-collapse>
+</mdui-list></div><mdui-collapse value="" data-v-4432c7e8><mdui-collapse-item value="one" data-v-4432c7e8><pre class="code" data-v-4432c7e8><code class="language-html" data-v-4432c7e8>&lt;mdui-list&gt;
+  &lt;mdui-list-subheader&gt;All Disabled&lt;/mdui-list-subheader&gt;
+  &lt;mdui-collapse disabled&gt;
+    &lt;mdui-collapse-item&gt;
+      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;Item 1&lt;/mdui-list-item&gt;
+      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;
+        &lt;mdui-list-item&gt;Item 1 - subitem&lt;/mdui-list-item&gt;
+      &lt;/div&gt;
+    &lt;/mdui-collapse-item&gt;
+    &lt;mdui-collapse-item&gt;
+      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;Item 2&lt;/mdui-list-item&gt;
+      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;
+        &lt;mdui-list-item&gt;Item 2 - subitem&lt;/mdui-list-item&gt;
+      &lt;/div&gt;
+    &lt;/mdui-collapse-item&gt;
+  &lt;/mdui-collapse&gt;
+
+  &lt;mdui-list-subheader&gt;Disable the First Panel&lt;/mdui-list-subheader&gt;
+  &lt;mdui-collapse&gt;
+    &lt;mdui-collapse-item disabled&gt;
+      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;Item 1&lt;/mdui-list-item&gt;
+      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;
+        &lt;mdui-list-item&gt;Item 1 - subitem&lt;/mdui-list-item&gt;
+      &lt;/div&gt;
+    &lt;/mdui-collapse-item&gt;
+    &lt;mdui-collapse-item&gt;
+      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;Item 2&lt;/mdui-list-item&gt;
+      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;
+        &lt;mdui-list-item&gt;Item 2 - subitem&lt;/mdui-list-item&gt;
+      &lt;/div&gt;
+    &lt;/mdui-collapse-item&gt;
+  &lt;/mdui-collapse&gt;
+&lt;/mdui-list&gt;</code></pre><mdui-button slot="header" class="source" variant="text" full-width end-icon="arrow_drop_down" data-v-4432c7e8>Code</mdui-button></mdui-collapse-item></mdui-collapse></div><!--]--><!--[--><div style="margin-top:3em;" data-v-5855b255><h3 id="example-trigger">
+                  <a href="#example-trigger">Triggering Element for Collapse</a>
+                </h3>
+<p>By default, clicking the entire panel header area triggers the collapse. You can specify the triggering element by using the <code>trigger</code> attribute of the <code>&lt;mdui-collapse-item&gt;</code> component. The <code>trigger</code> attribute can be a CSS selector or a DOM element.</p></div><!--]--><!--[--><div class="example expandable" data-v-5855b255 data-v-4432c7e8><div class="demo" data-v-4432c7e8><mdui-list>
+  <mdui-collapse>
+    <mdui-collapse-item trigger=".example-trigger">
+      <mdui-list-item slot="header" icon="near_me">
+        Item 1
+        <mdui-icon slot="end-icon" class="example-trigger" name="keyboard_arrow_down"></mdui-icon>
+      </mdui-list-item>
+      <div style="margin-left: 2.5rem">
+        <mdui-list-item>Item 1 - subitem</mdui-list-item>
+      </div>
+    </mdui-collapse-item>
+  </mdui-collapse>
+</mdui-list></div><mdui-collapse value="" data-v-4432c7e8><mdui-collapse-item value="one" data-v-4432c7e8><pre class="code" data-v-4432c7e8><code class="language-html" data-v-4432c7e8>&lt;mdui-list&gt;
+  &lt;mdui-collapse&gt;
+    &lt;mdui-collapse-item trigger=&quot;.example-trigger&quot;&gt;
+      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;
+        Item 1
+        &lt;mdui-icon slot=&quot;end-icon&quot; class=&quot;example-trigger&quot; name=&quot;keyboard_arrow_down&quot;&gt;&lt;/mdui-icon&gt;
+      &lt;/mdui-list-item&gt;
+      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;
+        &lt;mdui-list-item&gt;Item 1 - subitem&lt;/mdui-list-item&gt;
+      &lt;/div&gt;
+    &lt;/mdui-collapse-item&gt;
+  &lt;/mdui-collapse&gt;
+&lt;/mdui-list&gt;</code></pre><mdui-button slot="header" class="source" variant="text" full-width end-icon="arrow_drop_down" data-v-4432c7e8>Code</mdui-button></mdui-collapse-item></mdui-collapse></div><!--]--><!--]--><!--[--><!--[--><h2 id="collapse-item-api" data-v-646cee88><a href="#collapse-item-api" data-v-646cee88><code>mdui-collapse-item</code> API</a></h2><!--[--><ins class="reward reward-display adsbygoogle" style="display:block;border-bottom:none;color-scheme:auto;text-decoration:none;margin-bottom:1rem;" data-ad-client="ca-pub-4466345895756968" data-ad-slot="3732322489"></ins><!----><!--]--><div class="block attributes" data-v-646cee88><h3 id="collapse-item-attributes" data-v-646cee88><a href="#collapse-item-attributes" data-v-646cee88>Properties</a></h3><div class="mdui-table" data-v-646cee88><table data-v-646cee88><thead data-v-646cee88><tr data-v-646cee88><th data-v-646cee88>Attribute</th><th data-v-646cee88>Property</th><th data-v-646cee88>Reflect</th><th data-v-646cee88>Type</th><th data-v-646cee88>Default</th></tr></thead><tbody data-v-646cee88><!--[--><!--[--><tr class="api" id="collapse-item-attributes-value" data-v-646cee88><td data-v-646cee88><a href="#collapse-item-attributes-value" data-v-646cee88><code data-v-646cee88>value</code></a></td><td data-v-646cee88><a href="#collapse-item-attributes-value" data-v-646cee88><code data-v-646cee88>value</code></a></td><td data-v-646cee88><mdui-icon name="check--rounded" class="reflect" data-v-646cee88></mdui-icon></td><td class="wrap" data-v-646cee88><code data-v-646cee88>string</code></td><td data-v-646cee88><!--[-->-<!--]--></td></tr><tr data-v-646cee88><td colspan="5" data-v-646cee88><p>Specifies the value of the collapsible panel item.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="collapse-item-attributes-header" data-v-646cee88><td data-v-646cee88><a href="#collapse-item-attributes-header" data-v-646cee88><code data-v-646cee88>header</code></a></td><td data-v-646cee88><a href="#collapse-item-attributes-header" data-v-646cee88><code data-v-646cee88>header</code></a></td><td data-v-646cee88><mdui-icon name="check--rounded" class="reflect" data-v-646cee88></mdui-icon></td><td class="wrap" data-v-646cee88><code data-v-646cee88>string</code></td><td data-v-646cee88><!--[-->-<!--]--></td></tr><tr data-v-646cee88><td colspan="5" data-v-646cee88><p>Sets the header text for the collapsible panel item.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="collapse-item-attributes-disabled" data-v-646cee88><td data-v-646cee88><a href="#collapse-item-attributes-disabled" data-v-646cee88><code data-v-646cee88>disabled</code></a></td><td data-v-646cee88><a href="#collapse-item-attributes-disabled" data-v-646cee88><code data-v-646cee88>disabled</code></a></td><td data-v-646cee88><mdui-icon name="check--rounded" class="reflect" data-v-646cee88></mdui-icon></td><td class="wrap" data-v-646cee88><code data-v-646cee88>boolean</code></td><td data-v-646cee88><code data-v-646cee88>false</code></td></tr><tr data-v-646cee88><td colspan="5" data-v-646cee88><p>Disables the collapsible panel item.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="collapse-item-attributes-trigger" data-v-646cee88><td data-v-646cee88><a href="#collapse-item-attributes-trigger" data-v-646cee88><code data-v-646cee88>trigger</code></a></td><td data-v-646cee88><a href="#collapse-item-attributes-trigger" data-v-646cee88><code data-v-646cee88>trigger</code></a></td><td data-v-646cee88><!----></td><td class="wrap" data-v-646cee88><code data-v-646cee88>string | HTMLElement | JQ&lt;HTMLElement&gt;</code></td><td data-v-646cee88><!--[-->-<!--]--></td></tr><tr data-v-646cee88><td colspan="5" data-v-646cee88><p>Identifies the element that triggers the collapse on click. This can be a CSS selector, a DOM element, or a <a href="../functions/jq.htm" tppabs="https://www.mdui.org/docs/2/functions/jq">JQ object</a>. By default, the entire header area is the trigger.</p>
+</td></tr><!--]--><!--]--></tbody></table></div></div><!----><div class="block events" data-v-646cee88><h3 id="collapse-item-events" data-v-646cee88><a href="#collapse-item-events" data-v-646cee88>Events</a></h3><div class="mdui-table" data-v-646cee88><table data-v-646cee88><thead data-v-646cee88><tr data-v-646cee88><th data-v-646cee88>Name</th></tr></thead><tbody data-v-646cee88><!--[--><!--[--><tr class="api" id="collapse-item-events-open" data-v-646cee88><td data-v-646cee88><a href="#collapse-item-events-open" data-v-646cee88><code data-v-646cee88>open</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>Emitted when the collapse item starts to open.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="collapse-item-events-opened" data-v-646cee88><td data-v-646cee88><a href="#collapse-item-events-opened" data-v-646cee88><code data-v-646cee88>opened</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>Emitted after the collapse item has opened and the animations are completed.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="collapse-item-events-close" data-v-646cee88><td data-v-646cee88><a href="#collapse-item-events-close" data-v-646cee88><code data-v-646cee88>close</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>Emitted when the collapse item starts to close.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="collapse-item-events-closed" data-v-646cee88><td data-v-646cee88><a href="#collapse-item-events-closed" data-v-646cee88><code data-v-646cee88>closed</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>Emitted after the collapse item has closed and the animations are completed.</p>
+</td></tr><!--]--><!--]--></tbody></table></div></div><div class="block slots" data-v-646cee88><h3 id="collapse-item-slots" data-v-646cee88><a href="#collapse-item-slots" data-v-646cee88>Slots</a></h3><div class="mdui-table" data-v-646cee88><table data-v-646cee88><thead data-v-646cee88><tr data-v-646cee88><th data-v-646cee88>Name</th></tr></thead><tbody data-v-646cee88><!--[--><!--[--><tr class="api" id="collapse-item-slots-default" data-v-646cee88><td data-v-646cee88><a href="#collapse-item-slots-default" data-v-646cee88><span data-v-646cee88>(default)</span></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>Main content of the collapsible panel item.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="collapse-item-slots-header" data-v-646cee88><td data-v-646cee88><a href="#collapse-item-slots-header" data-v-646cee88><code data-v-646cee88>header</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>Content of the collapsible panel item&#39;s header.</p>
+</td></tr><!--]--><!--]--></tbody></table></div></div><div class="block css-parts" data-v-646cee88><h3 id="collapse-item-cssParts" data-v-646cee88><a href="#collapse-item-cssParts" data-v-646cee88>CSS Parts</a></h3><div class="mdui-table" data-v-646cee88><table data-v-646cee88><thead data-v-646cee88><tr data-v-646cee88><th data-v-646cee88>Name</th></tr></thead><tbody data-v-646cee88><!--[--><!--[--><tr class="api" id="collapse-item-cssParts-header" data-v-646cee88><td data-v-646cee88><a href="#collapse-item-cssParts-header" data-v-646cee88><code data-v-646cee88>header</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>Content of the collapsible panel&#39;s header.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="collapse-item-cssParts-body" data-v-646cee88><td data-v-646cee88><a href="#collapse-item-cssParts-body" data-v-646cee88><code data-v-646cee88>body</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>Content of the collapsible panel&#39;s body.</p>
+</td></tr><!--]--><!--]--></tbody></table></div></div><!----><!--]--><!--[--><h2 id="collapse-api" data-v-646cee88><a href="#collapse-api" data-v-646cee88><code>mdui-collapse</code> API</a></h2><!--[--><ins class="reward reward-display adsbygoogle" style="display:block;border-bottom:none;color-scheme:auto;text-decoration:none;margin-bottom:1rem;" data-ad-client="ca-pub-4466345895756968" data-ad-slot="3732322489"></ins><!----><!--]--><div class="block attributes" data-v-646cee88><h3 id="collapse-attributes" data-v-646cee88><a href="#collapse-attributes" data-v-646cee88>Properties</a></h3><div class="mdui-table" data-v-646cee88><table data-v-646cee88><thead data-v-646cee88><tr data-v-646cee88><th data-v-646cee88>Attribute</th><th data-v-646cee88>Property</th><th data-v-646cee88>Reflect</th><th data-v-646cee88>Type</th><th data-v-646cee88>Default</th></tr></thead><tbody data-v-646cee88><!--[--><!--[--><tr class="api" id="collapse-attributes-accordion" data-v-646cee88><td data-v-646cee88><a href="#collapse-attributes-accordion" data-v-646cee88><code data-v-646cee88>accordion</code></a></td><td data-v-646cee88><a href="#collapse-attributes-accordion" data-v-646cee88><code data-v-646cee88>accordion</code></a></td><td data-v-646cee88><mdui-icon name="check--rounded" class="reflect" data-v-646cee88></mdui-icon></td><td class="wrap" data-v-646cee88><code data-v-646cee88>boolean</code></td><td data-v-646cee88><code data-v-646cee88>false</code></td></tr><tr data-v-646cee88><td colspan="5" data-v-646cee88><p>Activates accordion mode.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="collapse-attributes-value" data-v-646cee88><td data-v-646cee88><a href="#collapse-attributes-value" data-v-646cee88><code data-v-646cee88>value</code></a></td><td data-v-646cee88><a href="#collapse-attributes-value" data-v-646cee88><code data-v-646cee88>value</code></a></td><td data-v-646cee88><!----></td><td class="wrap" data-v-646cee88><code data-v-646cee88>string | string[]</code></td><td data-v-646cee88><!--[-->-<!--]--></td></tr><tr data-v-646cee88><td colspan="5" data-v-646cee88><p>Specifies the open <code>&lt;mdui-collapse-item&gt;</code> value.</p>
+<p>Note: The HTML attribute is always a string and can only be initially set when <code>accordion</code> is <code>true</code>. The JavaScript property value is a string when <code>accordion</code> is <code>true</code> and a string array when <code>accordion</code> is <code>false</code>. To modify this value when <code>accordion</code> is <code>false</code>, you must change the JavaScript property.</p>
+</td></tr><!--]--><!--[--><tr class="api" id="collapse-attributes-disabled" data-v-646cee88><td data-v-646cee88><a href="#collapse-attributes-disabled" data-v-646cee88><code data-v-646cee88>disabled</code></a></td><td data-v-646cee88><a href="#collapse-attributes-disabled" data-v-646cee88><code data-v-646cee88>disabled</code></a></td><td data-v-646cee88><mdui-icon name="check--rounded" class="reflect" data-v-646cee88></mdui-icon></td><td class="wrap" data-v-646cee88><code data-v-646cee88>boolean</code></td><td data-v-646cee88><code data-v-646cee88>false</code></td></tr><tr data-v-646cee88><td colspan="5" data-v-646cee88><p>Disables the collapsible panel.</p>
+</td></tr><!--]--><!--]--></tbody></table></div></div><!----><div class="block events" data-v-646cee88><h3 id="collapse-events" data-v-646cee88><a href="#collapse-events" data-v-646cee88>Events</a></h3><div class="mdui-table" data-v-646cee88><table data-v-646cee88><thead data-v-646cee88><tr data-v-646cee88><th data-v-646cee88>Name</th></tr></thead><tbody data-v-646cee88><!--[--><!--[--><tr class="api" id="collapse-events-change" data-v-646cee88><td data-v-646cee88><a href="#collapse-events-change" data-v-646cee88><code data-v-646cee88>change</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>Emitted when the open collapsible panel item changes.</p>
+</td></tr><!--]--><!--]--></tbody></table></div></div><div class="block slots" data-v-646cee88><h3 id="collapse-slots" data-v-646cee88><a href="#collapse-slots" data-v-646cee88>Slots</a></h3><div class="mdui-table" data-v-646cee88><table data-v-646cee88><thead data-v-646cee88><tr data-v-646cee88><th data-v-646cee88>Name</th></tr></thead><tbody data-v-646cee88><!--[--><!--[--><tr class="api" id="collapse-slots-default" data-v-646cee88><td data-v-646cee88><a href="#collapse-slots-default" data-v-646cee88><span data-v-646cee88>(default)</span></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>The <code>&lt;mdui-collapse-item&gt;</code> components.</p>
+</td></tr><!--]--><!--]--></tbody></table></div></div><!----><!----><!--]--><!--]--><!----><!----><div class="nav" data-v-5855b255 data-v-b3c12c93><!--[--><mdui-card href="circular-progress.htm" tppabs="https://www.mdui.org/en/docs/2/components/circular-progress" variant="filled" class="card prev" data-v-b3c12c93><div class="container" data-v-b3c12c93><div class="overline" data-v-b3c12c93><mdui-icon name="east--rounded" class="arrow" data-v-b3c12c93></mdui-icon> Previous</div><div class="title" data-v-b3c12c93>CircularProgress <!----></div></div></mdui-card><!--]--><!--[--><mdui-card href="dialog.htm" tppabs="https://www.mdui.org/en/docs/2/components/dialog" variant="filled" class="card next" data-v-b3c12c93><div class="container" data-v-b3c12c93><div class="overline" data-v-b3c12c93>Up Next <mdui-icon name="east--rounded" class="arrow" data-v-b3c12c93></mdui-icon></div><div class="title" data-v-b3c12c93>Dialog <!----></div></div></mdui-card><!--]--></div></main><div class="contents" data-v-5855b255><div class="title" data-v-5855b255>On this page</div><mdui-list class="items" data-v-5855b255><!--[--><!--]--></mdui-list></div></div></mdui-layout-main></mdui-layout></div>
+
+<script>
+  window.__INITIAL_DATA__ = {"docs":{"loading":false,"path":"components/collapse","notFound":false,"docsHtml":"<p>Collapse panels are utilized to group and conceal complex content areas, enhancing page organization.</p>\n<p>The collapse panel component does not come with styles. You must either create your own styles or use it in conjunction with other components.</p>\n<h2 id=\"usage\">\n                  <a href=\"#usage\">Usage</a>\n                </h2>\n<p>Import the component:</p>\n<pre><code class=\"language-js\">import &#39;mdui/components/collapse.js&#39;;\nimport &#39;mdui/components/collapse-item.js&#39;;\n</code></pre>\n<p>Import the TypeScript type:</p>\n<pre><code class=\"language-ts\">import type { Collapse } from &#39;mdui/components/collapse.js&#39;;\nimport type { CollapseItem } from &#39;mdui/components/collapse-item.js&#39;;\n</code></pre>\n<p>Example:</p>\n<pre><code class=\"language-html,example\">&lt;mdui-collapse&gt;\n  &lt;mdui-collapse-item header=&quot;first header&quot;&gt;first content&lt;/mdui-collapse-item&gt;\n  &lt;mdui-collapse-item header=&quot;second header&quot;&gt;second content&lt;/mdui-collapse-item&gt;\n&lt;/mdui-collapse&gt;\n</code></pre>\n<h2 id=\"examples\">\n                  <a href=\"#examples\">Examples</a>\n                </h2>\n<h3 id=\"example-header\">\n                  <a href=\"#example-header\">Panel Header and Content</a>\n                </h3>\n<p>You can set the panel header text using the <code>header</code> attribute of the <code>&lt;mdui-collapse-item&gt;</code> component. Alternatively, use the <code>header</code> slot to specify the panel header element. The default slot of the component is for the panel content.</p>\n<pre><code class=\"language-html,example,expandable\">&lt;mdui-list&gt;\n  &lt;mdui-collapse&gt;\n    &lt;mdui-collapse-item&gt;\n      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;Item 1&lt;/mdui-list-item&gt;\n      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;\n        &lt;mdui-list-item&gt;Item 1 - subitem&lt;/mdui-list-item&gt;\n      &lt;/div&gt;\n    &lt;/mdui-collapse-item&gt;\n    &lt;mdui-collapse-item&gt;\n      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;Item 2&lt;/mdui-list-item&gt;\n      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;\n        &lt;mdui-list-item&gt;Item 2 - subitem&lt;/mdui-list-item&gt;\n      &lt;/div&gt;\n    &lt;/mdui-collapse-item&gt;\n  &lt;/mdui-collapse&gt;\n&lt;/mdui-list&gt;\n</code></pre>\n<h3 id=\"example-accordion\">\n                  <a href=\"#example-accordion\">Accordion Mode</a>\n                </h3>\n<p>To enable accordion mode, add the <code>accordion</code> attribute to the <code>&lt;mdui-collapse&gt;</code> component. In this mode, only one panel can be open at a time.</p>\n<pre><code class=\"language-html,example,expandable\">&lt;mdui-list&gt;\n  &lt;mdui-collapse accordion&gt;\n    &lt;mdui-collapse-item&gt;\n      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;Item 1&lt;/mdui-list-item&gt;\n      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;\n        &lt;mdui-list-item&gt;Item 1 - subitem&lt;/mdui-list-item&gt;\n      &lt;/div&gt;\n    &lt;/mdui-collapse-item&gt;\n    &lt;mdui-collapse-item&gt;\n      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;Item 2&lt;/mdui-list-item&gt;\n      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;\n        &lt;mdui-list-item&gt;Item 2 - subitem&lt;/mdui-list-item&gt;\n      &lt;/div&gt;\n    &lt;/mdui-collapse-item&gt;\n  &lt;/mdui-collapse&gt;\n&lt;/mdui-list&gt;\n</code></pre>\n<h3 id=\"example-value\">\n                  <a href=\"#example-value\">Setting the Active Panel</a>\n                </h3>\n<p>The <code>value</code> attribute of the <code>&lt;mdui-collapse&gt;</code> component can be used to get the currently open panel or set the panel you want to open.</p>\n<p>In accordion mode, <code>value</code> is a string and can be manipulated using either attribute or property. In non-accordion mode, <code>value</code> is an array and can only be manipulated using JavaScript property.</p>\n<pre><code class=\"language-html,example,expandable\">&lt;mdui-list&gt;\n  &lt;mdui-list-subheader&gt;Accordion Mode&lt;/mdui-list-subheader&gt;\n  &lt;mdui-collapse accordion value=&quot;item-1&quot;&gt;\n    &lt;mdui-collapse-item value=&quot;item-1&quot;&gt;\n      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;Item 1&lt;/mdui-list-item&gt;\n      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;\n        &lt;mdui-list-item&gt;Item 1 - subitem&lt;/mdui-list-item&gt;\n      &lt;/div&gt;\n    &lt;/mdui-collapse-item&gt;\n    &lt;mdui-collapse-item value=&quot;item-2&quot;&gt;\n      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;Item 2&lt;/mdui-list-item&gt;\n      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;\n        &lt;mdui-list-item&gt;Item 2 - subitem&lt;/mdui-list-item&gt;\n      &lt;/div&gt;\n    &lt;/mdui-collapse-item&gt;\n  &lt;/mdui-collapse&gt;\n\n  &lt;mdui-list-subheader&gt;Non-Accordion Mode&lt;/mdui-list-subheader&gt;\n  &lt;mdui-collapse class=&quot;example-value&quot;&gt;\n    &lt;mdui-collapse-item value=&quot;item-1&quot;&gt;\n      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;Item 1&lt;/mdui-list-item&gt;\n      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;\n        &lt;mdui-list-item&gt;Item 1 - subitem&lt;/mdui-list-item&gt;\n      &lt;/div&gt;\n    &lt;/mdui-collapse-item&gt;\n    &lt;mdui-collapse-item value=&quot;item-2&quot;&gt;\n      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;Item 2&lt;/mdui-list-item&gt;\n      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;\n        &lt;mdui-list-item&gt;Item 2 - subitem&lt;/mdui-list-item&gt;\n      &lt;/div&gt;\n    &lt;/mdui-collapse-item&gt;\n  &lt;/mdui-collapse&gt;\n&lt;/mdui-list&gt;\n\n&lt;script&gt;\n  const collapse = document.querySelector(&quot;.example-value&quot;);\n  collapse.value = [&quot;item-1&quot;, &quot;item-2&quot;];\n&lt;/script&gt;\n</code></pre>\n<h3 id=\"example-disabled\">\n                  <a href=\"#example-disabled\">Disabled State</a>\n                </h3>\n<p>To disable the entire collapse panel group, add the <code>disabled</code> attribute to the <code>&lt;mdui-collapse&gt;</code> component. To disable a specific collapse panel, add the <code>disabled</code> attribute to the <code>&lt;mdui-collapse-item&gt;</code>.</p>\n<pre><code class=\"language-html,example,expandable\">&lt;mdui-list&gt;\n  &lt;mdui-list-subheader&gt;All Disabled&lt;/mdui-list-subheader&gt;\n  &lt;mdui-collapse disabled&gt;\n    &lt;mdui-collapse-item&gt;\n      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;Item 1&lt;/mdui-list-item&gt;\n      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;\n        &lt;mdui-list-item&gt;Item 1 - subitem&lt;/mdui-list-item&gt;\n      &lt;/div&gt;\n    &lt;/mdui-collapse-item&gt;\n    &lt;mdui-collapse-item&gt;\n      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;Item 2&lt;/mdui-list-item&gt;\n      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;\n        &lt;mdui-list-item&gt;Item 2 - subitem&lt;/mdui-list-item&gt;\n      &lt;/div&gt;\n    &lt;/mdui-collapse-item&gt;\n  &lt;/mdui-collapse&gt;\n\n  &lt;mdui-list-subheader&gt;Disable the First Panel&lt;/mdui-list-subheader&gt;\n  &lt;mdui-collapse&gt;\n    &lt;mdui-collapse-item disabled&gt;\n      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;Item 1&lt;/mdui-list-item&gt;\n      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;\n        &lt;mdui-list-item&gt;Item 1 - subitem&lt;/mdui-list-item&gt;\n      &lt;/div&gt;\n    &lt;/mdui-collapse-item&gt;\n    &lt;mdui-collapse-item&gt;\n      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;Item 2&lt;/mdui-list-item&gt;\n      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;\n        &lt;mdui-list-item&gt;Item 2 - subitem&lt;/mdui-list-item&gt;\n      &lt;/div&gt;\n    &lt;/mdui-collapse-item&gt;\n  &lt;/mdui-collapse&gt;\n&lt;/mdui-list&gt;\n</code></pre>\n<h3 id=\"example-trigger\">\n                  <a href=\"#example-trigger\">Triggering Element for Collapse</a>\n                </h3>\n<p>By default, clicking the entire panel header area triggers the collapse. You can specify the triggering element by using the <code>trigger</code> attribute of the <code>&lt;mdui-collapse-item&gt;</code> component. The <code>trigger</code> attribute can be a CSS selector or a DOM element.</p>\n<pre><code class=\"language-html,example,expandable\">&lt;mdui-list&gt;\n  &lt;mdui-collapse&gt;\n    &lt;mdui-collapse-item trigger=&quot;.example-trigger&quot;&gt;\n      &lt;mdui-list-item slot=&quot;header&quot; icon=&quot;near_me&quot;&gt;\n        Item 1\n        &lt;mdui-icon slot=&quot;end-icon&quot; class=&quot;example-trigger&quot; name=&quot;keyboard_arrow_down&quot;&gt;&lt;/mdui-icon&gt;\n      &lt;/mdui-list-item&gt;\n      &lt;div style=&quot;margin-left: 2.5rem&quot;&gt;\n        &lt;mdui-list-item&gt;Item 1 - subitem&lt;/mdui-list-item&gt;\n      &lt;/div&gt;\n    &lt;/mdui-collapse-item&gt;\n  &lt;/mdui-collapse&gt;\n&lt;/mdui-list&gt;\n</code></pre>\n","customElements":[{"name":"CollapseItem","tagName":"mdui-collapse-item","summary":"<p>Collapse Item Component. It should be used in conjunction with the <code>&lt;mdui-collapse&gt;</code> component.</p>\n<pre><code class=\"language-html\">&lt;mdui-collapse&gt;\n..&lt;mdui-collapse-item header=&quot;header-1&quot;&gt;content-1&lt;/mdui-collapse-item&gt;\n..&lt;mdui-collapse-item header=&quot;header-2&quot;&gt;content-2&lt;/mdui-collapse-item&gt;\n&lt;/mdui-collapse&gt;\n</code></pre>\n","attributes":[{"attributeName":"value","propertyName":"value","reflect":true,"description":"<p>Specifies the value of the collapsible panel item.</p>\n","type":"string","enum":[]},{"attributeName":"header","propertyName":"header","reflect":true,"description":"<p>Sets the header text for the collapsible panel item.</p>\n","type":"string","enum":[]},{"attributeName":"disabled","propertyName":"disabled","reflect":true,"description":"<p>Disables the collapsible panel item.</p>\n","type":"boolean","enum":[],"default":"false"},{"attributeName":"trigger","propertyName":"trigger","reflect":false,"description":"<p>Identifies the element that triggers the collapse on click. This can be a CSS selector, a DOM element, or a <a href=\"../functions/jq.htm\"/*tpa=https://www.mdui.org/docs/2/functions/jq*/>JQ object</a>. By default, the entire header area is the trigger.</p>\n","type":"string | HTMLElement | JQ<HTMLElement>","enum":["string","HTMLElement","JQ<HTMLElement>"]}],"methods":[],"events":[{"name":"open","description":"<p>Emitted when the collapse item starts to open.</p>\n"},{"name":"opened","description":"<p>Emitted after the collapse item has opened and the animations are completed.</p>\n"},{"name":"close","description":"<p>Emitted when the collapse item starts to close.</p>\n"},{"name":"closed","description":"<p>Emitted after the collapse item has closed and the animations are completed.</p>\n"}],"slots":[{"name":"","description":"<p>Main content of the collapsible panel item.</p>\n"},{"name":"header","description":"<p>Content of the collapsible panel item&#39;s header.</p>\n"}],"cssParts":[{"name":"header","description":"<p>Content of the collapsible panel&#39;s header.</p>\n"},{"name":"body","description":"<p>Content of the collapsible panel&#39;s body.</p>\n"}],"cssProperties":[]},{"name":"Collapse","tagName":"mdui-collapse","summary":"<p>Collapse Panel Component. It should be used in conjunction with the <code>&lt;mdui-collapse-item&gt;</code> component.</p>\n<pre><code class=\"language-html\">&lt;mdui-collapse&gt;\n..&lt;mdui-collapse-item header=&quot;header-1&quot;&gt;content-1&lt;/mdui-collapse-item&gt;\n..&lt;mdui-collapse-item header=&quot;header-2&quot;&gt;content-2&lt;/mdui-collapse-item&gt;\n&lt;/mdui-collapse&gt;\n</code></pre>\n","attributes":[{"attributeName":"accordion","propertyName":"accordion","reflect":true,"description":"<p>Activates accordion mode.</p>\n","type":"boolean","enum":[],"default":"false"},{"attributeName":"value","propertyName":"value","reflect":false,"description":"<p>Specifies the open <code>&lt;mdui-collapse-item&gt;</code> value.</p>\n<p>Note: The HTML attribute is always a string and can only be initially set when <code>accordion</code> is <code>true</code>. The JavaScript property value is a string when <code>accordion</code> is <code>true</code> and a string array when <code>accordion</code> is <code>false</code>. To modify this value when <code>accordion</code> is <code>false</code>, you must change the JavaScript property.</p>\n","type":"string | string[]","enum":["string","string[]"]},{"attributeName":"disabled","propertyName":"disabled","reflect":true,"description":"<p>Disables the collapsible panel.</p>\n","type":"boolean","enum":[],"default":"false"}],"methods":[],"events":[{"name":"change","description":"<p>Emitted when the open collapsible panel item changes.</p>\n"}],"slots":[{"name":"","description":"<p>The <code>&lt;mdui-collapse-item&gt;</code> components.</p>\n"}],"cssParts":[],"cssProperties":[]}]},"drawer":{"open":false}};
+</script>
+</body>
+</html>

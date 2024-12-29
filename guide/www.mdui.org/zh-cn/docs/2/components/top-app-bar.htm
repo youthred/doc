@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="mdui-theme-auto">
+<head>
+  <meta charset=utf-8"UTF-8">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=5.0">
+  <title>顶部应用栏组件 TopAppBar - mdui 开发文档</title>
+  <meta name="description" content="顶部应用栏用于在页面顶部展示关键信息和相关操作，为用户提供清晰的导航和方便的功能访问。">
+  <link rel="preconnect" href="https://cdn.w3cbus.com">
+  <link rel="alternate" hreflang="en" href="https://www.mdui.org/en/docs/2/components/top-app-bar">
+  <link rel="alternate" hreflang="zh-cn" href="https://www.mdui.org/zh-cn/docs/2/components/top-app-bar">
+  <link rel="alternate" hreflang="x-default" href="https://www.mdui.org/en/docs/2/components/top-app-bar">
+  <link rel="preload" href="https://cdn.w3cbus.com/library/roboto/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="modulepreload" crossorigin href="https://cdn.w3cbus.com/mdui/2/assets/index-444705a2.js"><link rel="preload" href="https://cdn.w3cbus.com/mdui/2/assets/index-44251c77.css" as="style">
+  <link rel="stylesheet" href="../../../../../cdn.w3cbus.com/mdui/2/assets/index-44251c77.css" tppabs="https://cdn.w3cbus.com/mdui/2/assets/index-44251c77.css"><link rel="modulepreload" crossorigin href="https://cdn.w3cbus.com/mdui/2/assets/ThemeSettings-3f9ecbf9.js"><link rel="preload" href="https://cdn.w3cbus.com/mdui/2/assets/ThemeSettings-fa6ba0b3.css" as="style">
+  <link rel="stylesheet" href="../../../../../cdn.w3cbus.com/mdui/2/assets/ThemeSettings-fa6ba0b3.css" tppabs="https://cdn.w3cbus.com/mdui/2/assets/ThemeSettings-fa6ba0b3.css">
+  <link rel="icon" href="https://cdn.w3cbus.com/mdui/icon-192.png">
+  <link rel="icon" href="https://cdn.w3cbus.com/mdui/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="https://cdn.w3cbus.com/mdui/apple-touch-icon-180.png">
+  <link rel="canonical" href="https://www.mdui.org/zh-cn/docs/2/components/top-app-bar">
+  
+  <script type="application/ld+json">{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"mdui","item":"https://www.mdui.org/zh-cn/"},{"@type":"ListItem","position":2,"name":"mdui 2 开发文档","item":"https://www.mdui.org/zh-cn/docs/2/"},{"@type":"ListItem","position":3,"name":"顶部应用栏组件 TopAppBar"}],"@context":"https://schema.org"}</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'/*tpa=https://www.mdui.org/zh-cn/docs/2/components/gtm.js*/});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K3T2R6S');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="../../../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js-client=ca-pub-4466345895756968" tppabs="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4466345895756968" data-overlays="bottom" crossorigin="anonymous"></script>
+  <script type="module" crossorigin src="../../../../../cdn.w3cbus.com/mdui/2/assets/index-255315c2.js" tppabs="https://cdn.w3cbus.com/mdui/2/assets/index-255315c2.js"></script>
+  <link rel="modulepreload" crossorigin href="https://cdn.w3cbus.com/mdui/2/assets/vendor-mdui-689d1f65.js">
+  <link rel="stylesheet" href="../../../../../cdn.w3cbus.com/mdui/2/assets/vendor-mdui-67e1dd1d.css" tppabs="https://cdn.w3cbus.com/mdui/2/assets/vendor-mdui-67e1dd1d.css">
+  <link rel="stylesheet" href="../../../../../cdn.w3cbus.com/mdui/2/assets/index-c1bb6128.css" tppabs="https://cdn.w3cbus.com/mdui/2/assets/index-c1bb6128.css">
+</head>
+<body>
+<div id="app"><mdui-layout class="layout" data-v-5855b255><mdui-top-app-bar class="appbar" scroll-behavior="elevate" order="1" data-nosnippet data-v-5855b255 data-v-93b4b6dd><mdui-button-icon data-v-93b4b6dd><mdui-icon name="menu--rounded" data-v-93b4b6dd></mdui-icon></mdui-button-icon><mdui-top-app-bar-title data-v-93b4b6dd><a href="../../../index.htm" tppabs="https://www.mdui.org/zh-cn/" class="title" data-v-93b4b6dd>MDUI</a><a href="../index.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/" class="title small" data-v-93b4b6dd>文档</a></mdui-top-app-bar-title><mdui-dropdown trigger="hover" data-v-93b4b6dd data-v-d73cc679><mdui-button-icon slot="trigger" class="icon" data-v-d73cc679><mdui-icon-translate--rounded data-v-d73cc679></mdui-icon-translate--rounded></mdui-button-icon><mdui-menu selects="single" class="menu" data-v-d73cc679><!--[--><mdui-menu-item value="en" data-v-d73cc679>English</mdui-menu-item><mdui-menu-item value="zh-cn" data-v-d73cc679>简体中文</mdui-menu-item><!--]--></mdui-menu></mdui-dropdown><mdui-dropdown trigger="hover" data-v-93b4b6dd data-v-931aaba3><mdui-button-icon slot="trigger" class="auto" data-v-931aaba3><mdui-icon-light-mode class="light-filled" data-v-931aaba3></mdui-icon-light-mode><mdui-icon-light-mode--outlined class="light-outlined" data-v-931aaba3></mdui-icon-light-mode--outlined><mdui-icon-dark-mode class="dark-filled" data-v-931aaba3></mdui-icon-dark-mode><mdui-icon-dark-mode--outlined class="dark-outlined" data-v-931aaba3></mdui-icon-dark-mode--outlined></mdui-button-icon><mdui-menu selects="single" value="auto" class="menu" data-v-931aaba3><mdui-menu-item value="light" data-v-931aaba3>亮色模式</mdui-menu-item><mdui-menu-item value="dark" data-v-931aaba3>暗色模式</mdui-menu-item><mdui-divider data-v-931aaba3></mdui-divider><mdui-menu-item value="auto" data-v-931aaba3>跟随系统</mdui-menu-item></mdui-menu></mdui-dropdown><mdui-dropdown stay-open-on-click trigger="hover" class="color-scheme" data-v-93b4b6dd data-v-e56655cb><mdui-button-icon slot="trigger" class="icon" data-v-e56655cb><mdui-icon name="palette--outlined" class="outlined" data-v-e56655cb></mdui-icon><mdui-icon name="palette" class="filled" data-v-e56655cb></mdui-icon></mdui-button-icon><mdui-card class="card" data-v-e56655cb><div class="color-label" data-v-e56655cb>预设颜色</div><div class="color-preset" data-v-e56655cb><div class="red" data-v-e56655cb></div><div class="purple" data-v-e56655cb></div><div class="blue" data-v-e56655cb></div><div class="green" data-v-e56655cb></div><div class="yellow" data-v-e56655cb></div><div class="grey" data-v-e56655cb></div></div><div class="color-label" data-v-e56655cb>自选颜色</div><input type="color" class="color-custom" data-v-e56655cb><div class="color-label" data-v-e56655cb>从壁纸提取颜色</div><div class="color-wallpaper" data-v-e56655cb>请选择一张壁纸 <input type="file" accept="image/png, image/jpeg" data-v-e56655cb></div></mdui-card></mdui-dropdown></mdui-top-app-bar><mdui-navigation-drawer class="drawer" style="--mdui-motion-duration-long2:0;position:absolute;top:64px;bottom:0px;left:0px;" close-on-esc close-on-overlay-click order="2" data-nosnippet data-v-5855b255 data-v-9c367966><mdui-list class="list" data-v-9c367966><mdui-collapse value="components" accordion data-v-9c367966><!--[--><mdui-collapse-item value="getting-started" data-v-9c367966><mdui-list-item slot="header" rounded data-v-9c367966>开发指南 <mdui-icon slot="icon" name="near_me--rounded" data-v-9c367966></mdui-icon><mdui-icon slot="end-icon" name="expand_more" class="arrow" data-v-9c367966></mdui-icon></mdui-list-item><div class="sublist" data-v-9c367966><!----></div></mdui-collapse-item><mdui-collapse-item value="styles" data-v-9c367966><mdui-list-item slot="header" rounded data-v-9c367966>样式 <mdui-icon slot="icon" name="layers--rounded" data-v-9c367966></mdui-icon><mdui-icon slot="end-icon" name="expand_more" class="arrow" data-v-9c367966></mdui-icon></mdui-list-item><div class="sublist" data-v-9c367966><!----></div></mdui-collapse-item><mdui-collapse-item value="frameworks" data-v-9c367966><mdui-list-item slot="header" rounded data-v-9c367966>与框架集成 <mdui-icon slot="icon" name="workspaces--rounded" data-v-9c367966></mdui-icon><mdui-icon slot="end-icon" name="expand_more" class="arrow" data-v-9c367966></mdui-icon></mdui-list-item><div class="sublist" data-v-9c367966><!----></div></mdui-collapse-item><mdui-collapse-item value="components" data-v-9c367966><mdui-list-item slot="header" rounded data-v-9c367966>组件 <mdui-icon slot="icon" name="widgets--rounded" data-v-9c367966></mdui-icon><mdui-icon slot="end-icon" name="expand_more" class="arrow-active arrow" data-v-9c367966></mdui-icon></mdui-list-item><div class="sublist" data-v-9c367966><!--[--><!--[--><mdui-list-item rounded active="false" href="avatar.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/avatar" data-v-9c367966>Avatar <span slot="end-icon" data-v-9c367966>头像</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="badge.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/badge" data-v-9c367966>Badge <span slot="end-icon" data-v-9c367966>徽标</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="bottom-app-bar.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/bottom-app-bar" data-v-9c367966>BottomAppBar <span slot="end-icon" data-v-9c367966>底部应用栏</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="button.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/button" data-v-9c367966>Button <span slot="end-icon" data-v-9c367966>按钮</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="button-icon.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/button-icon" data-v-9c367966>ButtonIcon <span slot="end-icon" data-v-9c367966>图标按钮</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="card.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/card" data-v-9c367966>Card <span slot="end-icon" data-v-9c367966>卡片</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="checkbox.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/checkbox" data-v-9c367966>Checkbox <span slot="end-icon" data-v-9c367966>复选框</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="chip.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/chip" data-v-9c367966>Chip <span slot="end-icon" data-v-9c367966>纸片</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="circular-progress.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/circular-progress" data-v-9c367966>CircularProgress <span slot="end-icon" data-v-9c367966>圆形进度指示器</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="collapse.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/collapse" data-v-9c367966>Collapse <span slot="end-icon" data-v-9c367966>折叠面板</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="dialog.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/dialog" data-v-9c367966>Dialog <span slot="end-icon" data-v-9c367966>对话框</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="divider.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/divider" data-v-9c367966>Divider <span slot="end-icon" data-v-9c367966>分割线</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="dropdown.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/dropdown" data-v-9c367966>Dropdown <span slot="end-icon" data-v-9c367966>下拉组件</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="fab.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/fab" data-v-9c367966>Fab <span slot="end-icon" data-v-9c367966>浮动操作按钮</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="icon.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/icon" data-v-9c367966>Icon <span slot="end-icon" data-v-9c367966>图标</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="layout.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/layout" data-v-9c367966>Layout <span slot="end-icon" data-v-9c367966>布局</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="linear-progress.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/linear-progress" data-v-9c367966>LinearProgress <span slot="end-icon" data-v-9c367966>线性进度指示器</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="list.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/list" data-v-9c367966>List <span slot="end-icon" data-v-9c367966>列表</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="menu.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/menu" data-v-9c367966>Menu <span slot="end-icon" data-v-9c367966>菜单</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="navigation-bar.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/navigation-bar" data-v-9c367966>NavigationBar <span slot="end-icon" data-v-9c367966>底部导航栏</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="navigation-drawer.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/navigation-drawer" data-v-9c367966>NavigationDrawer <span slot="end-icon" data-v-9c367966>侧边抽屉栏</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="navigation-rail.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/navigation-rail" data-v-9c367966>NavigationRail <span slot="end-icon" data-v-9c367966>侧边导航栏</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="radio.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/radio" data-v-9c367966>Radio <span slot="end-icon" data-v-9c367966>单选框</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="range-slider.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/range-slider" data-v-9c367966>RangeSlider <span slot="end-icon" data-v-9c367966>范围滑块</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="select.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/select" data-v-9c367966>Select <span slot="end-icon" data-v-9c367966>选择框</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="segmented-button.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/segmented-button" data-v-9c367966>SegmentedButton <span slot="end-icon" data-v-9c367966>分段按钮</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="slider.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/slider" data-v-9c367966>Slider <span slot="end-icon" data-v-9c367966>滑块</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="snackbar.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/snackbar" data-v-9c367966>Snackbar <span slot="end-icon" data-v-9c367966>消息条</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="switch.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/switch" data-v-9c367966>Switch <span slot="end-icon" data-v-9c367966>开关切换</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="tabs.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/tabs" data-v-9c367966>Tabs <span slot="end-icon" data-v-9c367966>选项卡</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="text-field.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/text-field" data-v-9c367966>TextField <span slot="end-icon" data-v-9c367966>文本框</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="false" href="tooltip.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/tooltip" data-v-9c367966>Tooltip <span slot="end-icon" data-v-9c367966>工具提示</span></mdui-list-item><!--]--><!--[--><mdui-list-item rounded active="true" href="top-app-bar.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/top-app-bar" data-v-9c367966>TopAppBar <span slot="end-icon" data-v-9c367966>顶部应用栏</span></mdui-list-item><!--]--><!--]--></div></mdui-collapse-item><mdui-collapse-item value="functions" data-v-9c367966><mdui-list-item slot="header" rounded data-v-9c367966>工具函数 <mdui-icon slot="icon" name="functions--rounded" data-v-9c367966></mdui-icon><mdui-icon slot="end-icon" name="expand_more" class="arrow" data-v-9c367966></mdui-icon></mdui-list-item><div class="sublist" data-v-9c367966><!----></div></mdui-collapse-item><mdui-collapse-item value="libraries" data-v-9c367966><mdui-list-item slot="header" rounded data-v-9c367966>独立包 <mdui-icon slot="icon" name="local_mall--rounded" data-v-9c367966></mdui-icon><mdui-icon slot="end-icon" name="expand_more" class="arrow" data-v-9c367966></mdui-icon></mdui-list-item><div class="sublist" data-v-9c367966><!----></div></mdui-collapse-item><!--]--></mdui-collapse></mdui-list></mdui-navigation-drawer><mdui-layout-main class="layout-main" data-v-5855b255><div class="main" data-v-5855b255><main class="container mdui-prose" data-v-5855b255><h1 data-v-5855b255>TopAppBar 顶部应用栏</h1><!--[--><!--[--><!--[--><div><p>顶部应用栏用于在页面顶部展示关键信息和相关操作，为用户提供清晰的导航和方便的功能访问。</p>
+</div><!--[--><ins class="reward reward-display first-screen adsbygoogle" style="display:block;border-bottom:none;color-scheme:auto;text-decoration:none;margin-top:1rem;" data-ad-client="ca-pub-4466345895756968" data-ad-slot="3732322489"></ins><!----><!--]--><div style="margin-top:4.21875em;"><h2 id="usage">
+                  <a href="#usage">使用方法</a>
+                </h2>
+<p>按需导入组件：</p>
+<pre><code class="language-js">import &#39;mdui/components/top-app-bar.js&#39;;
+import &#39;mdui/components/top-app-bar-title.js&#39;;
+</code></pre>
+<p>按需导入组件的 TypeScript 类型：</p>
+<pre><code class="language-ts">import type { TopAppBar } from &#39;mdui/components/top-app-bar.js&#39;;
+import type { TopAppBarTitle } from &#39;mdui/components/top-app-bar-title.js&#39;;
+</code></pre>
+<p>使用示例：（示例中的 <code>style=&quot;position: relative&quot;</code> 仅用于演示，实际使用时请移除该样式。）</p></div><!--]--><!--]--><!--[--><div class="example" data-v-5855b255 data-v-4432c7e8><div class="demo" data-v-4432c7e8><mdui-top-app-bar style="position: relative;">
+  <mdui-button-icon icon="menu"></mdui-button-icon>
+  <mdui-top-app-bar-title>Title</mdui-top-app-bar-title>
+  <div style="flex-grow: 1"></div>
+  <mdui-button-icon icon="more_vert"></mdui-button-icon>
+</mdui-top-app-bar></div><mdui-collapse value="one" data-v-4432c7e8><mdui-collapse-item value="one" data-v-4432c7e8><pre class="code" data-v-4432c7e8><code class="language-html" data-v-4432c7e8>&lt;mdui-top-app-bar style=&quot;position: relative;&quot;&gt;
+  &lt;mdui-button-icon icon=&quot;menu&quot;&gt;&lt;/mdui-button-icon&gt;
+  &lt;mdui-top-app-bar-title&gt;Title&lt;/mdui-top-app-bar-title&gt;
+  &lt;div style=&quot;flex-grow: 1&quot;&gt;&lt;/div&gt;
+  &lt;mdui-button-icon icon=&quot;more_vert&quot;&gt;&lt;/mdui-button-icon&gt;
+&lt;/mdui-top-app-bar&gt;</code></pre><!----></mdui-collapse-item></mdui-collapse></div><!--]--><!--[--><div style="margin-top:1.25em;" data-v-5855b255><p><strong>注意事项：</strong></p>
+<p>该组件默认使用 <code>position: fixed</code> 定位，并会自动在 <code>body</code> 上添加 <code>padding-top</code> 样式，以防止页面内容被该组件遮挡。</p>
+<p>但在以下两种情况下，会默认使用 <code>position: absolute</code> 定位：</p>
+<ol>
+<li>当指定了 <code>scroll-target</code> 属性时。此时会在 <code>scroll-target</code> 的元素上添加 <code>padding-top</code> 样式。</li>
+<li>当位于 <a href="layout.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/layout"><code>&lt;mdui-layout&gt;&lt;/mdui-layout&gt;</code></a> 组件中时。此时不会添加 <code>padding-top</code> 样式。</li>
+</ol>
+<h2 id="examples">
+                  <a href="#examples">示例</a>
+                </h2>
+<h3 id="example-scroll-target">
+                  <a href="#example-scroll-target">位于指定容器内</a>
+                </h3>
+<p>默认情况下，顶部应用栏会相对于当前窗口，在页面顶部显示。</p>
+<p>如果你希望将顶部应用栏放在指定的容器内，可以在 <code>&lt;mdui-top-app-bar&gt;</code> 组件上指定 <code>scroll-target</code> 属性，其值为可滚动内容的容器的 CSS 选择器或 DOM 元素。此时，顶部应用栏会相对于父元素显示（你需要自行在父元素上添加样式 <code>position: relative; overflow: hidden</code>）。</p></div><!--]--><!--[--><div class="example expandable" data-v-5855b255 data-v-4432c7e8><div class="demo" data-v-4432c7e8><div style="position: relative;overflow: hidden">
+  <mdui-top-app-bar scroll-target=".example-scroll-target">
+    <mdui-top-app-bar-title>Title</mdui-top-app-bar-title>
+  </mdui-top-app-bar>
+
+  <div class="example-scroll-target" style="height: 160px;overflow: auto;">
+    <div style="height: 1000px"></div>
+  </div>
+</div></div><mdui-collapse value="" data-v-4432c7e8><mdui-collapse-item value="one" data-v-4432c7e8><pre class="code" data-v-4432c7e8><code class="language-html" data-v-4432c7e8>&lt;div style=&quot;position: relative;overflow: hidden&quot;&gt;
+  &lt;mdui-top-app-bar scroll-target=&quot;.example-scroll-target&quot;&gt;
+    &lt;mdui-top-app-bar-title&gt;Title&lt;/mdui-top-app-bar-title&gt;
+  &lt;/mdui-top-app-bar&gt;
+
+  &lt;div class=&quot;example-scroll-target&quot; style=&quot;height: 160px;overflow: auto;&quot;&gt;
+    &lt;div style=&quot;height: 1000px&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre><mdui-button slot="header" class="source" variant="text" full-width end-icon="arrow_drop_down" data-v-4432c7e8>源码</mdui-button></mdui-collapse-item></mdui-collapse></div><!--]--><!--[--><div style="margin-top:3em;" data-v-5855b255><h3 id="example-variant">
+                  <a href="#example-variant">形状</a>
+                </h3>
+<p>可以通过在 <code>&lt;mdui-top-app-bar&gt;</code> 组件上使用 <code>variant</code> 属性来设置顶部应用栏的形状。</p></div><!--]--><!--[--><div class="example expandable" data-v-5855b255 data-v-4432c7e8><div class="demo" data-v-4432c7e8><div style="position: relative;overflow: hidden">
+  <mdui-top-app-bar variant="small" scroll-target=".example-variant" class="example-variant-bar">
+    <mdui-button-icon icon="menu"></mdui-button-icon>
+    <mdui-top-app-bar-title>Title</mdui-top-app-bar-title>
+    <div style="flex-grow: 1"></div>
+    <mdui-button-icon icon="more_vert"></mdui-button-icon>
+  </mdui-top-app-bar>
+
+  <div class="example-variant" style="height: 160px;overflow: auto;">
+    <div style="height: 1000px">
+      <mdui-segmented-button-group selects="single" value="small">
+        <mdui-segmented-button value="center-aligned">center-aligned</mdui-segmented-button>
+        <mdui-segmented-button value="small">small</mdui-segmented-button>
+        <mdui-segmented-button value="medium">medium</mdui-segmented-button>
+        <mdui-segmented-button value="large">large</mdui-segmented-button>
+      </mdui-segmented-button-group>
+    </div>
+  </div>
+</div>
+
+</div><mdui-collapse value="" data-v-4432c7e8><mdui-collapse-item value="one" data-v-4432c7e8><pre class="code" data-v-4432c7e8><code class="language-html" data-v-4432c7e8>&lt;div style=&quot;position: relative;overflow: hidden&quot;&gt;
+  &lt;mdui-top-app-bar variant=&quot;small&quot; scroll-target=&quot;.example-variant&quot; class=&quot;example-variant-bar&quot;&gt;
+    &lt;mdui-button-icon icon=&quot;menu&quot;&gt;&lt;/mdui-button-icon&gt;
+    &lt;mdui-top-app-bar-title&gt;Title&lt;/mdui-top-app-bar-title&gt;
+    &lt;div style=&quot;flex-grow: 1&quot;&gt;&lt;/div&gt;
+    &lt;mdui-button-icon icon=&quot;more_vert&quot;&gt;&lt;/mdui-button-icon&gt;
+  &lt;/mdui-top-app-bar&gt;
+
+  &lt;div class=&quot;example-variant&quot; style=&quot;height: 160px;overflow: auto;&quot;&gt;
+    &lt;div style=&quot;height: 1000px&quot;&gt;
+      &lt;mdui-segmented-button-group selects=&quot;single&quot; value=&quot;small&quot;&gt;
+        &lt;mdui-segmented-button value=&quot;center-aligned&quot;&gt;center-aligned&lt;/mdui-segmented-button&gt;
+        &lt;mdui-segmented-button value=&quot;small&quot;&gt;small&lt;/mdui-segmented-button&gt;
+        &lt;mdui-segmented-button value=&quot;medium&quot;&gt;medium&lt;/mdui-segmented-button&gt;
+        &lt;mdui-segmented-button value=&quot;large&quot;&gt;large&lt;/mdui-segmented-button&gt;
+      &lt;/mdui-segmented-button-group&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  const topAppBar = document.querySelector(&quot;.example-variant-bar&quot;);
+  const segmentedButtonGroup = document.querySelector(&quot;.example-variant&quot;);
+
+  segmentedButtonGroup.addEventListener(&quot;change&quot;, (event) =&gt; {
+    topAppBar.variant = event.target.value;
+  });
+&lt;/script&gt;</code></pre><mdui-button slot="header" class="source" variant="text" full-width end-icon="arrow_drop_down" data-v-4432c7e8>源码</mdui-button></mdui-collapse-item></mdui-collapse></div><!--]--><!--[--><div style="margin-top:3em;" data-v-5855b255><h3 id="example-scroll-behavior">
+                  <a href="#example-scroll-behavior">页面滚动时的行为</a>
+                </h3>
+<p>通过在 <code>&lt;mdui-top-app-bar&gt;</code> 组件上设置 <code>scroll-behavior</code> 属性，可以定义页面滚动时顶部应用栏的行为。可以同时设置多个行为，用空格分隔即可。</p>
+<p>滚动行为包括：</p>
+<ul>
+<li><code>hide</code>：页面向下滚动时隐藏顶部应用栏，向上滚动时显示顶部应用栏。</li>
+<li><code>shrink</code>：仅在 <code>variant</code> 属性为 <code>medium</code> 或 <code>large</code> 时有效。页面向下滚动时展开顶部应用栏，向上滚动时收缩顶部应用栏。</li>
+<li><code>elevate</code>：页面向下滚动时，在顶部应用栏上添加阴影；页面滚回到顶部时，取消阴影。</li>
+</ul>
+<p>使用 <code>scroll-threshold</code> 属性，可以设置滚动多少像素后开始触发顶部应用栏的滚动行为。（注意，为了响应及时，在使用了 <code>elevate</code> 滚动行为时，请不要再设置 <code>scroll-threshold</code> 属性。）</p>
+<p><strong>示例：滚动时隐藏</strong></p></div><!--]--><!--[--><div class="example expandable" data-v-5855b255 data-v-4432c7e8><div class="demo" data-v-4432c7e8><div style="position: relative;overflow: hidden">
+  <mdui-top-app-bar
+    scroll-behavior="hide"
+    scroll-threshold="30"
+    scroll-target=".example-scroll-behavior-hide"
+  >
+    <mdui-button-icon icon="menu"></mdui-button-icon>
+    <mdui-top-app-bar-title>Title</mdui-top-app-bar-title>
+    <div style="flex-grow: 1"></div>
+    <mdui-button-icon icon="more_vert"></mdui-button-icon>
+  </mdui-top-app-bar>
+
+  <div class="example-scroll-behavior-hide" style="height: 160px;overflow: auto;">
+    <div style="height: 1000px"></div>
+  </div>
+</div></div><mdui-collapse value="" data-v-4432c7e8><mdui-collapse-item value="one" data-v-4432c7e8><pre class="code" data-v-4432c7e8><code class="language-html" data-v-4432c7e8>&lt;div style=&quot;position: relative;overflow: hidden&quot;&gt;
+  &lt;mdui-top-app-bar
+    scroll-behavior=&quot;hide&quot;
+    scroll-threshold=&quot;30&quot;
+    scroll-target=&quot;.example-scroll-behavior-hide&quot;
+  &gt;
+    &lt;mdui-button-icon icon=&quot;menu&quot;&gt;&lt;/mdui-button-icon&gt;
+    &lt;mdui-top-app-bar-title&gt;Title&lt;/mdui-top-app-bar-title&gt;
+    &lt;div style=&quot;flex-grow: 1&quot;&gt;&lt;/div&gt;
+    &lt;mdui-button-icon icon=&quot;more_vert&quot;&gt;&lt;/mdui-button-icon&gt;
+  &lt;/mdui-top-app-bar&gt;
+
+  &lt;div class=&quot;example-scroll-behavior-hide&quot; style=&quot;height: 160px;overflow: auto;&quot;&gt;
+    &lt;div style=&quot;height: 1000px&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre><mdui-button slot="header" class="source" variant="text" full-width end-icon="arrow_drop_down" data-v-4432c7e8>源码</mdui-button></mdui-collapse-item></mdui-collapse></div><!--]--><!--[--><div style="margin-top:1.25em;" data-v-5855b255><p><strong>示例：滚动时添加阴影</strong></p></div><!--]--><!--[--><div class="example expandable" data-v-5855b255 data-v-4432c7e8><div class="demo" data-v-4432c7e8><div style="position: relative;overflow: hidden">
+  <mdui-top-app-bar
+    scroll-behavior="elevate"
+    scroll-target=".example-scroll-behavior-elevate"
+  >
+    <mdui-button-icon icon="menu"></mdui-button-icon>
+    <mdui-top-app-bar-title>Title</mdui-top-app-bar-title>
+    <div style="flex-grow: 1"></div>
+    <mdui-button-icon icon="more_vert"></mdui-button-icon>
+  </mdui-top-app-bar>
+
+  <div class="example-scroll-behavior-elevate" style="height: 160px;overflow: auto;">
+    <div style="height: 1000px"></div>
+  </div>
+</div></div><mdui-collapse value="" data-v-4432c7e8><mdui-collapse-item value="one" data-v-4432c7e8><pre class="code" data-v-4432c7e8><code class="language-html" data-v-4432c7e8>&lt;div style=&quot;position: relative;overflow: hidden&quot;&gt;
+  &lt;mdui-top-app-bar
+    scroll-behavior=&quot;elevate&quot;
+    scroll-target=&quot;.example-scroll-behavior-elevate&quot;
+  &gt;
+    &lt;mdui-button-icon icon=&quot;menu&quot;&gt;&lt;/mdui-button-icon&gt;
+    &lt;mdui-top-app-bar-title&gt;Title&lt;/mdui-top-app-bar-title&gt;
+    &lt;div style=&quot;flex-grow: 1&quot;&gt;&lt;/div&gt;
+    &lt;mdui-button-icon icon=&quot;more_vert&quot;&gt;&lt;/mdui-button-icon&gt;
+  &lt;/mdui-top-app-bar&gt;
+
+  &lt;div class=&quot;example-scroll-behavior-elevate&quot; style=&quot;height: 160px;overflow: auto;&quot;&gt;
+    &lt;div style=&quot;height: 1000px&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre><mdui-button slot="header" class="source" variant="text" full-width end-icon="arrow_drop_down" data-v-4432c7e8>源码</mdui-button></mdui-collapse-item></mdui-collapse></div><!--]--><!--[--><div style="margin-top:1.25em;" data-v-5855b255><p><strong>示例：滚动时收缩</strong></p></div><!--]--><!--[--><div class="example expandable" data-v-5855b255 data-v-4432c7e8><div class="demo" data-v-4432c7e8><div style="position: relative;overflow: hidden">
+  <mdui-top-app-bar
+    variant="medium"
+    scroll-behavior="shrink"
+    scroll-threshold="30"
+    scroll-target=".example-scroll-behavior-shrink"
+  >
+    <mdui-button-icon icon="menu"></mdui-button-icon>
+    <mdui-top-app-bar-title>Title</mdui-top-app-bar-title>
+    <div style="flex-grow: 1"></div>
+    <mdui-button-icon icon="more_vert"></mdui-button-icon>
+  </mdui-top-app-bar>
+
+  <div class="example-scroll-behavior-shrink" style="height: 160px;overflow: auto;">
+    <div style="height: 1000px"></div>
+  </div>
+</div></div><mdui-collapse value="" data-v-4432c7e8><mdui-collapse-item value="one" data-v-4432c7e8><pre class="code" data-v-4432c7e8><code class="language-html" data-v-4432c7e8>&lt;div style=&quot;position: relative;overflow: hidden&quot;&gt;
+  &lt;mdui-top-app-bar
+    variant=&quot;medium&quot;
+    scroll-behavior=&quot;shrink&quot;
+    scroll-threshold=&quot;30&quot;
+    scroll-target=&quot;.example-scroll-behavior-shrink&quot;
+  &gt;
+    &lt;mdui-button-icon icon=&quot;menu&quot;&gt;&lt;/mdui-button-icon&gt;
+    &lt;mdui-top-app-bar-title&gt;Title&lt;/mdui-top-app-bar-title&gt;
+    &lt;div style=&quot;flex-grow: 1&quot;&gt;&lt;/div&gt;
+    &lt;mdui-button-icon icon=&quot;more_vert&quot;&gt;&lt;/mdui-button-icon&gt;
+  &lt;/mdui-top-app-bar&gt;
+
+  &lt;div class=&quot;example-scroll-behavior-shrink&quot; style=&quot;height: 160px;overflow: auto;&quot;&gt;
+    &lt;div style=&quot;height: 1000px&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre><mdui-button slot="header" class="source" variant="text" full-width end-icon="arrow_drop_down" data-v-4432c7e8>源码</mdui-button></mdui-collapse-item></mdui-collapse></div><!--]--><!--[--><div style="margin-top:1.25em;" data-v-5855b255><p><strong>示例：滚动时收缩及添加阴影</strong></p></div><!--]--><!--[--><div class="example expandable" data-v-5855b255 data-v-4432c7e8><div class="demo" data-v-4432c7e8><div style="position: relative;overflow: hidden">
+  <mdui-top-app-bar
+    variant="medium"
+    scroll-behavior="shrink elevate"
+    scroll-target=".example-scroll-behavior-shrink-elevate"
+  >
+    <mdui-button-icon icon="menu"></mdui-button-icon>
+    <mdui-top-app-bar-title>Title</mdui-top-app-bar-title>
+    <div style="flex-grow: 1"></div>
+    <mdui-button-icon icon="more_vert"></mdui-button-icon>
+  </mdui-top-app-bar>
+
+  <div class="example-scroll-behavior-shrink-elevate" style="height: 160px;overflow: auto;">
+    <div style="height: 1000px"></div>
+  </div>
+</div></div><mdui-collapse value="" data-v-4432c7e8><mdui-collapse-item value="one" data-v-4432c7e8><pre class="code" data-v-4432c7e8><code class="language-html" data-v-4432c7e8>&lt;div style=&quot;position: relative;overflow: hidden&quot;&gt;
+  &lt;mdui-top-app-bar
+    variant=&quot;medium&quot;
+    scroll-behavior=&quot;shrink elevate&quot;
+    scroll-target=&quot;.example-scroll-behavior-shrink-elevate&quot;
+  &gt;
+    &lt;mdui-button-icon icon=&quot;menu&quot;&gt;&lt;/mdui-button-icon&gt;
+    &lt;mdui-top-app-bar-title&gt;Title&lt;/mdui-top-app-bar-title&gt;
+    &lt;div style=&quot;flex-grow: 1&quot;&gt;&lt;/div&gt;
+    &lt;mdui-button-icon icon=&quot;more_vert&quot;&gt;&lt;/mdui-button-icon&gt;
+  &lt;/mdui-top-app-bar&gt;
+
+  &lt;div class=&quot;example-scroll-behavior-shrink-elevate&quot; style=&quot;height: 160px;overflow: auto;&quot;&gt;
+    &lt;div style=&quot;height: 1000px&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre><mdui-button slot="header" class="source" variant="text" full-width end-icon="arrow_drop_down" data-v-4432c7e8>源码</mdui-button></mdui-collapse-item></mdui-collapse></div><!--]--><!--[--><div style="margin-top:3em;" data-v-5855b255><h3 id="label-large">
+                  <a href="#label-large">展开状态的文本</a>
+                </h3>
+<p>对于 <code>variant</code> 属性为 <code>medium</code> 或 <code>large</code>，且 <code>scroll-behavior</code> 属性为 <code>shrink</code> 的顶部应用栏，你可以在 <code>&lt;mdui-top-app-bar-title&gt;</code> 组件中添加 <code>label-large</code> slot，以设置展开状态下的文本。</p></div><!--]--><!--[--><div class="example expandable" data-v-5855b255 data-v-4432c7e8><div class="demo" data-v-4432c7e8><div style="position: relative;overflow: hidden">
+  <mdui-top-app-bar
+    variant="medium"
+    scroll-behavior="shrink elevate"
+    scroll-target=".example-label-large-slot"
+  >
+    <mdui-button-icon icon="menu"></mdui-button-icon>
+    <mdui-top-app-bar-title>
+      这是收起状态的标题
+      <span slot="label-large">这是展开状态的标题</span>
+    </mdui-top-app-bar-title>
+    <div style="flex-grow: 1"></div>
+    <mdui-button-icon icon="more_vert"></mdui-button-icon>
+  </mdui-top-app-bar>
+
+  <div class="example-label-large-slot" style="height: 160px;overflow: auto;">
+    <div style="height: 1000px"></div>
+  </div>
+</div></div><mdui-collapse value="" data-v-4432c7e8><mdui-collapse-item value="one" data-v-4432c7e8><pre class="code" data-v-4432c7e8><code class="language-html" data-v-4432c7e8>&lt;div style=&quot;position: relative;overflow: hidden&quot;&gt;
+  &lt;mdui-top-app-bar
+    variant=&quot;medium&quot;
+    scroll-behavior=&quot;shrink elevate&quot;
+    scroll-target=&quot;.example-label-large-slot&quot;
+  &gt;
+    &lt;mdui-button-icon icon=&quot;menu&quot;&gt;&lt;/mdui-button-icon&gt;
+    &lt;mdui-top-app-bar-title&gt;
+      这是收起状态的标题
+      &lt;span slot=&quot;label-large&quot;&gt;这是展开状态的标题&lt;/span&gt;
+    &lt;/mdui-top-app-bar-title&gt;
+    &lt;div style=&quot;flex-grow: 1&quot;&gt;&lt;/div&gt;
+    &lt;mdui-button-icon icon=&quot;more_vert&quot;&gt;&lt;/mdui-button-icon&gt;
+  &lt;/mdui-top-app-bar&gt;
+
+  &lt;div class=&quot;example-label-large-slot&quot; style=&quot;height: 160px;overflow: auto;&quot;&gt;
+    &lt;div style=&quot;height: 1000px&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre><mdui-button slot="header" class="source" variant="text" full-width end-icon="arrow_drop_down" data-v-4432c7e8>源码</mdui-button></mdui-collapse-item></mdui-collapse></div><!--]--><!--]--><!--[--><!--[--><h2 id="top-app-bar-title-api" data-v-646cee88><a href="#top-app-bar-title-api" data-v-646cee88><code>mdui-top-app-bar-title</code> API</a></h2><!--[--><ins class="reward reward-display adsbygoogle" style="display:block;border-bottom:none;color-scheme:auto;text-decoration:none;margin-bottom:1rem;" data-ad-client="ca-pub-4466345895756968" data-ad-slot="3732322489"></ins><!----><!--]--><!----><!----><!----><div class="block slots" data-v-646cee88><h3 id="top-app-bar-title-slots" data-v-646cee88><a href="#top-app-bar-title-slots" data-v-646cee88>Slots</a></h3><div class="mdui-table" data-v-646cee88><table data-v-646cee88><thead data-v-646cee88><tr data-v-646cee88><th data-v-646cee88>名称</th></tr></thead><tbody data-v-646cee88><!--[--><!--[--><tr class="api" id="top-app-bar-title-slots-default" data-v-646cee88><td data-v-646cee88><a href="#top-app-bar-title-slots-default" data-v-646cee88><span data-v-646cee88>默认</span></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>顶部应用栏的标题文本</p>
+</td></tr><!--]--><!--[--><tr class="api" id="top-app-bar-title-slots-label-large" data-v-646cee88><td data-v-646cee88><a href="#top-app-bar-title-slots-label-large" data-v-646cee88><code data-v-646cee88>label-large</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>展开状态下的标题文本</p>
+</td></tr><!--]--><!--]--></tbody></table></div></div><div class="block css-parts" data-v-646cee88><h3 id="top-app-bar-title-cssParts" data-v-646cee88><a href="#top-app-bar-title-cssParts" data-v-646cee88>CSS Parts</a></h3><div class="mdui-table" data-v-646cee88><table data-v-646cee88><thead data-v-646cee88><tr data-v-646cee88><th data-v-646cee88>名称</th></tr></thead><tbody data-v-646cee88><!--[--><!--[--><tr class="api" id="top-app-bar-title-cssParts-label" data-v-646cee88><td data-v-646cee88><a href="#top-app-bar-title-cssParts-label" data-v-646cee88><code data-v-646cee88>label</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>标题文本</p>
+</td></tr><!--]--><!--[--><tr class="api" id="top-app-bar-title-cssParts-label-large" data-v-646cee88><td data-v-646cee88><a href="#top-app-bar-title-cssParts-label-large" data-v-646cee88><code data-v-646cee88>label-large</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>展开状态下的标题文本</p>
+</td></tr><!--]--><!--]--></tbody></table></div></div><!----><!--]--><!--[--><h2 id="top-app-bar-api" data-v-646cee88><a href="#top-app-bar-api" data-v-646cee88><code>mdui-top-app-bar</code> API</a></h2><!--[--><ins class="reward reward-display adsbygoogle" style="display:block;border-bottom:none;color-scheme:auto;text-decoration:none;margin-bottom:1rem;" data-ad-client="ca-pub-4466345895756968" data-ad-slot="3732322489"></ins><!----><!--]--><div class="block attributes" data-v-646cee88><h3 id="top-app-bar-attributes" data-v-646cee88><a href="#top-app-bar-attributes" data-v-646cee88>属性</a></h3><div class="mdui-table" data-v-646cee88><table data-v-646cee88><thead data-v-646cee88><tr data-v-646cee88><th data-v-646cee88>HTML 属性</th><th data-v-646cee88>JavaScript 属性</th><th data-v-646cee88>Reflect</th><th data-v-646cee88>类型</th><th data-v-646cee88>默认值</th></tr></thead><tbody data-v-646cee88><!--[--><!--[--><tr class="api" id="top-app-bar-attributes-variant" data-v-646cee88><td data-v-646cee88><a href="#top-app-bar-attributes-variant" data-v-646cee88><code data-v-646cee88>variant</code></a></td><td data-v-646cee88><a href="#top-app-bar-attributes-variant" data-v-646cee88><code data-v-646cee88>variant</code></a></td><td data-v-646cee88><mdui-icon name="check--rounded" class="reflect" data-v-646cee88></mdui-icon></td><td class="wrap" data-v-646cee88><code data-v-646cee88>&#39;center-aligned&#39; | &#39;small&#39; | &#39;medium&#39; | &#39;large&#39;</code></td><td data-v-646cee88><code data-v-646cee88>&#39;small&#39;</code></td></tr><tr data-v-646cee88><td colspan="5" data-v-646cee88><p>顶部应用栏的形状。默认为 <code>small</code>。可选值包括：</p>
+<ul>
+<li><code>center-aligned</code>：小型应用栏，标题居中</li>
+<li><code>small</code>：小型应用栏</li>
+<li><code>medium</code>：中型应用栏</li>
+<li><code>large</code>：大型应用栏</li>
+</ul>
+</td></tr><!--]--><!--[--><tr class="api" id="top-app-bar-attributes-hide" data-v-646cee88><td data-v-646cee88><a href="#top-app-bar-attributes-hide" data-v-646cee88><code data-v-646cee88>hide</code></a></td><td data-v-646cee88><a href="#top-app-bar-attributes-hide" data-v-646cee88><code data-v-646cee88>hide</code></a></td><td data-v-646cee88><mdui-icon name="check--rounded" class="reflect" data-v-646cee88></mdui-icon></td><td class="wrap" data-v-646cee88><code data-v-646cee88>boolean</code></td><td data-v-646cee88><code data-v-646cee88>false</code></td></tr><tr data-v-646cee88><td colspan="5" data-v-646cee88><p>是否隐藏</p>
+</td></tr><!--]--><!--[--><tr class="api" id="top-app-bar-attributes-shrink" data-v-646cee88><td data-v-646cee88><a href="#top-app-bar-attributes-shrink" data-v-646cee88><code data-v-646cee88>shrink</code></a></td><td data-v-646cee88><a href="#top-app-bar-attributes-shrink" data-v-646cee88><code data-v-646cee88>shrink</code></a></td><td data-v-646cee88><mdui-icon name="check--rounded" class="reflect" data-v-646cee88></mdui-icon></td><td class="wrap" data-v-646cee88><code data-v-646cee88>boolean</code></td><td data-v-646cee88><code data-v-646cee88>false</code></td></tr><tr data-v-646cee88><td colspan="5" data-v-646cee88><p>是否缩小为 <code>variant=&quot;small&quot;</code> 的样式，仅在 <code>variant=&quot;medium&quot;</code> 或 <code>variant=&quot;large&quot;</code> 时生效</p>
+</td></tr><!--]--><!--[--><tr class="api" id="top-app-bar-attributes-scroll-behavior" data-v-646cee88><td data-v-646cee88><a href="#top-app-bar-attributes-scroll-behavior" data-v-646cee88><code data-v-646cee88>scroll-behavior</code></a></td><td data-v-646cee88><a href="#top-app-bar-attributes-scroll-behavior" data-v-646cee88><code data-v-646cee88>scrollBehavior</code></a></td><td data-v-646cee88><mdui-icon name="check--rounded" class="reflect" data-v-646cee88></mdui-icon></td><td class="wrap" data-v-646cee88><code data-v-646cee88>&#39;hide&#39; | &#39;shrink&#39; | &#39;elevate&#39;</code></td><td data-v-646cee88><!--[-->-<!--]--></td></tr><tr data-v-646cee88><td colspan="5" data-v-646cee88><p>滚动行为。可同时使用多个值，用空格分隔。可选值包括：</p>
+<ul>
+<li><code>hide</code>：滚动时隐藏</li>
+<li><code>shrink</code>：在中型、大型应用栏中可使用，滚动时缩小成小型应用栏的样式</li>
+<li><code>elevate</code>：滚动时添加阴影</li>
+</ul>
+</td></tr><!--]--><!--[--><tr class="api" id="top-app-bar-attributes-scroll-target" data-v-646cee88><td data-v-646cee88><a href="#top-app-bar-attributes-scroll-target" data-v-646cee88><code data-v-646cee88>scroll-target</code></a></td><td data-v-646cee88><a href="#top-app-bar-attributes-scroll-target" data-v-646cee88><code data-v-646cee88>scrollTarget</code></a></td><td data-v-646cee88><!----></td><td class="wrap" data-v-646cee88><code data-v-646cee88>string | HTMLElement | JQ&lt;HTMLElement&gt;</code></td><td data-v-646cee88><!--[-->-<!--]--></td></tr><tr data-v-646cee88><td colspan="5" data-v-646cee88><p>需要监听其滚动事件的元素。值可以是 CSS 选择器、DOM 元素、或 <a href="../../../../en/docs/2/functions/jq.htm" tppabs="https://www.mdui.org/docs/2/functions/jq">JQ 对象</a>。默认监听 <code>window</code> 的滚动事件</p>
+</td></tr><!--]--><!--[--><tr class="api" id="top-app-bar-attributes-scroll-threshold" data-v-646cee88><td data-v-646cee88><a href="#top-app-bar-attributes-scroll-threshold" data-v-646cee88><code data-v-646cee88>scroll-threshold</code></a></td><td data-v-646cee88><a href="#top-app-bar-attributes-scroll-threshold" data-v-646cee88><code data-v-646cee88>scrollThreshold</code></a></td><td data-v-646cee88><mdui-icon name="check--rounded" class="reflect" data-v-646cee88></mdui-icon></td><td class="wrap" data-v-646cee88><code data-v-646cee88>number</code></td><td data-v-646cee88><!--[-->-<!--]--></td></tr><tr data-v-646cee88><td colspan="5" data-v-646cee88><p>在滚动多少距离之后触发滚动行为，单位为 <code>px</code></p>
+</td></tr><!--]--><!--[--><tr class="api" id="top-app-bar-attributes-order" data-v-646cee88><td data-v-646cee88><a href="#top-app-bar-attributes-order" data-v-646cee88><code data-v-646cee88>order</code></a></td><td data-v-646cee88><a href="#top-app-bar-attributes-order" data-v-646cee88><code data-v-646cee88>order</code></a></td><td data-v-646cee88><mdui-icon name="check--rounded" class="reflect" data-v-646cee88></mdui-icon></td><td class="wrap" data-v-646cee88><code data-v-646cee88>number</code></td><td data-v-646cee88><!--[-->-<!--]--></td></tr><tr data-v-646cee88><td colspan="5" data-v-646cee88><p>该组件在 <a href="../../../../en/docs/2/components/layout.htm" tppabs="https://www.mdui.org/docs/2/components/layout"><code>&lt;mdui-layout&gt;</code></a> 中的布局顺序，按从小到大排序。默认为 <code>0</code></p>
+</td></tr><!--]--><!--]--></tbody></table></div></div><!----><div class="block events" data-v-646cee88><h3 id="top-app-bar-events" data-v-646cee88><a href="#top-app-bar-events" data-v-646cee88>事件</a></h3><div class="mdui-table" data-v-646cee88><table data-v-646cee88><thead data-v-646cee88><tr data-v-646cee88><th data-v-646cee88>名称</th></tr></thead><tbody data-v-646cee88><!--[--><!--[--><tr class="api" id="top-app-bar-events-show" data-v-646cee88><td data-v-646cee88><a href="#top-app-bar-events-show" data-v-646cee88><code data-v-646cee88>show</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>开始显示时，事件被触发。可以通过调用 <code>event.preventDefault()</code> 阻止显示</p>
+</td></tr><!--]--><!--[--><tr class="api" id="top-app-bar-events-shown" data-v-646cee88><td data-v-646cee88><a href="#top-app-bar-events-shown" data-v-646cee88><code data-v-646cee88>shown</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>显示动画完成时，事件被触发</p>
+</td></tr><!--]--><!--[--><tr class="api" id="top-app-bar-events-hide" data-v-646cee88><td data-v-646cee88><a href="#top-app-bar-events-hide" data-v-646cee88><code data-v-646cee88>hide</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>开始隐藏时，事件被触发。可以通过调用 <code>event.preventDefault()</code> 阻止隐藏</p>
+</td></tr><!--]--><!--[--><tr class="api" id="top-app-bar-events-hidden" data-v-646cee88><td data-v-646cee88><a href="#top-app-bar-events-hidden" data-v-646cee88><code data-v-646cee88>hidden</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>隐藏动画完成时，事件被触发</p>
+</td></tr><!--]--><!--]--></tbody></table></div></div><div class="block slots" data-v-646cee88><h3 id="top-app-bar-slots" data-v-646cee88><a href="#top-app-bar-slots" data-v-646cee88>Slots</a></h3><div class="mdui-table" data-v-646cee88><table data-v-646cee88><thead data-v-646cee88><tr data-v-646cee88><th data-v-646cee88>名称</th></tr></thead><tbody data-v-646cee88><!--[--><!--[--><tr class="api" id="top-app-bar-slots-default" data-v-646cee88><td data-v-646cee88><a href="#top-app-bar-slots-default" data-v-646cee88><span data-v-646cee88>默认</span></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>顶部应用栏内部的元素</p>
+</td></tr><!--]--><!--]--></tbody></table></div></div><!----><div class="block css-properties" data-v-646cee88><h3 id="top-app-bar-cssProperties" data-v-646cee88><a href="#top-app-bar-cssProperties" data-v-646cee88>CSS 自定义属性</a></h3><div class="mdui-table" data-v-646cee88><table data-v-646cee88><thead data-v-646cee88><tr data-v-646cee88><th data-v-646cee88>名称</th></tr></thead><tbody data-v-646cee88><!--[--><!--[--><tr class="api" id="top-app-bar-cssProperties-shape-corner" data-v-646cee88><td data-v-646cee88><a href="#top-app-bar-cssProperties-shape-corner" data-v-646cee88><code data-v-646cee88>--shape-corner</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>组件的圆角大小。可以指定一个具体的像素值；但更推荐引用<a href="../../../../en/docs/2/styles/design-tokens.htm#shape-corner" tppabs="https://www.mdui.org/docs/2/styles/design-tokens#shape-corner">设计令牌</a></p>
+</td></tr><!--]--><!--[--><tr class="api" id="top-app-bar-cssProperties-z-index" data-v-646cee88><td data-v-646cee88><a href="#top-app-bar-cssProperties-z-index" data-v-646cee88><code data-v-646cee88>--z-index</code></a></td></tr><tr data-v-646cee88><td data-v-646cee88><p>组件的 CSS <code>z-index</code> 值</p>
+</td></tr><!--]--><!--]--></tbody></table></div></div><!--]--><!--]--><!----><!----><div class="nav" data-v-5855b255 data-v-b3c12c93><!--[--><mdui-card href="tooltip.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/components/tooltip" variant="filled" class="card prev" data-v-b3c12c93><div class="container" data-v-b3c12c93><div class="overline" data-v-b3c12c93><mdui-icon name="east--rounded" class="arrow" data-v-b3c12c93></mdui-icon> 上一章</div><div class="title" data-v-b3c12c93>Tooltip <span class="subtitle" data-v-b3c12c93>工具提示</span></div></div></mdui-card><!--]--><!--[--><mdui-card href="../functions/jq.htm" tppabs="https://www.mdui.org/zh-cn/docs/2/functions/jq" variant="filled" class="card next" data-v-b3c12c93><div class="container" data-v-b3c12c93><div class="overline" data-v-b3c12c93>下一章 <mdui-icon name="east--rounded" class="arrow" data-v-b3c12c93></mdui-icon></div><div class="title" data-v-b3c12c93>jq 工具库 <!----></div></div></mdui-card><!--]--></div></main><div class="contents" data-v-5855b255><div class="title" data-v-5855b255>本页目录</div><mdui-list class="items" data-v-5855b255><!--[--><!--]--></mdui-list></div></div></mdui-layout-main></mdui-layout></div>
+
+<script>
+  window.__INITIAL_DATA__ = {"docs":{"loading":false,"path":"components/top-app-bar","notFound":false,"docsHtml":"<p>顶部应用栏用于在页面顶部展示关键信息和相关操作，为用户提供清晰的导航和方便的功能访问。</p>\n<h2 id=\"usage\">\n                  <a href=\"#usage\">使用方法</a>\n                </h2>\n<p>按需导入组件：</p>\n<pre><code class=\"language-js\">import &#39;mdui/components/top-app-bar.js&#39;;\nimport &#39;mdui/components/top-app-bar-title.js&#39;;\n</code></pre>\n<p>按需导入组件的 TypeScript 类型：</p>\n<pre><code class=\"language-ts\">import type { TopAppBar } from &#39;mdui/components/top-app-bar.js&#39;;\nimport type { TopAppBarTitle } from &#39;mdui/components/top-app-bar-title.js&#39;;\n</code></pre>\n<p>使用示例：（示例中的 <code>style=&quot;position: relative&quot;</code> 仅用于演示，实际使用时请移除该样式。）</p>\n<pre><code class=\"language-html,example\">&lt;mdui-top-app-bar style=&quot;position: relative;&quot;&gt;\n  &lt;mdui-button-icon icon=&quot;menu&quot;&gt;&lt;/mdui-button-icon&gt;\n  &lt;mdui-top-app-bar-title&gt;Title&lt;/mdui-top-app-bar-title&gt;\n  &lt;div style=&quot;flex-grow: 1&quot;&gt;&lt;/div&gt;\n  &lt;mdui-button-icon icon=&quot;more_vert&quot;&gt;&lt;/mdui-button-icon&gt;\n&lt;/mdui-top-app-bar&gt;\n</code></pre>\n<p><strong>注意事项：</strong></p>\n<p>该组件默认使用 <code>position: fixed</code> 定位，并会自动在 <code>body</code> 上添加 <code>padding-top</code> 样式，以防止页面内容被该组件遮挡。</p>\n<p>但在以下两种情况下，会默认使用 <code>position: absolute</code> 定位：</p>\n<ol>\n<li>当指定了 <code>scroll-target</code> 属性时。此时会在 <code>scroll-target</code> 的元素上添加 <code>padding-top</code> 样式。</li>\n<li>当位于 <a href=\"layout.htm\"/*tpa=https://www.mdui.org/zh-cn/docs/2/components/layout*/><code>&lt;mdui-layout&gt;&lt;/mdui-layout&gt;</code></a> 组件中时。此时不会添加 <code>padding-top</code> 样式。</li>\n</ol>\n<h2 id=\"examples\">\n                  <a href=\"#examples\">示例</a>\n                </h2>\n<h3 id=\"example-scroll-target\">\n                  <a href=\"#example-scroll-target\">位于指定容器内</a>\n                </h3>\n<p>默认情况下，顶部应用栏会相对于当前窗口，在页面顶部显示。</p>\n<p>如果你希望将顶部应用栏放在指定的容器内，可以在 <code>&lt;mdui-top-app-bar&gt;</code> 组件上指定 <code>scroll-target</code> 属性，其值为可滚动内容的容器的 CSS 选择器或 DOM 元素。此时，顶部应用栏会相对于父元素显示（你需要自行在父元素上添加样式 <code>position: relative; overflow: hidden</code>）。</p>\n<pre><code class=\"language-html,example,expandable\">&lt;div style=&quot;position: relative;overflow: hidden&quot;&gt;\n  &lt;mdui-top-app-bar scroll-target=&quot;.example-scroll-target&quot;&gt;\n    &lt;mdui-top-app-bar-title&gt;Title&lt;/mdui-top-app-bar-title&gt;\n  &lt;/mdui-top-app-bar&gt;\n\n  &lt;div class=&quot;example-scroll-target&quot; style=&quot;height: 160px;overflow: auto;&quot;&gt;\n    &lt;div style=&quot;height: 1000px&quot;&gt;&lt;/div&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n</code></pre>\n<h3 id=\"example-variant\">\n                  <a href=\"#example-variant\">形状</a>\n                </h3>\n<p>可以通过在 <code>&lt;mdui-top-app-bar&gt;</code> 组件上使用 <code>variant</code> 属性来设置顶部应用栏的形状。</p>\n<pre><code class=\"language-html,example,expandable\">&lt;div style=&quot;position: relative;overflow: hidden&quot;&gt;\n  &lt;mdui-top-app-bar variant=&quot;small&quot; scroll-target=&quot;.example-variant&quot; class=&quot;example-variant-bar&quot;&gt;\n    &lt;mdui-button-icon icon=&quot;menu&quot;&gt;&lt;/mdui-button-icon&gt;\n    &lt;mdui-top-app-bar-title&gt;Title&lt;/mdui-top-app-bar-title&gt;\n    &lt;div style=&quot;flex-grow: 1&quot;&gt;&lt;/div&gt;\n    &lt;mdui-button-icon icon=&quot;more_vert&quot;&gt;&lt;/mdui-button-icon&gt;\n  &lt;/mdui-top-app-bar&gt;\n\n  &lt;div class=&quot;example-variant&quot; style=&quot;height: 160px;overflow: auto;&quot;&gt;\n    &lt;div style=&quot;height: 1000px&quot;&gt;\n      &lt;mdui-segmented-button-group selects=&quot;single&quot; value=&quot;small&quot;&gt;\n        &lt;mdui-segmented-button value=&quot;center-aligned&quot;&gt;center-aligned&lt;/mdui-segmented-button&gt;\n        &lt;mdui-segmented-button value=&quot;small&quot;&gt;small&lt;/mdui-segmented-button&gt;\n        &lt;mdui-segmented-button value=&quot;medium&quot;&gt;medium&lt;/mdui-segmented-button&gt;\n        &lt;mdui-segmented-button value=&quot;large&quot;&gt;large&lt;/mdui-segmented-button&gt;\n      &lt;/mdui-segmented-button-group&gt;\n    &lt;/div&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n\n&lt;script&gt;\n  const topAppBar = document.querySelector(&quot;.example-variant-bar&quot;);\n  const segmentedButtonGroup = document.querySelector(&quot;.example-variant&quot;);\n\n  segmentedButtonGroup.addEventListener(&quot;change&quot;, (event) =&gt; {\n    topAppBar.variant = event.target.value;\n  });\n&lt;/script&gt;\n</code></pre>\n<h3 id=\"example-scroll-behavior\">\n                  <a href=\"#example-scroll-behavior\">页面滚动时的行为</a>\n                </h3>\n<p>通过在 <code>&lt;mdui-top-app-bar&gt;</code> 组件上设置 <code>scroll-behavior</code> 属性，可以定义页面滚动时顶部应用栏的行为。可以同时设置多个行为，用空格分隔即可。</p>\n<p>滚动行为包括：</p>\n<ul>\n<li><code>hide</code>：页面向下滚动时隐藏顶部应用栏，向上滚动时显示顶部应用栏。</li>\n<li><code>shrink</code>：仅在 <code>variant</code> 属性为 <code>medium</code> 或 <code>large</code> 时有效。页面向下滚动时展开顶部应用栏，向上滚动时收缩顶部应用栏。</li>\n<li><code>elevate</code>：页面向下滚动时，在顶部应用栏上添加阴影；页面滚回到顶部时，取消阴影。</li>\n</ul>\n<p>使用 <code>scroll-threshold</code> 属性，可以设置滚动多少像素后开始触发顶部应用栏的滚动行为。（注意，为了响应及时，在使用了 <code>elevate</code> 滚动行为时，请不要再设置 <code>scroll-threshold</code> 属性。）</p>\n<p><strong>示例：滚动时隐藏</strong></p>\n<pre><code class=\"language-html,example,expandable\">&lt;div style=&quot;position: relative;overflow: hidden&quot;&gt;\n  &lt;mdui-top-app-bar\n    scroll-behavior=&quot;hide&quot;\n    scroll-threshold=&quot;30&quot;\n    scroll-target=&quot;.example-scroll-behavior-hide&quot;\n  &gt;\n    &lt;mdui-button-icon icon=&quot;menu&quot;&gt;&lt;/mdui-button-icon&gt;\n    &lt;mdui-top-app-bar-title&gt;Title&lt;/mdui-top-app-bar-title&gt;\n    &lt;div style=&quot;flex-grow: 1&quot;&gt;&lt;/div&gt;\n    &lt;mdui-button-icon icon=&quot;more_vert&quot;&gt;&lt;/mdui-button-icon&gt;\n  &lt;/mdui-top-app-bar&gt;\n\n  &lt;div class=&quot;example-scroll-behavior-hide&quot; style=&quot;height: 160px;overflow: auto;&quot;&gt;\n    &lt;div style=&quot;height: 1000px&quot;&gt;&lt;/div&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n</code></pre>\n<p><strong>示例：滚动时添加阴影</strong></p>\n<pre><code class=\"language-html,example,expandable\">&lt;div style=&quot;position: relative;overflow: hidden&quot;&gt;\n  &lt;mdui-top-app-bar\n    scroll-behavior=&quot;elevate&quot;\n    scroll-target=&quot;.example-scroll-behavior-elevate&quot;\n  &gt;\n    &lt;mdui-button-icon icon=&quot;menu&quot;&gt;&lt;/mdui-button-icon&gt;\n    &lt;mdui-top-app-bar-title&gt;Title&lt;/mdui-top-app-bar-title&gt;\n    &lt;div style=&quot;flex-grow: 1&quot;&gt;&lt;/div&gt;\n    &lt;mdui-button-icon icon=&quot;more_vert&quot;&gt;&lt;/mdui-button-icon&gt;\n  &lt;/mdui-top-app-bar&gt;\n\n  &lt;div class=&quot;example-scroll-behavior-elevate&quot; style=&quot;height: 160px;overflow: auto;&quot;&gt;\n    &lt;div style=&quot;height: 1000px&quot;&gt;&lt;/div&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n</code></pre>\n<p><strong>示例：滚动时收缩</strong></p>\n<pre><code class=\"language-html,example,expandable\">&lt;div style=&quot;position: relative;overflow: hidden&quot;&gt;\n  &lt;mdui-top-app-bar\n    variant=&quot;medium&quot;\n    scroll-behavior=&quot;shrink&quot;\n    scroll-threshold=&quot;30&quot;\n    scroll-target=&quot;.example-scroll-behavior-shrink&quot;\n  &gt;\n    &lt;mdui-button-icon icon=&quot;menu&quot;&gt;&lt;/mdui-button-icon&gt;\n    &lt;mdui-top-app-bar-title&gt;Title&lt;/mdui-top-app-bar-title&gt;\n    &lt;div style=&quot;flex-grow: 1&quot;&gt;&lt;/div&gt;\n    &lt;mdui-button-icon icon=&quot;more_vert&quot;&gt;&lt;/mdui-button-icon&gt;\n  &lt;/mdui-top-app-bar&gt;\n\n  &lt;div class=&quot;example-scroll-behavior-shrink&quot; style=&quot;height: 160px;overflow: auto;&quot;&gt;\n    &lt;div style=&quot;height: 1000px&quot;&gt;&lt;/div&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n</code></pre>\n<p><strong>示例：滚动时收缩及添加阴影</strong></p>\n<pre><code class=\"language-html,example,expandable\">&lt;div style=&quot;position: relative;overflow: hidden&quot;&gt;\n  &lt;mdui-top-app-bar\n    variant=&quot;medium&quot;\n    scroll-behavior=&quot;shrink elevate&quot;\n    scroll-target=&quot;.example-scroll-behavior-shrink-elevate&quot;\n  &gt;\n    &lt;mdui-button-icon icon=&quot;menu&quot;&gt;&lt;/mdui-button-icon&gt;\n    &lt;mdui-top-app-bar-title&gt;Title&lt;/mdui-top-app-bar-title&gt;\n    &lt;div style=&quot;flex-grow: 1&quot;&gt;&lt;/div&gt;\n    &lt;mdui-button-icon icon=&quot;more_vert&quot;&gt;&lt;/mdui-button-icon&gt;\n  &lt;/mdui-top-app-bar&gt;\n\n  &lt;div class=&quot;example-scroll-behavior-shrink-elevate&quot; style=&quot;height: 160px;overflow: auto;&quot;&gt;\n    &lt;div style=&quot;height: 1000px&quot;&gt;&lt;/div&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n</code></pre>\n<h3 id=\"label-large\">\n                  <a href=\"#label-large\">展开状态的文本</a>\n                </h3>\n<p>对于 <code>variant</code> 属性为 <code>medium</code> 或 <code>large</code>，且 <code>scroll-behavior</code> 属性为 <code>shrink</code> 的顶部应用栏，你可以在 <code>&lt;mdui-top-app-bar-title&gt;</code> 组件中添加 <code>label-large</code> slot，以设置展开状态下的文本。</p>\n<pre><code class=\"language-html,example,expandable\">&lt;div style=&quot;position: relative;overflow: hidden&quot;&gt;\n  &lt;mdui-top-app-bar\n    variant=&quot;medium&quot;\n    scroll-behavior=&quot;shrink elevate&quot;\n    scroll-target=&quot;.example-label-large-slot&quot;\n  &gt;\n    &lt;mdui-button-icon icon=&quot;menu&quot;&gt;&lt;/mdui-button-icon&gt;\n    &lt;mdui-top-app-bar-title&gt;\n      这是收起状态的标题\n      &lt;span slot=&quot;label-large&quot;&gt;这是展开状态的标题&lt;/span&gt;\n    &lt;/mdui-top-app-bar-title&gt;\n    &lt;div style=&quot;flex-grow: 1&quot;&gt;&lt;/div&gt;\n    &lt;mdui-button-icon icon=&quot;more_vert&quot;&gt;&lt;/mdui-button-icon&gt;\n  &lt;/mdui-top-app-bar&gt;\n\n  &lt;div class=&quot;example-label-large-slot&quot; style=&quot;height: 160px;overflow: auto;&quot;&gt;\n    &lt;div style=&quot;height: 1000px&quot;&gt;&lt;/div&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n</code></pre>\n","customElements":[{"name":"TopAppBarTitle","tagName":"mdui-top-app-bar-title","summary":"<p>顶部应用栏标题组件。需配合 <code>&lt;mdui-top-app-bar&gt;</code> 组件使用</p>\n<pre><code class=\"language-html\">&lt;mdui-top-app-bar&gt;\n..&lt;mdui-button-icon icon=&quot;menu&quot;&gt;&lt;/mdui-button-icon&gt;\n..&lt;mdui-top-app-bar-title&gt;Title&lt;/mdui-top-app-bar-title&gt;\n..&lt;div style=&quot;flex-grow: 1&quot;&gt;&lt;/div&gt;\n..&lt;mdui-button-icon icon=&quot;more_vert&quot;&gt;&lt;/mdui-button-icon&gt;\n&lt;/mdui-top-app-bar&gt;\n</code></pre>\n","attributes":[],"methods":[],"events":[],"slots":[{"name":"","description":"<p>顶部应用栏的标题文本</p>\n"},{"name":"label-large","description":"<p>展开状态下的标题文本</p>\n"}],"cssParts":[{"name":"label","description":"<p>标题文本</p>\n"},{"name":"label-large","description":"<p>展开状态下的标题文本</p>\n"}],"cssProperties":[]},{"name":"TopAppBar","tagName":"mdui-top-app-bar","summary":"<p>顶部应用栏组件</p>\n<pre><code class=\"language-html\">&lt;mdui-top-app-bar&gt;\n..&lt;mdui-button-icon icon=&quot;menu&quot;&gt;&lt;/mdui-button-icon&gt;\n..&lt;mdui-top-app-bar-title&gt;Title&lt;/mdui-top-app-bar-title&gt;\n..&lt;div style=&quot;flex-grow: 1&quot;&gt;&lt;/div&gt;\n..&lt;mdui-button-icon icon=&quot;more_vert&quot;&gt;&lt;/mdui-button-icon&gt;\n&lt;/mdui-top-app-bar&gt;\n</code></pre>\n","attributes":[{"attributeName":"variant","propertyName":"variant","reflect":true,"description":"<p>顶部应用栏的形状。默认为 <code>small</code>。可选值包括：</p>\n<ul>\n<li><code>center-aligned</code>：小型应用栏，标题居中</li>\n<li><code>small</code>：小型应用栏</li>\n<li><code>medium</code>：中型应用栏</li>\n<li><code>large</code>：大型应用栏</li>\n</ul>\n","type":"'center-aligned' | 'small' | 'medium' | 'large'","enum":["'center-aligned'","'small'","'medium'","'large'"],"default":"'small'"},{"attributeName":"hide","propertyName":"hide","reflect":true,"description":"<p>是否隐藏</p>\n","type":"boolean","enum":[],"default":"false"},{"attributeName":"shrink","propertyName":"shrink","reflect":true,"description":"<p>是否缩小为 <code>variant=&quot;small&quot;</code> 的样式，仅在 <code>variant=&quot;medium&quot;</code> 或 <code>variant=&quot;large&quot;</code> 时生效</p>\n","type":"boolean","enum":[],"default":"false"},{"attributeName":"scroll-behavior","propertyName":"scrollBehavior","reflect":true,"description":"<p>滚动行为。可同时使用多个值，用空格分隔。可选值包括：</p>\n<ul>\n<li><code>hide</code>：滚动时隐藏</li>\n<li><code>shrink</code>：在中型、大型应用栏中可使用，滚动时缩小成小型应用栏的样式</li>\n<li><code>elevate</code>：滚动时添加阴影</li>\n</ul>\n","type":"'hide' | 'shrink' | 'elevate'","enum":["'hide'","'shrink'","'elevate'"]},{"attributeName":"scroll-target","propertyName":"scrollTarget","reflect":false,"description":"<p>需要监听其滚动事件的元素。值可以是 CSS 选择器、DOM 元素、或 <a href=\"../../../../en/docs/2/functions/jq.htm\"/*tpa=https://www.mdui.org/docs/2/functions/jq*/>JQ 对象</a>。默认监听 <code>window</code> 的滚动事件</p>\n","type":"string | HTMLElement | JQ<HTMLElement>","enum":["string","HTMLElement","JQ<HTMLElement>"]},{"attributeName":"scroll-threshold","propertyName":"scrollThreshold","reflect":true,"description":"<p>在滚动多少距离之后触发滚动行为，单位为 <code>px</code></p>\n","type":"number","enum":[]},{"attributeName":"order","propertyName":"order","reflect":true,"description":"<p>该组件在 <a href=\"../../../../en/docs/2/components/layout.htm\"/*tpa=https://www.mdui.org/docs/2/components/layout*/><code>&lt;mdui-layout&gt;</code></a> 中的布局顺序，按从小到大排序。默认为 <code>0</code></p>\n","type":"number","enum":[]}],"methods":[],"events":[{"name":"show","description":"<p>开始显示时，事件被触发。可以通过调用 <code>event.preventDefault()</code> 阻止显示</p>\n"},{"name":"shown","description":"<p>显示动画完成时，事件被触发</p>\n"},{"name":"hide","description":"<p>开始隐藏时，事件被触发。可以通过调用 <code>event.preventDefault()</code> 阻止隐藏</p>\n"},{"name":"hidden","description":"<p>隐藏动画完成时，事件被触发</p>\n"}],"slots":[{"name":"","description":"<p>顶部应用栏内部的元素</p>\n"}],"cssParts":[],"cssProperties":[{"name":"--shape-corner","description":"<p>组件的圆角大小。可以指定一个具体的像素值；但更推荐引用<a href=\"../../../../en/docs/2/styles/design-tokens.htm#shape-corner\"/*tpa=https://www.mdui.org/docs/2/styles/design-tokens#shape-corner*/>设计令牌</a></p>\n"},{"name":"--z-index","description":"<p>组件的 CSS <code>z-index</code> 值</p>\n"}]}]},"drawer":{"open":false}};
+</script>
+</body>
+</html>
