@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=5.0">
+  <title>列表组件 - mdui v1 开发文档</title>
+  <meta name="description" content="列表以垂直排列方式显示多行条目，每行可包含图标、头像、文本等内容，提升信息的组织和可读性。">
+  <link rel="preconnect" href="https://cdn.w3cbus.com/">
+  <link rel="preload" href="https://cdn.w3cbus.com/library/mdui/1.0.2/fonts/roboto/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="modulepreload" crossorigin href="images/list-bf35a44d.js"><link rel="modulepreload" crossorigin href="images/myreward.vue_vue_type_script_setup_true_lang-df11eaf3.js"><link rel="preload" href="images/myreward-0ad2484e.css" as="style">
+  <link rel="stylesheet" href="images/myreward-0ad2484e.css"><link rel="modulepreload" crossorigin href="images/demo-5062ffc5.js"><link rel="preload" href="images/demo-e5dd9f9f.css" as="style">
+  <link rel="stylesheet" href="images/demo-e5dd9f9f.css">
+  <link rel="stylesheet" href="images/mdui.min.css">
+  <script src="images/mdui.min.js"></script>
+  <script src="images/holder.min.js"></script>
+  <link rel="canonical" href="list.html">
+  
+  <script type="application/ld+json">{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"mdui","item":"https://www.mdui.org"},{"@type":"ListItem","position":2,"name":"mdui 1 开发文档","item":"https://www.mdui.org/docs/"},{"@type":"ListItem","position":3,"name":"列表"}],"@context":"https://schema.org"}</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K3T2R6S');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="images/fe7db.txt?client=ca-pub-4466345895756968" data-overlays="bottom" crossorigin="anonymous"></script>
+  <script type="module" crossorigin src="images/index-15cb1481.js"></script>
+  <link rel="stylesheet" href="images/index-abafda3c.css">
+</head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-auto mdui-theme-layout-auto mdui-theme-primary-indigo mdui-theme-accent-pink">
+<div id="app"><!--[--><header class="appbar mdui-appbar mdui-appbar-fixed" data-v-724d73df><div class="mdui-toolbar mdui-color-theme" data-nosnippet data-v-724d73df><span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" data-v-724d73df><i class="mdui-icon material-icons" data-v-724d73df>menu</i></span><a href="https://www.mdui.org/" class="mdui-typo-headline mdui-hidden-xs" data-v-724d73df>MDUI</a><a href="index.html" class="mdui-typo-title" data-v-724d73df>文档</a><div class="mdui-toolbar-spacer" data-v-724d73df></div><span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: &#39;设置主题&#39;}" data-v-724d73df><i class="mdui-icon material-icons" data-v-724d73df>color_lens</i></span><a href="https://github.com/zdhxiong/mdui" target="_blank" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: &#39;查看 Github&#39;}" data-v-724d73df><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon" style="width:24px;height:24px;" data-v-724d73df><path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4c-0.2-0.4-0.7-2.1,0.2-4.3c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C34.3,8.7,27,1.4,18,1.4z" data-v-724d73df></path></svg></a></div></header><div class="mdui-drawer" data-nosnippet><div class="mdui-list" id="drawer-collapse" style="margin-bottom:76px;"><!--[--><div class="mdui-collapse-item"><div class="mdui-collapse-item-header mdui-list-item mdui-ripple"><i class="mdui-text-color-blue mdui-list-item-icon mdui-icon material-icons">near_me</i><div class="mdui-list-item-content">开始使用</div><i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><div class="mdui-collapse-item-body mdui-list"><!----></div></div><div class="mdui-collapse-item"><div class="mdui-collapse-item-header mdui-list-item mdui-ripple"><i class="mdui-text-color-deep-orange mdui-list-item-icon mdui-icon material-icons">layers</i><div class="mdui-list-item-content">样式</div><i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><div class="mdui-collapse-item-body mdui-list"><!----></div></div><div class="mdui-collapse-item-open mdui-collapse-item"><div class="mdui-collapse-item-header mdui-list-item mdui-ripple"><i class="mdui-text-color-green mdui-list-item-icon mdui-icon material-icons">widgets</i><div class="mdui-list-item-content">组件</div><i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><div class="mdui-collapse-item-body mdui-list"><!--[--><a href="ripple.html" class="mdui-list-item mdui-ripple">涟漪动画效果</a><a href="button.html" class="mdui-list-item mdui-ripple">按钮</a><a href="fab.html" class="mdui-list-item mdui-ripple">浮动操作按钮</a><a href="select.html" class="mdui-list-item mdui-ripple">下拉选择</a><a href="divider.html" class="mdui-list-item mdui-ripple">分隔线</a><a href="panel.html" class="mdui-list-item mdui-ripple">可扩展面板</a><a href="textfield.html" class="mdui-list-item mdui-ripple">文本框</a><a href="selection_control.html" class="mdui-list-item mdui-ripple">选择控件</a><a href="slider.html" class="mdui-list-item mdui-ripple">滑块</a><a aria-current="page" href="list.html" class="router-link-active router-link-exact-active mdui-list-item mdui-ripple mdui-list-item-active">列表</a><a href="list_control.html" class="mdui-list-item mdui-ripple">列表控制</a><a href="grid_list.html" class="mdui-list-item mdui-ripple">网格列表</a><a href="tab.html" class="mdui-list-item mdui-ripple">Tab 选项卡</a><a href="toolbar.html" class="mdui-list-item mdui-ripple">工具栏</a><a href="appbar.html" class="mdui-list-item mdui-ripple">应用栏</a><a href="drawer.html" class="mdui-list-item mdui-ripple">抽屉式导航</a><a href="bottom_nav.html" class="mdui-list-item mdui-ripple">底部导航栏</a><a href="card.html" class="mdui-list-item mdui-ripple">卡片</a><a href="chip.html" class="mdui-list-item mdui-ripple">纸片</a><a href="tooltip.html" class="mdui-list-item mdui-ripple">工具提示</a><a href="snackbar.html" class="mdui-list-item mdui-ripple">Snackbar</a><a href="table.html" class="mdui-list-item mdui-ripple">表格</a><a href="dialog.html" class="mdui-list-item mdui-ripple">对话框</a><a href="menu.html" class="mdui-list-item mdui-ripple">菜单</a><a href="progress.html" class="mdui-list-item mdui-ripple">进度指示器</a><!--]--></div></div><div class="mdui-collapse-item"><div class="mdui-collapse-item-header mdui-list-item mdui-ripple"><i class="mdui-text-color-brown mdui-list-item-icon mdui-icon material-icons">view_carousel</i><div class="mdui-list-item-content">JavaScript 插件</div><i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><div class="mdui-collapse-item-body mdui-list"><!----></div></div><div class="mdui-collapse-item"><div class="mdui-collapse-item-header mdui-list-item mdui-ripple"><i class="mdui-text-color-purple mdui-list-item-icon mdui-icon material-icons">local_mall</i><div class="mdui-list-item-content">资源</div><i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><div class="mdui-collapse-item-body mdui-list"><!----></div></div><!--]--></div></div><a id="anchor-top"></a><div class="container mdui-container"><!--[--><div class="mdui-typo to-mdui2" data-nosnippet data-v-f11a6feb> 基于 Material Design 3 和 Web Components 的 mdui 2 已发布，查看 <a href="https://www.mdui.org/zh-cn/docs/2/" data-v-f11a6feb>mdui 2 开发文档</a>。 </div><h1 class="title mdui-text-color-theme">列表</h1><div class="intro mdui-typo"><p> 列表以垂直排列的方式显示多行条目。每行条目都可以包含图标、头像、文本等内容。 </p><div class="intro-module"><h3>调用方式</h3><p>列表组件使用纯 CSS 编写，只需编写 HTML 代码即可生效。</p></div><div class="intro-module"><h3>色彩</h3><p>背景色：透明背景。</p><p>文字颜色：在亮色主题下为黑色，在深色主题下为白色。</p></div><div class="intro-module"><h3>相关阅读</h3><p><a href="https://www.mdui.org/zh-cn/design/1/components/lists.html" target="_blank">Material Design 设计指南：组件 - 列表</a></p></div></div><!--[--><ins class="reward reward-display first-screen adsbygoogle" style="display:block;border-bottom:none;color-scheme:auto;text-decoration:none;" data-ad-client="ca-pub-4466345895756968" data-ad-slot="3103002934"></ins><!----><!--]--><nav class="toc mdui-text-color-theme"><ul><li><a href="#style">样式</a><ul><li><a href="#text">纯文本</a></li><li><a href="#icon">图标</a></li><li><a href="#avatar">头像</a></li><li><a href="#multiline">多行文本</a></li><li><a href="#divider">分隔线</a></li><li><a href="#subheader">副标题</a></li><li><a href="#dense">密集型列表</a></li><li><a href="#active">激活状态</a></li></ul></li><li><a href="#class">CSS 类名列表</a></li><li><a href="#demo">更多示例</a><ul><li><a href="#file-list">文件列表</a></li><li><a href="#phone-list">通讯录</a></li></ul></li></ul></nav><div class="chapter"><div class="mdui-typo"><h2 class="chapter-title chapter-title-first mdui-text-color-theme"> 样式 <a class="anchor" id="style"></a></h2><h4 class="article-title">纯文本 <a class="anchor" id="text"></a></h4><p>这是一个最简单的列表。</p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="demo1-15.html" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;Inbox&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;Starred&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;Send mail&lt;/li&gt;
+&lt;/ul&gt;<!--]--></code></pre></div><div class="mdui-typo"><p>使用链接作为列表条目。</p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="demo2-14.html" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;div class=&quot;mdui-list&quot;&gt;
+  &lt;a href=&quot;#&quot; class=&quot;mdui-list-item mdui-ripple&quot;&gt;Inbox&lt;/a&gt;
+  &lt;a href=&quot;#&quot; class=&quot;mdui-list-item mdui-ripple&quot;&gt;Starred&lt;/a&gt;
+  &lt;a href=&quot;#&quot; class=&quot;mdui-list-item mdui-ripple&quot;&gt;Send mail&lt;/a&gt;
+&lt;/div&gt;<!--]--></code></pre></div><div class="mdui-typo"><h4 class="article-title">图标 <a class="anchor" id="icon"></a></h4><p>列表可以包含图标。</p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="demo3-13.html" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons&quot;&gt;move_to_inbox&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Inbox&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons&quot;&gt;send&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Outbox&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons&quot;&gt;delete&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Trash&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons&quot;&gt;error&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Spam&lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;<!--]--></code></pre></div><div class="mdui-typo"><p>图标可以在列表右侧。</p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="demo4-9.html" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Inbox&lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons&quot;&gt;move_to_inbox&lt;/i&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Outbox&lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons&quot;&gt;send&lt;/i&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Trash&lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons&quot;&gt;delete&lt;/i&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Spam&lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons&quot;&gt;error&lt;/i&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;<!--]--></code></pre></div><div class="mdui-typo"><p>用空图标进行占位。</p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="demo5-9.html" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons&quot;&gt;move_to_inbox&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Inbox&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons&quot;&gt;send&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Outbox&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon&quot;&gt;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Trash&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon&quot;&gt;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Spam&lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;<!--]--></code></pre></div><div class="mdui-typo"><h4 class="article-title">头像 <a class="anchor" id="avatar"></a></h4><p>列表可以包含头像。</p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="demo6-7.html" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;
+      &lt;img src=&quot;avatar1.jpg&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Brendan Lim&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;
+      &lt;img src=&quot;avatar2.jpg&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;me, Scott, Jennifer&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;
+      &lt;img src=&quot;avatar3.jpg&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Grace Ng&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;
+      &lt;img src=&quot;avatar4.jpg&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Kerem Suer&lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;<!--]--></code></pre></div><div class="mdui-typo"><p>头像可以在列表右侧。</p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="demo7-5.html" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Brendan Lim&lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;
+      &lt;img src=&quot;avatar1.jpg&quot;/&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;me, Scott, Jennifer&lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;
+      &lt;img src=&quot;avatar2.jpg&quot;/&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Grace Ng&lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;
+      &lt;img src=&quot;avatar3.jpg&quot;/&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Kerem Suer&lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;
+      &lt;img src=&quot;avatar4.jpg&quot;/&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;<!--]--></code></pre></div><div class="mdui-typo"><p>同时包含头像和图标。</p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="demo8-4.html" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;
+      &lt;img src=&quot;avatar1.jpg&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Brendan Lim&lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons&quot;&gt;chat_bubble&lt;/i&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;
+      &lt;img src=&quot;avatar2.jpg&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;me, Scott, Jennifer&lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons&quot;&gt;chat_bubble&lt;/i&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;
+      &lt;img src=&quot;avatar3.jpg&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Grace Ng&lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons&quot;&gt;chat_bubble&lt;/i&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;
+      &lt;img src=&quot;avatar4.jpg&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Kerem Suer&lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons&quot;&gt;chat_bubble&lt;/i&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;<!--]--></code></pre></div><div class="mdui-typo"><p>用图标代替头像。</p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="demo19.html" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-avatar mdui-icon material-icons&quot;&gt;folder&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Photos&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-avatar mdui-icon material-icons&quot;&gt;folder&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Recipes&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-avatar mdui-icon material-icons&quot;&gt;assignment&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Work&lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;<!--]--></code></pre></div><div class="mdui-typo"><h4 class="article-title"> 多行文本 <a class="anchor" id="multiline"></a></h4><p> 每一个列表条目最多可包含 3 行文本，如果有超过 3 行的文本，就应该使用 <a href="card.html" class="">卡片</a> 代替。 </p><p> 默认不限制文本的高度，即使文本高度超过了 3 行，也会照常显示出来。可以在 <code>.mdui-list-item-title</code> 和 <code>.mdui-list-item-text</code> 上添加类来限制文本的高度： </p><ul><li>添加类 <code>.mdui-list-item-one-line</code> 限制文本占一行高度</li><li>添加类 <code>.mdui-list-item-two-line</code> 限制文本占两行高度</li><li> 添加类 <code>.mdui-list-item-three-line</code> 限制文本占三行高度 </li></ul></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="demo9-3.html" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title mdui-list-item-one-line&quot;&gt;Multiline item&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text mdui-list-item-two-line&quot;&gt;You&#39;ve got to get enough sleep. Other travelling salesmen live a life of luxury. You&#39;ve got to get enough sleep. Other travelling salesmen live a life of luxury.&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title mdui-list-item-one-line&quot;&gt;Multiline item&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text mdui-list-item-two-line&quot;&gt;You&#39;ve got to get enough sleep. Other travelling salesmen live a life of luxury. You&#39;ve got to get enough sleep. Other travelling salesmen live a life of luxury.&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;<!--]--></code></pre></div><div class="mdui-typo"><h4 class="article-title">分隔线 <a class="anchor" id="divider"></a></h4><p>列表中的分隔线上下会有 8px 的间距。</p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="demo10-3.html" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;Inbox&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;Starred&lt;/li&gt;
+  &lt;li class=&quot;mdui-divider&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;All mail&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;Trash&lt;/li&gt;
+&lt;/ul&gt;<!--]--></code></pre></div><div class="mdui-typo"><p>去除分隔线的上下边距。</p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="demo11-2.html" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;
+      &lt;img src=&quot;avatar1.jpg&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Brunch this weekend?&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text mdui-list-item-one-line&quot;&gt;
+        &lt;span class=&quot;mdui-text-color-theme-text&quot;&gt;All Connors&lt;/span&gt; - I&#39;ll be in your neighborhood ...
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-divider-inset mdui-m-y-0&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;
+      &lt;img src=&quot;avatar2.jpg&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Summer BBQ&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text mdui-list-item-one-line&quot;&gt;
+        &lt;span class=&quot;mdui-text-color-theme-text&quot;&gt;to Alex, Scott, Jennifer&lt;/span&gt; - Wish I could ...
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-divider-inset mdui-m-y-0&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;
+      &lt;img src=&quot;avatar3.jpg&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Oui oui&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text mdui-list-item-one-line&quot;&gt;
+        &lt;span class=&quot;mdui-text-color-theme-text&quot;&gt;Sandra Adams&lt;/span&gt; - Do you have Paris reco ...
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;<!--]--></code></pre></div><div class="mdui-typo"><h4 class="article-title"> 副标题 <a class="anchor" id="subheader"></a></h4><p>在列表中使用副标题时，会自动在副标题上方添加分割线。</p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="demo12-2.html" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-subheader&quot;&gt;Mail&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;Inbox&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;Sent&lt;/li&gt;
+  &lt;li class=&quot;mdui-subheader&quot;&gt;Work&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;Family&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;Friends&lt;/li&gt;
+&lt;/ul&gt;<!--]--></code></pre></div><div class="mdui-typo"><p>内凹型副标题</p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="demo13.html" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-subheader-inset&quot;&gt;Friends&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;
+      &lt;img src=&quot;avatar1.jpg&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Brendan Lim&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;
+      &lt;img src=&quot;avatar2.jpg&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;me, Scott, Jennifer&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-subheader-inset&quot;&gt;Familay&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;
+      &lt;img src=&quot;avatar3.jpg&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Grace Ng&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;
+      &lt;img src=&quot;avatar4.jpg&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Kerem Suer&lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;<!--]--></code></pre></div><div class="mdui-typo"><h4 class="article-title"> 密集型列表 <a class="anchor" id="dense"></a></h4><p>密集型列表的各个元素会更紧凑。</p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="demo14.html" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;ul class=&quot;mdui-list mdui-list-dense&quot;&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons&quot;&gt;move_to_inbox&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Inbox&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons&quot;&gt;send&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Outbox&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons&quot;&gt;delete&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Trash&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons&quot;&gt;error&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Spam&lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;<!--]--></code></pre></div><div class="mdui-typo"><p>另一个密集型列表的示例。</p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="demo15.html" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;ul class=&quot;mdui-list mdui-list-dense&quot;&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;
+      &lt;img src=&quot;avatar1.jpg&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Brunch this weekend?&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text mdui-list-item-two-line&quot;&gt;
+        &lt;span class=&quot;mdui-text-color-theme-text&quot;&gt;All Connors&lt;/span&gt; - I&#39;ll be in your neighborhood doing errands this weekend. Do you want ...
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-divider-inset mdui-m-y-0&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;
+      &lt;img src=&quot;avatar2.jpg&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Summer BBQ&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text mdui-list-item-two-line&quot;&gt;
+        &lt;span class=&quot;mdui-text-color-theme-text&quot;&gt;to Alex, Scott, Jennifer&lt;/span&gt; - Wish I could come, but I&#39;m out of town this weekend.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-divider-inset mdui-m-y-0&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;
+      &lt;img src=&quot;avatar3.jpg&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Oui oui&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text mdui-list-item-two-line&quot;&gt;
+        &lt;span class=&quot;mdui-text-color-theme-text&quot;&gt;Sandra Adams&lt;/span&gt; - Do you have Paris recommendations? Have you ever been?
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;<!--]--></code></pre></div><div class="mdui-typo"><h4 class="article-title">激活状态 <a class="anchor" id="active"></a></h4><p>激活状态的条目会添加背景色，并加粗文本。</p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="demo16.html" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item mdui-list-item-active mdui-ripple&quot;&gt;Inbox&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;Starred&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;Send mail&lt;/li&gt;
+&lt;/ul&gt;<!--]--></code></pre></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="demo17.html" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item mdui-list-item-active mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;
+      &lt;img src=&quot;avatar1.jpg&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Brunch this weekend?&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text mdui-list-item-one-line&quot;&gt;
+        &lt;span class=&quot;mdui-text-color-theme-text&quot;&gt;All Connors&lt;/span&gt; - I&#39;ll be in your neighborhood ...
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-divider-inset mdui-m-y-0&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;
+      &lt;img src=&quot;avatar2.jpg&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Summer BBQ&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text mdui-list-item-one-line&quot;&gt;
+        &lt;span class=&quot;mdui-text-color-theme-text&quot;&gt;to Alex, Scott, Jennifer&lt;/span&gt; - Wish I could ...
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-divider-inset mdui-m-y-0&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;
+      &lt;img src=&quot;avatar3.jpg&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Oui oui&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text mdui-list-item-one-line&quot;&gt;
+        &lt;span class=&quot;mdui-text-color-theme-text&quot;&gt;Sandra Adams&lt;/span&gt; - Do you have Paris reco ...
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;<!--]--></code></pre></div><div class="mdui-typo"><h2 class="chapter-title mdui-text-color-theme"> CSS 类名列表 <a class="anchor" id="class"></a></h2><div class="mdui-table-fluid"><table class="mdui-table"><thead><tr><th>类名</th><th>效果</th><th>说明</th></tr></thead><tbody><tr><td><code>.mdui-list</code></td><td>定义列表</td><td>必须</td></tr><tr><td><code>.mdui-list-dense</code></td><td>定义密集型列表</td><td></td></tr><tr><td><code>.mdui-list-item</code></td><td>定义列表条目</td><td>必须</td></tr><tr><td><code>.mdui-list-item-active</code></td><td>设置列表条目为激活状态</td><td></td></tr><tr><td><code>.mdui-list-item-icon</code></td><td>定义列表条目中的图标</td><td></td></tr><tr><td><code>.mdui-list-item-avatar</code></td><td>定义列表条目中的头像</td><td></td></tr><tr><td><code>.mdui-list-item-content</code></td><td>定义列表条目的内容</td><td></td></tr><tr><td><code>.mdui-list-item-title</code></td><td>定义列表条目中的内容中的标题</td><td></td></tr><tr><td><code>.mdui-list-item-text</code></td><td>定义列表条目的内容中的副文本</td><td></td></tr><tr><td><code>.mdui-list-item-one-line</code></td><td>设置文本占一行高度</td><td></td></tr><tr><td><code>.mdui-list-item-two-line</code></td><td>设置文本占两行高度</td><td></td></tr><tr><td><code>.mdui-list-item-three-line</code></td><td>设置文本占三行高度</td><td></td></tr></tbody></table></div></div><div class="mdui-typo"><h2 class="chapter-title mdui-text-color-theme"> 更多示例 <a class="anchor" id="demo"></a></h2><h4 class="article-title"> 文件列表 <a class="anchor" id="file-list"></a></h4></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="demo18.html" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-subheader-inset&quot;&gt;Folders&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-avatar mdui-icon material-icons&quot;&gt;folder&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Photos&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text&quot;&gt;Jan 9, 2014&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons&quot;&gt;info&lt;/i&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-avatar mdui-icon material-icons&quot;&gt;folder&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Recipes&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text&quot;&gt;Jan 17, 2014&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons mdui-text-color-grey-400&quot;&gt;info&lt;/i&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-avatar mdui-icon material-icons&quot;&gt;folder&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Work&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text&quot;&gt;Jan 28, 2014&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons mdui-text-color-grey-400&quot;&gt;info&lt;/i&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-subheader-inset&quot;&gt;Files&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-avatar mdui-icon material-icons mdui-color-blue mdui-text-color-white&quot;&gt;assignment&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Photos&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text&quot;&gt;Jan 9, 2014&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons mdui-text-color-grey-400&quot;&gt;info&lt;/i&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-avatar mdui-icon material-icons mdui-color-yellow-600 mdui-text-color-white&quot;&gt;assessment&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Kitchen remodel&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text&quot;&gt;Jan 10, 2014&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons mdui-text-color-grey-400&quot;&gt;info&lt;/i&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;<!--]--></code></pre></div><div class="mdui-typo"><h4 class="article-title"> 通讯录 <a class="anchor" id="phone-list"></a></h4></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="demo20.html" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons mdui-text-color-indigo&quot;&gt;phone&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;(650) 555-1234&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text&quot;&gt;Mobile&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons&quot;&gt;chat_bubble&lt;/i&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon&quot;&gt;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;(323) 555-6789&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text&quot;&gt;Work&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons&quot;&gt;chat_bubble&lt;/i&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-divider&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon mdui-icon material-icons mdui-text-color-indigo&quot;&gt;email&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;aliconnors@example.com&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text&quot;&gt;Personal&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item mdui-ripple&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon&quot;&gt;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;ali_connors@example.com&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text&quot;&gt;Work&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;<!--]--></code></pre></div></div><!--]--></div><div class="nav mdui-color-theme" data-nosnippet data-v-36aafd1d><div class="mdui-container" data-v-36aafd1d><div class="mdui-row" data-v-36aafd1d><a href="slider.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 nav-left" data-v-36aafd1d><div class="nav-text" data-v-36aafd1d><i class="mdui-icon material-icons" data-v-36aafd1d>arrow_back</i><span class="nav-direction mdui-hidden-xs-down" data-v-36aafd1d>Previous</span><div class="nav-chapter mdui-hidden-xs-down" data-v-36aafd1d>滑块</div></div></a><a href="list_control.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 nav-right" data-v-36aafd1d><div class="nav-text" data-v-36aafd1d><i class="mdui-icon material-icons" data-v-36aafd1d>arrow_forward</i><span class="nav-direction" data-v-36aafd1d>Next</span><div class="nav-chapter" data-v-36aafd1d>列表控制</div></div></a></div></div></div><!----><!--]--></div>
+
+<script>
+  window.__INITIAL_DATA__ = {"docs":{"defaultPrimary":"indigo","defaultAccent":"pink","defaultLayout":"auto","primary":"indigo","accent":"pink","layout":"auto","drawer":null,"themeDialog":null}};
+</script>
+</body>
+</html>

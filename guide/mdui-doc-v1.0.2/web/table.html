@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=5.0">
+  <title>表格组件 - mdui v1 开发文档</title>
+  <meta name="description" content="MDUI 的表格组件美化了 HTML 表格，并提供额外功能，提升表格的可视性和用户体验。">
+  <link rel="preconnect" href="https://cdn.w3cbus.com/">
+  <link rel="preload" href="https://cdn.w3cbus.com/library/mdui/1.0.2/fonts/roboto/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="modulepreload" crossorigin href="images/table-497af702.js"><link rel="modulepreload" crossorigin href="images/myreward.vue_vue_type_script_setup_true_lang-df11eaf3.js"><link rel="preload" href="images/myreward-0ad2484e.css" as="style">
+  <link rel="stylesheet" href="images/myreward-0ad2484e.css"><link rel="modulepreload" crossorigin href="images/demo-5062ffc5.js"><link rel="preload" href="images/demo-e5dd9f9f.css" as="style">
+  <link rel="stylesheet" href="images/demo-e5dd9f9f.css">
+  <link rel="stylesheet" href="images/mdui.min.css">
+  <script src="images/mdui.min.js"></script>
+  <script src="images/holder.min.js"></script>
+  <link rel="canonical" href="table.html">
+  
+  <script type="application/ld+json">{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"mdui","item":"https://www.mdui.org"},{"@type":"ListItem","position":2,"name":"mdui 1 开发文档","item":"https://www.mdui.org/docs/"},{"@type":"ListItem","position":3,"name":"表格"}],"@context":"https://schema.org"}</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K3T2R6S');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="images/fe7db.txt?client=ca-pub-4466345895756968" data-overlays="bottom" crossorigin="anonymous"></script>
+  <script type="module" crossorigin src="images/index-15cb1481.js"></script>
+  <link rel="stylesheet" href="images/index-abafda3c.css">
+</head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-auto mdui-theme-layout-auto mdui-theme-primary-indigo mdui-theme-accent-pink">
+<div id="app"><!--[--><header class="appbar mdui-appbar mdui-appbar-fixed" data-v-724d73df><div class="mdui-toolbar mdui-color-theme" data-nosnippet data-v-724d73df><span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" data-v-724d73df><i class="mdui-icon material-icons" data-v-724d73df>menu</i></span><a href="https://www.mdui.org/" class="mdui-typo-headline mdui-hidden-xs" data-v-724d73df>MDUI</a><a href="index.html" class="mdui-typo-title" data-v-724d73df>文档</a><div class="mdui-toolbar-spacer" data-v-724d73df></div><span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: &#39;设置主题&#39;}" data-v-724d73df><i class="mdui-icon material-icons" data-v-724d73df>color_lens</i></span><a href="https://github.com/zdhxiong/mdui" target="_blank" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: &#39;查看 Github&#39;}" data-v-724d73df><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon" style="width:24px;height:24px;" data-v-724d73df><path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4c-0.2-0.4-0.7-2.1,0.2-4.3c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C34.3,8.7,27,1.4,18,1.4z" data-v-724d73df></path></svg></a></div></header><div class="mdui-drawer" data-nosnippet><div class="mdui-list" id="drawer-collapse" style="margin-bottom:76px;"><!--[--><div class="mdui-collapse-item"><div class="mdui-collapse-item-header mdui-list-item mdui-ripple"><i class="mdui-text-color-blue mdui-list-item-icon mdui-icon material-icons">near_me</i><div class="mdui-list-item-content">开始使用</div><i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><div class="mdui-collapse-item-body mdui-list"><!----></div></div><div class="mdui-collapse-item"><div class="mdui-collapse-item-header mdui-list-item mdui-ripple"><i class="mdui-text-color-deep-orange mdui-list-item-icon mdui-icon material-icons">layers</i><div class="mdui-list-item-content">样式</div><i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><div class="mdui-collapse-item-body mdui-list"><!----></div></div><div class="mdui-collapse-item-open mdui-collapse-item"><div class="mdui-collapse-item-header mdui-list-item mdui-ripple"><i class="mdui-text-color-green mdui-list-item-icon mdui-icon material-icons">widgets</i><div class="mdui-list-item-content">组件</div><i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><div class="mdui-collapse-item-body mdui-list"><!--[--><a href="ripple.html" class="mdui-list-item mdui-ripple">涟漪动画效果</a><a href="button.html" class="mdui-list-item mdui-ripple">按钮</a><a href="fab.html" class="mdui-list-item mdui-ripple">浮动操作按钮</a><a href="select.html" class="mdui-list-item mdui-ripple">下拉选择</a><a href="divider.html" class="mdui-list-item mdui-ripple">分隔线</a><a href="panel.html" class="mdui-list-item mdui-ripple">可扩展面板</a><a href="textfield.html" class="mdui-list-item mdui-ripple">文本框</a><a href="selection_control.html" class="mdui-list-item mdui-ripple">选择控件</a><a href="slider.html" class="mdui-list-item mdui-ripple">滑块</a><a href="list.html" class="mdui-list-item mdui-ripple">列表</a><a href="list_control.html" class="mdui-list-item mdui-ripple">列表控制</a><a href="grid_list.html" class="mdui-list-item mdui-ripple">网格列表</a><a href="tab.html" class="mdui-list-item mdui-ripple">Tab 选项卡</a><a href="toolbar.html" class="mdui-list-item mdui-ripple">工具栏</a><a href="appbar.html" class="mdui-list-item mdui-ripple">应用栏</a><a href="drawer.html" class="mdui-list-item mdui-ripple">抽屉式导航</a><a href="bottom_nav.html" class="mdui-list-item mdui-ripple">底部导航栏</a><a href="card.html" class="mdui-list-item mdui-ripple">卡片</a><a href="chip.html" class="mdui-list-item mdui-ripple">纸片</a><a href="tooltip.html" class="mdui-list-item mdui-ripple">工具提示</a><a href="snackbar.html" class="mdui-list-item mdui-ripple">Snackbar</a><a aria-current="page" href="table.html" class="router-link-active router-link-exact-active mdui-list-item mdui-ripple mdui-list-item-active">表格</a><a href="dialog.html" class="mdui-list-item mdui-ripple">对话框</a><a href="menu.html" class="mdui-list-item mdui-ripple">菜单</a><a href="progress.html" class="mdui-list-item mdui-ripple">进度指示器</a><!--]--></div></div><div class="mdui-collapse-item"><div class="mdui-collapse-item-header mdui-list-item mdui-ripple"><i class="mdui-text-color-brown mdui-list-item-icon mdui-icon material-icons">view_carousel</i><div class="mdui-list-item-content">JavaScript 插件</div><i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><div class="mdui-collapse-item-body mdui-list"><!----></div></div><div class="mdui-collapse-item"><div class="mdui-collapse-item-header mdui-list-item mdui-ripple"><i class="mdui-text-color-purple mdui-list-item-icon mdui-icon material-icons">local_mall</i><div class="mdui-list-item-content">资源</div><i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><div class="mdui-collapse-item-body mdui-list"><!----></div></div><!--]--></div></div><a id="anchor-top"></a><div class="container mdui-container"><!--[--><div class="mdui-typo to-mdui2" data-nosnippet data-v-f11a6feb> 基于 Material Design 3 和 Web Components 的 mdui 2 已发布，查看 <a href="https://www.mdui.org/zh-cn/docs/2/" data-v-f11a6feb>mdui 2 开发文档</a>。 </div><h1 class="title mdui-text-color-theme">表格</h1><div class="intro mdui-typo"><div class="intro-module"><h3>调用方式</h3><p>表格在页面加载完后会自动初始化。对于动态生成的表格，需要调用 <a href="global.html#mutation" class=""><code>mdui.mutation()</code></a> 进行初始化。</p></div><div class="intro-module"><h3>相关阅读</h3><p><a href="https://www.mdui.org/zh-cn/design/1/components/data-tables.html" target="_blank">Material Design 设计指南：组件 - 数据表格</a></p></div></div><!--[--><ins class="reward reward-display first-screen adsbygoogle" style="display:block;border-bottom:none;color-scheme:auto;text-decoration:none;" data-ad-client="ca-pub-4466345895756968" data-ad-slot="3103002934"></ins><!----><!--]--><nav class="toc mdui-text-color-theme"><ul><li><a href="#style">样式</a><ul><li><a href="#basic">基础表格</a></li><li><a href="#fluid">响应式</a></li><li><a href="#hoverable">鼠标悬浮</a></li><li><a href="#text-align">列对齐方式</a></li><li><a href="#selectable">列选择</a></li></ul></li><li><a href="#dynamic">动态生成的表格</a></li><li><a href="#class">CSS 类名列表</a></li></ul></nav><div class="chapter"><div class="mdui-typo"><h2 class="chapter-title chapter-title-first mdui-text-color-theme">样式 <a class="anchor" id="style"></a></h2><h4 class="article-title">基础表格 <a class="anchor" id="basic"></a></h4><p>为 <code>table</code> 标签添加类 <code>.mdui-table</code> 即可为表格赋予基本的样式。</p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="demo1-27.html" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;div class=&quot;mdui-table-fluid&quot;&gt;
+  &lt;table class=&quot;mdui-table&quot;&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;#&lt;/th&gt;
+        &lt;th&gt;First Name&lt;/th&gt;
+        &lt;th&gt;Last Name&lt;/th&gt;
+        &lt;th&gt;Username&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;Mark&lt;/td&gt;
+        &lt;td&gt;Otto&lt;/td&gt;
+        &lt;td&gt;@mdo&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;2&lt;/td&gt;
+        &lt;td&gt;Jacob&lt;/td&gt;
+        &lt;td&gt;Thornton&lt;/td&gt;
+        &lt;td&gt;@fat&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;3&lt;/td&gt;
+        &lt;td&gt;Larry the Bird&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;@twitter&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;<!--]--></code></pre></div><div class="mdui-typo"><h4 class="article-title">响应式 <a class="anchor" id="fluid"></a></h4><p>如果表格宽度过大，可能会导致页面出现横向滚动条。将 <code>.mdui-table</code> 元素包裹在 <code>.mdui-table-fluid</code> 元素内，即可在表格宽度超出页面宽度时，使表格支持水平滚动。</p><pre><code class="language-html">&lt;div class=&quot;mdui-table-fluid&quot;&gt;
+  &lt;table class=&quot;mdui-table&quot;&gt;
+    ...
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre></div><div class="mdui-typo"><h4 class="article-title">鼠标悬浮 <a class="anchor" id="hoverable"></a></h4><p>在 <code>.mdui-table</code> 元素上添加 <code>.mdui-table-hoverable</code> 类可以让 <code>tbody</code> 中的每一行对鼠标悬浮状态作出响应。</p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="demo2-25.html" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;div class=&quot;mdui-table-fluid&quot;&gt;
+  &lt;table class=&quot;mdui-table mdui-table-hoverable&quot;&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;#&lt;/th&gt;
+        &lt;th&gt;First Name&lt;/th&gt;
+        &lt;th&gt;Last Name&lt;/th&gt;
+        &lt;th&gt;Username&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;Mark&lt;/td&gt;
+        &lt;td&gt;Otto&lt;/td&gt;
+        &lt;td&gt;@mdo&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;2&lt;/td&gt;
+        &lt;td&gt;Jacob&lt;/td&gt;
+        &lt;td&gt;Thornton&lt;/td&gt;
+        &lt;td&gt;@fat&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;3&lt;/td&gt;
+        &lt;td&gt;Larry the Bird&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;@twitter&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;<!--]--></code></pre></div><div class="mdui-typo"><h4 class="article-title">列对齐方式 <a class="anchor" id="text-align"></a></h4><p>按照 Material Design 的规范，应该把表格中的文本列左对齐，数值列右对齐。</p><p>MDUI 中表格列默认使用左对齐，在数值列的 <code>&lt;th&gt;</code> 标签上添加类 <code>.mdui-table-col-numeric</code> 即可使该列向右对齐。</p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="demo3-22.html" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;div class=&quot;mdui-table-fluid&quot;&gt;
+  &lt;table class=&quot;mdui-table&quot;&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;#&lt;/th&gt;
+        &lt;th&gt;First Name&lt;/th&gt;
+        &lt;th&gt;Last Name&lt;/th&gt;
+        &lt;th class=&quot;mdui-table-col-numeric&quot;&gt;age&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;Mark&lt;/td&gt;
+        &lt;td&gt;Otto&lt;/td&gt;
+        &lt;td&gt;18&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;2&lt;/td&gt;
+        &lt;td&gt;Jacob&lt;/td&gt;
+        &lt;td&gt;Thornton&lt;/td&gt;
+        &lt;td&gt;21&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;3&lt;/td&gt;
+        &lt;td&gt;Larry the Bird&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;9&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;<!--]--></code></pre></div><div class="mdui-typo"><h4 class="article-title">列选择 <a class="anchor" id="selectable"></a></h4><p>在 <code>.mdui-table</code> 元素上添加类 <code>.mdui-table-selectable</code> 即可在每一行的前面添加一个复选框。</p><p>选中复选框后，会在该行的 <code>&lt;tr&gt;</code> 元素上添加类 <code>.mdui-table-row-selected</code>。</p><p>也可以预先在 <code>&lt;tr&gt;</code> 元素上添加类 <code>.mdui-table-row-selected</code>，使该行处于默认选中状态。</p></div><div class="example" data-nosnippet data-v-1667aa4c><div class="tools" data-v-1667aa4c><a href="javascript:;" class="viewsource" mdui-tooltip="{content: &#39;查看代码&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>code</i></a><a href="demo4-17.html" target="_blank" mdui-tooltip="{content: &#39;在线调试&#39;}" data-v-1667aa4c><i class="mdui-icon material-icons" data-v-1667aa4c>play_arrow</i></a></div><div class="demo-label" data-v-1667aa4c>Example</div><div class="demo" data-v-1667aa4c><!----></div><pre class="code" data-v-1667aa4c><code class="language-xml" data-v-1667aa4c><!--[-->&lt;div class=&quot;mdui-table-fluid&quot;&gt;
+  &lt;table class=&quot;mdui-table mdui-table-selectable&quot;&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Dessert (100g serving)&lt;/th&gt;
+        &lt;th class=&quot;mdui-table-col-numeric&quot; mdui-tooltip=&quot;{content: &#39;The total amount of food energy in the given serving size.&#39;}&quot;&gt;Calories&lt;/th&gt;
+        &lt;th class=&quot;mdui-table-col-numeric&quot;&gt;Fat (g)&lt;/th&gt;
+        &lt;th class=&quot;mdui-table-col-numeric&quot;&gt;Carbs (g)&lt;/th&gt;
+        &lt;th class=&quot;mdui-table-col-numeric&quot;&gt;Protein (g)&lt;/th&gt;
+        &lt;th class=&quot;mdui-table-col-numeric&quot;&gt;Sodium (mg)&lt;/th&gt;
+        &lt;th class=&quot;mdui-table-col-numeric&quot; mdui-tooltip=&quot;{content: &#39;The amount of calcium as a percentage of the recommended daily amount.&#39;}&quot;&gt;Calclum (%)&lt;/th&gt;
+        &lt;th class=&quot;mdui-table-col-numeric&quot;&gt;Lron (%)&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr class=&quot;mdui-table-row-selected&quot;&gt;
+        &lt;td&gt;Frozen yogurt&lt;/td&gt;
+        &lt;td&gt;159&lt;/td&gt;
+        &lt;td&gt;6.0&lt;/td&gt;
+        &lt;td&gt;24&lt;/td&gt;
+        &lt;td&gt;4.0&lt;/td&gt;
+        &lt;td&gt;87&lt;/td&gt;
+        &lt;td&gt;14%&lt;/td&gt;
+        &lt;td&gt;1%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Ice cream sandwich&lt;/td&gt;
+        &lt;td&gt;237&lt;/td&gt;
+        &lt;td&gt;9.0&lt;/td&gt;
+        &lt;td&gt;37&lt;/td&gt;
+        &lt;td&gt;4.3&lt;/td&gt;
+        &lt;td&gt;129&lt;/td&gt;
+        &lt;td&gt;8%&lt;/td&gt;
+        &lt;td&gt;1%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Eclair&lt;/td&gt;
+        &lt;td&gt;262&lt;/td&gt;
+        &lt;td&gt;16.0&lt;/td&gt;
+        &lt;td&gt;24&lt;/td&gt;
+        &lt;td&gt;6.0&lt;/td&gt;
+        &lt;td&gt;337&lt;/td&gt;
+        &lt;td&gt;6%&lt;/td&gt;
+        &lt;td&gt;7%&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;<!--]--></code></pre></div><div class="mdui-typo"><h2 class="chapter-title mdui-text-color-theme">动态生成的表格 <a class="anchor" id="dynamic"></a></h2><p>如果你的表格是动态生成的，则需要调用 <a href="global.html#mutation" class=""><code>mdui.mutation()</code></a> 进行初始化。</p><p>如果你动态修改了表格属性，则需要调用 <code>mdui.updateTables()</code> 方法来重新初始化表格。该方法可以接受一个含 <code>&lt;table class=&quot;mdui-table&quot;&gt;</code> 元素的 CSS 选择器、或者 DOM 元素、或者 DOM 元素组成的数组作为参数，表示只重新初始化指定的表格。如果没有传入参数，则将重新初始化页面中所有的表格。</p></div><div class="mdui-typo"><h2 class="chapter-title mdui-text-color-theme">CSS 类名列表 <a class="anchor" id="class"></a></h2><div class="mdui-table-fluid"><table class="mdui-table"><thead><tr><th>类名</th><th>效果</th></tr></thead><tbody><tr><td><code>.mdui-table</code></td><td>定义表格组件。</td></tr><tr><td><code>.mdui-table-fluid</code></td><td>定义响应式表格。</td></tr><tr><td><code>.mdui-table-hoverable</code></td><td>使表格的行在鼠标悬浮状态做出响应。</td></tr><tr><td><code>.mdui-table-col-numeric</code></td><td>使列右对齐。</td></tr><tr><td><code>.mdui-table-selectable</code></td><td>在每一行前面添加复选框。</td></tr><tr><td><code>.mdui-table-row-selected</code></td><td>选中的行会有该类。</td></tr></tbody></table></div></div></div><!--]--></div><div class="nav mdui-color-theme" data-nosnippet data-v-36aafd1d><div class="mdui-container" data-v-36aafd1d><div class="mdui-row" data-v-36aafd1d><a href="snackbar.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 nav-left" data-v-36aafd1d><div class="nav-text" data-v-36aafd1d><i class="mdui-icon material-icons" data-v-36aafd1d>arrow_back</i><span class="nav-direction mdui-hidden-xs-down" data-v-36aafd1d>Previous</span><div class="nav-chapter mdui-hidden-xs-down" data-v-36aafd1d>Snackbar</div></div></a><a href="dialog.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 nav-right" data-v-36aafd1d><div class="nav-text" data-v-36aafd1d><i class="mdui-icon material-icons" data-v-36aafd1d>arrow_forward</i><span class="nav-direction" data-v-36aafd1d>Next</span><div class="nav-chapter" data-v-36aafd1d>对话框</div></div></a></div></div></div><!----><!--]--></div>
+
+<script>
+  window.__INITIAL_DATA__ = {"docs":{"defaultPrimary":"indigo","defaultAccent":"pink","defaultLayout":"auto","primary":"indigo","accent":"pink","layout":"auto","drawer":null,"themeDialog":null}};
+</script>
+</body>
+</html>
