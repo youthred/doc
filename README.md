@@ -1,12 +1,16 @@
 # GUIDE
 
-[bash](guide/bash)
+[Bash 脚本手册](guide/bash/Bash 脚本手册.md)
+
+[Bash常用快速翻查](guide/bash/Bash常用快速翻查.md)
 
 [hutool-docs-html](guide/hutool-docs/index.html)
 
 [hutool-docs-md](guide/hutool-docs/SUMMARY.md)
 
 [mdui-v1.0.2-docs](guide/mdui-v1.0.2-docs)
+
+[mdui-v1.0.2-docs-mark2](guide/mdui-doc-v1.0.2)
 
 [thymeleaf-docs](guide/thymeleaf-docs)
 
