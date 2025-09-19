@@ -12,6 +12,8 @@
 
 [mdui-v1.0.2-docs-mark2](guide/mdui-doc-v1.0.2)
 
+[mdui-v1.0.2-jq](guide/mdui-v1.0.2-jq)
+
 [thymeleaf-docs](guide/thymeleaf-docs)
 
 [Netty 4.x 用户指南](guide/netty-4-user-guide/SUMMARY.md)
