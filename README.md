@@ -21,3 +21,5 @@
 [Netty 4.x 案例大全](guide/netty-4-user-guide-demos)
 
 [SpringSecurity 5.2.0 中文文档](guide/spring-security-Reference-5.2.0.RELEASE-zh/spring-security-Reference-5.2.0.RELEASE-zh.html)
+
+[Alpine.js 3.16.3 中文文档](guide/alpinejs/index.html)
