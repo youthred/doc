@@ -74,6 +74,7 @@ var allMyCharts = $("canvas").chart();
 
 全局选项适用于所有可用的图标类型（包括曲线图、饼图和柱状图）。以下列出所有可用的全局选项及默认值：
 
+{% raw %}
 ```js
 {
     // Boolean - 是否执行动画效果
@@ -210,6 +211,7 @@ var allMyCharts = $("canvas").chart();
     onAnimationComplete: function() {}
 }
 ```
+{% endraw %}
 
 ## 曲线图
 
