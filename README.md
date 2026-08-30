@@ -23,5 +23,3 @@
 [SpringSecurity 5.2.0 中文文档](guide/spring-security-Reference-5.2.0.RELEASE-zh/spring-security-Reference-5.2.0.RELEASE-zh.html)
 
 [Alpine.js 3.16.3 中文文档](guide/alpinejs/index.html)
-
-[zui-1.10.0](guide/zui-1.10.0/index.html)
