@@ -1,0 +1,5 @@
+liquid:
+  error_mode: strict
+  strict_filters: true
+  # 关键：不要解析代码块内liquid
+  render_liquid: false
